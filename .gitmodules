@@ -1,0 +1,3 @@
+[submodule "polly-data-model"]
+	path = polly-data-model
+	url = git@github.com:ElucidataInc/polly-data-model.git
