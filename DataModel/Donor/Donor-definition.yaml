@@ -1,0 +1,106 @@
+Donor:
+  donor_id:
+    type: String
+    isOntology: false
+  patientId:
+    type: String
+    isOntology: false
+  patientUuid:
+    type: String
+    isOntology: false
+  bmi:
+    type: Float
+    isOntology: false
+  preMenopauseCycleType:
+    type: String
+    isOntology: false
+  preMenopauseCycleDuration:
+    type: String
+    isOntology: false
+  age:
+    type: Integer
+    isOntology: false
+  gender:
+    type: String
+    isOntology: false
+  menstruation:
+    type: String
+    isOntology: false
+  occupation:
+    type: String
+    isOntology: false
+  ethnicity:
+    type: String
+    isOntology: false
+  height:
+    type: Float
+    isOntology: false
+  weight:
+    type: Float
+    isOntology: false
+  diet:
+    type: String
+    isOntology: false
+  maritalStatus:
+    type: String
+    isOntology: false
+  numberOfChildren:
+    type: Integer
+    isOntology: false
+  waistCircumference:
+    type: Float
+    isOntology: false
+  baselineHba1c:
+    type: Float
+    isOntology: false
+  baselineFpg:
+    type: Float
+    isOntology: false
+  race:
+    type: String
+    isOntology: false
+  ethnicityHispanic:
+    type: String
+    isOntology: false
+  asianMajority:
+    type: String
+    isOntology: false
+  diseaseDuration:
+    type: String
+    isOntology: false
+  indication:
+    type: String
+    isOntology: false
+  diseaseEntryCriteria:
+    type: String
+    isOntology: false
+  overweight:
+    type: String
+    isOntology: false
+  obesityClassI:
+    type: String
+    isOntology: false
+  obesityClassII:
+    type: String
+    isOntology: false
+  obesityClassIII:
+    type: String
+    isOntology: false
+  diabetes:
+    type: String
+    isOntology: false
+  prediabetes:
+    type: String
+    isOntology: false
+  dyslipidemia:
+    type: String
+    isOntology: false
+  hypertension:
+    type: String
+    isOntology: false
+  depression:
+    type: String
+    isOntology: false
+  pcos:
+    type: String
+    isOntology: false

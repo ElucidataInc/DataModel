@@ -1,0 +1,13 @@
+Therapy:
+  donor_id:
+    type: String
+    isOntology: false
+  mono_dual:
+    type: String
+    isOntology: false
+  dose_level:
+    type: String
+    isOntology: false
+  response:
+    type: String
+    isOntology: false

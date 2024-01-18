@@ -1,0 +1,19 @@
+Family:
+  donor_id:
+    type: String
+    isOntology: false
+  patientId:
+    type: String
+    isOntology: false
+  herediatries:
+    type: String
+    isOntology: false
+  patientRelation:
+    type: String
+    isOntology: false
+  cancerSiteName:
+    type: String
+    isOntology: false
+  ageAtDiagnosis:
+    type: Integer
+    isOntology: false

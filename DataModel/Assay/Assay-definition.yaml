@@ -1,0 +1,114 @@
+Assay:
+  assayType:
+    transcriptomics:
+      rawCountData:
+        - geneSymbol:
+            type: String
+            isOntology: false
+          expressionData:
+            - sample_id:
+                type: String
+                isOntology: false
+              expression_value:
+                type: Float
+                isOntology: false
+            type: List
+            isOntology: false
+        type: List
+        isOntology: false
+      normalisedData:
+        - geneSymbol:
+            type: String
+            isOntology: false
+          expressionData:
+            - sample_id:
+                type: String
+                isOntology: false
+              expression_value:
+                type: Float
+                isOntology: false
+            type: List
+            isOntology: false
+        type: List
+        isOntology: false
+    proteomics:
+      rawCountData:
+        - geneSymbol:
+            type: String
+            isOntology: false
+          expressionData:
+            - sample_id:
+                type: String
+                isOntology: false
+              expression_value:
+                type: Float
+                isOntology: false
+            type: List
+            isOntology: false
+        type: List
+        isOntology: false
+      normalisedData:
+        - geneSymbol:
+            type: String
+            isOntology: false
+          expressionData:
+            - sample_id:
+                type: String
+                isOntology: false
+              expression_value:
+                type: Float
+                isOntology: false
+            type: List
+            isOntology: false
+        type: List
+        isOntology: false
+    Cytokine:
+      assayData:
+        - donor_id:
+            type: String
+            isOntology: false
+          sample_id:
+            type: String
+            isOntology: false
+          customVisitDays:
+            type: Float
+            isOntology: false
+          biomarkers:
+            - marker:
+                type: String
+                isOntology: false
+              value:
+                type: Float
+                isOntology: false
+            type: List
+            isOntology: false
+        type: List
+        isOntology: false
+    ICS:
+      assayData:
+        - donor_id:
+            type: String
+            isOntology: false
+          sample_id:
+            type: String
+            isOntology: false
+          customVisitDays:
+            type: Float
+            isOntology: false
+          lymphocytes:
+            type: Float
+            isOntology: false
+          viableLymphocytes:
+            type: Float
+            isOntology: false
+          biomarkers:
+            - marker:
+                type: String
+                isOntology: false
+              value:
+                type: Float
+                isOntology: false
+            type: List
+            isOntology: false
+        type: List
+        isOntology: false

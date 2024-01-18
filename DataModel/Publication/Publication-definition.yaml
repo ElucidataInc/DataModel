@@ -1,0 +1,40 @@
+Publication:
+  dataset_id:
+    type: String
+    isOntology: false
+  url:
+    type: String
+    isOntology: false
+  sourceNumber:
+    type: Integer
+    isOntology: false
+  authors:
+    type: List
+    isOntology: false
+  publicationYear:
+    type: Integer
+    isOntology: false
+  title:
+    type: String
+    isOntology: false
+  journal:
+    type: String
+    isOntology: false
+  volume:
+    type: String
+    isOntology: false
+  pages:
+    type: Integer
+    isOntology: false
+  publicationType:
+    type: String
+    isOntology: false
+  primarySource:
+    type: String
+    isOntology: false
+  firstAuthor:
+    type: String
+    isOntology: false
+  reference:
+    type: String
+    isOntology: false

@@ -1,0 +1,58 @@
+Exposure:
+  donor_id:
+    type: String
+    isOntology: false
+  patientId:
+    type: String
+    isOntology: false
+  smoking:
+    type: String
+    isOntology: false
+  smokingOnsetYear:
+    type: Integer
+    isOntology: false
+  smokingQuitYear:
+    type: Integer
+    isOntology: false
+  smokingSpecify:
+    type: String
+    isOntology: false
+  smokingFrequency:
+    type: String
+    isOntology: false
+  drinking:
+    type: String
+    isOntology: false
+  drinkingSpecify:
+    type: String
+    isOntology: false
+  drinkingFrequency:
+    type: String
+    isOntology: false
+  isBloodThinningMedications:
+    type: String
+    isOntology: false
+  bloodThinningMedicationSpecify:
+    type: String
+    isOntology: false
+  otherFormsOfTobaccoUse:
+    type: String
+    isOntology: false
+  otherFormsOfTobaccoUseSpecify:
+    type: String
+    isOntology: false
+  backTreatments:
+    type: String
+    isOntology: false
+  failedTreatments:
+    type: String
+    isOntology: false
+  treatmentSwitch:
+    type: String
+    isOntology: false
+  diet:
+    type: String
+    isOntology: false
+  exercise:
+    type: String
+    isOntology: false
