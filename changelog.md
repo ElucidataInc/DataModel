@@ -1,6 +1,6 @@
 # CHANGELOG.md
 
-## 1.0.0 (Pre-Release)
+## Pre-Release
 
 Fix:
     - Add missing ngs attributes to Diagnosis Entity
