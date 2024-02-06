@@ -2,9 +2,6 @@ Diagnosis:
   donor_id:
     type: String
     isOntology: false
-  patientId:
-    type: String
-    isOntology: false
   disease:
     primaryDiagnosis:
       type: String
@@ -45,6 +42,8 @@ Diagnosis:
               type: Integer
               isOntology: false
             cycles:
+              type: List
+              isOntology: false
               drugdosages:
                 date:
                   type: String
@@ -82,14 +81,17 @@ Diagnosis:
               isOntology: false
         surgery:
           surgerydetails:
-            name:
-              type: String
+            surgeries:
+              type: List
               isOntology: false
-            date:
-              type: String
-              isOntology: false
+              name:
+                type: String
+                isOntology: false
+              date:
+                type: String
+                isOntology: false
             adverseEventList:
-              type: String
+              type: List
               isOntology: false
             adverseEventMedication:
               type: String
@@ -154,6 +156,82 @@ Diagnosis:
               result:
                 type: String
                 isOntology: false
+            ngs:
+              createdOn:
+                type: String
+                isOntology: false
+              siteOfLesions:
+                type: List
+                isOntology: false
+                fusion:
+                  type: String
+                  isOntology: false
+                variation_Missense_mutation:
+                  type: List
+                  isOntology: false
+                  chromosomalCoordinates:
+                    type: String
+                    isOntology: false
+                  exonLocation:
+                    type: String
+                    isOntology: false
+                  variant:
+                    type: String
+                    isOntology: false
+                variation_Inframe_deletion:
+                  type: String
+                  isOntology: false
+                variation_Inframe_insertion:
+                  type: String
+                  isOntology: false
+                variation_Indel:
+                  type: String
+                  isOntology: false
+                variation_Splice_site:
+                  type: String
+                  isOntology: false
+                variation_Frame_shift_mutation:
+                  type: String
+                  isOntology: false
+                variation:
+                  type: String
+                  isOntology: false
+                geneName:
+                  type: String
+                  isOntology: false
+                geneMarker:
+                  type: String
+                  isOntology: false
+                clinicalSignificanceOfTheVariant:
+                  type: String
+                  isOntology: false
+                ngsSelectedDrugs:
+                  type: List
+                  isOntology: false
+                  drugsRecommended:
+                    type: String
+                    isOntology: false
+                  trialDrugsSuggested:
+                    type: String
+                    isOntology: false
+                cnv:
+                  type: String
+                  isOntology: false
+              pathwaysInvolved:
+                type: List
+                isOntology: false
+              nameOfTheAssay:
+                type: String
+                isOntology: false
+              tmb:
+                type: String
+                isOntology: false
+              tmbScore:
+                type: Float
+                isOntology: false
+              msi:
+                type: String
+                isOntology: false
           selectMethod:
             type: String
             isOntology: false
@@ -174,15 +252,17 @@ Diagnosis:
             type: String
             isOntology: false
           biomarkers:
-            biomarker:
-              type: String
+              type: List
               isOntology: false
-            biomarkerValue:
-              type: String
-              isOntology: false
-            unit:
-              type: String
-              isOntology: false
+              biomarker:
+                type: String
+                isOntology: false
+              biomarkerValue:
+                type: String
+                isOntology: false
+              unit:
+                type: String
+                isOntology: false
         pathology:
           lymphNodeRegions:
             type: String
@@ -206,12 +286,15 @@ Diagnosis:
             type: String
             isOntology: false
       consultation:
-        comments:
-          type: String
+        consultationdetails:
+          type: List
           isOntology: false
-        advise:
-          type: String
-          isOntology: false
-        eventdate:
-          type: String
-          isOntology: false
+          comments:
+            type: String
+            isOntology: false
+          advise:
+            type: String
+            isOntology: false
+          eventdate:
+            type: String
+            isOntology: false
