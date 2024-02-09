@@ -1,22 +1,22 @@
 ClinicalHistory:
   donor_id:
-    type: String
+    type: str
     isOntology: false
   patientId:
-    type: String
+    type: str
     isOntology: false
   ageAtDiagnosis:
     type: Integer
     isOntology: false
   symptomsBeforeDiagnosis:
-    type: String
+    type: str
     isOntology: false
   hereditaryFactor:
-    type: String
+    type: str
     isOntology: false
   hereditaryFactorSignificant:
-    type: String
+    type: str
     isOntology: false
   synchronousOrMetachronous:
-    type: String
+    type: str
     isOntology: false

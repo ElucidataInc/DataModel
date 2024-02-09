@@ -1,19 +1,19 @@
 Sample:
   sampleId:
-    type: String
+    type: str
     isOntology: false
   patientId:
-    type: String
+    type: str
     isOntology: false
   type:
-    type: String
+    type: str
     isOntology: false
   preservationMethod:
-    type: String
+    type: str
     isOntology: false
   siteOfResection:
-    type: String
+    type: str
     isOntology: false
   tissueType:
-    type: String
+    type: str
     isOntology: false

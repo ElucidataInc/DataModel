@@ -1,4 +1,4 @@
 Specimen:
   specimen_id:
-    type: String
+    type: str
     isOntology: false

@@ -1,106 +1,106 @@
 Donor:
   donor_id:
-    type: String
+    type: str
     isOntology: false
   patientId:
-    type: String
+    type: str
     isOntology: false
   patientUuid:
-    type: String
+    type: str
     isOntology: false
   bmi:
-    type: Float
+    type: float
     isOntology: false
   preMenopauseCycleType:
-    type: String
+    type: str
     isOntology: false
   preMenopauseCycleDuration:
-    type: String
+    type: str
     isOntology: false
   age:
-    type: Integer
+    type: int
     isOntology: false
   gender:
-    type: String
+    type: str
     isOntology: false
   menstruation:
-    type: String
+    type: str
     isOntology: false
   occupation:
-    type: String
+    type: str
     isOntology: false
   ethnicity:
-    type: String
+    type: str
     isOntology: false
   height:
-    type: Float
+    type: float
     isOntology: false
   weight:
-    type: Float
+    type: float
     isOntology: false
   diet:
-    type: String
+    type: str
     isOntology: false
   maritalStatus:
-    type: String
+    type: str
     isOntology: false
   numberOfChildren:
-    type: Integer
+    type: int
     isOntology: false
   waistCircumference:
-    type: Float
+    type: float
     isOntology: false
   baselineHba1c:
-    type: Float
+    type: float
     isOntology: false
   baselineFpg:
-    type: Float
+    type: float
     isOntology: false
   race:
-    type: String
+    type: str
     isOntology: false
   ethnicityHispanic:
-    type: String
+    type: str
     isOntology: false
   asianMajority:
-    type: String
+    type: str
     isOntology: false
   diseaseDuration:
-    type: String
+    type: str
     isOntology: false
   indication:
-    type: String
+    type: str
     isOntology: false
   diseaseEntryCriteria:
-    type: String
+    type: str
     isOntology: false
   overweight:
-    type: String
+    type: str
     isOntology: false
   obesityClassI:
-    type: String
+    type: str
     isOntology: false
   obesityClassII:
-    type: String
+    type: str
     isOntology: false
   obesityClassIII:
-    type: String
+    type: str
     isOntology: false
   diabetes:
-    type: String
+    type: str
     isOntology: false
   prediabetes:
-    type: String
+    type: str
     isOntology: false
   dyslipidemia:
-    type: String
+    type: str
     isOntology: false
   hypertension:
-    type: String
+    type: str
     isOntology: false
   depression:
-    type: String
+    type: str
     isOntology: false
   pcos:
-    type: String
+    type: str
     isOntology: false

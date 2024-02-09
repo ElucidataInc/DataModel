@@ -3,112 +3,112 @@ Assay:
     transcriptomics:
       rawCountData:
         - geneSymbol:
-            type: String
+            type: str
             isOntology: false
           expressionData:
             - sample_id:
-                type: String
+                type: str
                 isOntology: false
               expression_value:
-                type: Float
+                type: float
                 isOntology: false
-            type: List
+            type: list
             isOntology: false
-        type: List
+        type: list
         isOntology: false
       normalisedData:
         - geneSymbol:
-            type: String
+            type: str
             isOntology: false
           expressionData:
             - sample_id:
-                type: String
+                type: str
                 isOntology: false
               expression_value:
-                type: Float
+                type: float
                 isOntology: false
-            type: List
+            type: list
             isOntology: false
-        type: List
+        type: list
         isOntology: false
     proteomics:
       rawCountData:
         - geneSymbol:
-            type: String
+            type: str
             isOntology: false
           expressionData:
             - sample_id:
-                type: String
+                type: str
                 isOntology: false
               expression_value:
-                type: Float
+                type: float
                 isOntology: false
-            type: List
+            type: list
             isOntology: false
-        type: List
+        type: list
         isOntology: false
       normalisedData:
         - geneSymbol:
-            type: String
+            type: str
             isOntology: false
           expressionData:
             - sample_id:
-                type: String
+                type: str
                 isOntology: false
               expression_value:
-                type: Float
+                type: float
                 isOntology: false
-            type: List
+            type: list
             isOntology: false
-        type: List
+        type: list
         isOntology: false
     Cytokine:
       assayData:
         - donor_id:
-            type: String
+            type: str
             isOntology: false
           sample_id:
-            type: String
+            type: str
             isOntology: false
           customVisitDays:
-            type: Float
+            type: float
             isOntology: false
           biomarkers:
             - marker:
-                type: String
+                type: str
                 isOntology: false
               value:
-                type: Float
+                type: float
                 isOntology: false
-            type: List
+            type: list
             isOntology: false
-        type: List
+        type: list
         isOntology: false
     ICS:
       assayData:
         - donor_id:
-            type: String
+            type: str
             isOntology: false
           sample_id:
-            type: String
+            type: str
             isOntology: false
           customVisitDays:
-            type: Float
+            type: float
             isOntology: false
           lymphocytes:
-            type: Float
+            type: float
             isOntology: false
           viableLymphocytes:
-            type: Float
+            type: float
             isOntology: false
           biomarkers:
             - marker:
-                type: String
+                type: str
                 isOntology: false
               value:
-                type: Float
+                type: float
                 isOntology: false
-            type: List
+            type: list
             isOntology: false
-        type: List
+        type: list
         isOntology: false

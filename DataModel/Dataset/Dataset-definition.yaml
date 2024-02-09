@@ -1,4 +1,4 @@
 Dataset:
   dataset_id:
-    type: String
+    type: str
     isOntology: false

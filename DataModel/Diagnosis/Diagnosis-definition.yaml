@@ -1,31 +1,31 @@
 Diagnosis:
   donor_id:
-    type: String
+    type: str
     isOntology: false
   disease:
     primaryDiagnosis:
-      type: String
+      type: str
       isOntology: false
     cancerSite:
-      type: String
+      type: str
       isOntology: false
     cancerLocation:
-      type: String
+      type: str
       isOntology: false
     morphology:
-      type: String
+      type: str
       isOntology: false
     laterality:
-      type: String
+      type: str
       isOntology: false
     tnmStage:
-      type: String
+      type: str
       isOntology: false
     tumorGrade:
-      type: String
+      type: str
       isOntology: false
     tumorStage:
-      type: String
+      type: str
       isOntology: false
   diagnostictests:
     eventtype:
@@ -33,268 +33,268 @@ Diagnosis:
         chemotherapy:
           chemotherapydetails:
             selectedRegimen:
-              type: String
+              type: str
               isOntology: false
             startDate:
-              type: String
+              type: str
               isOntology: false
             numberOfCycles:
-              type: Integer
+              type: int
               isOntology: false
             cycles:
-              type: List
+              type: list
               isOntology: false
               drugdosages:
                 date:
-                  type: String
+                  type: str
                   isOntology: false
                 drugName:
-                  type: String
+                  type: str
                   isOntology: false
                 dosage:
-                  type: Float
+                  type: float
                   isOntology: false
-              type: List
+              type: list
               isOntology: false
             routeOfAdministration:
-              type: String
+              type: str
               isOntology: false
-            adverseEventList:
-              type: List
+            adverseEventlist:
+              type: list
               isOntology: false
             adverseEventMedication:
-              type: String
+              type: str
               isOntology: false
         performancestatus:
           performancestatusdetails:
             diseaseFreeSurvival:
-              type: String
+              type: str
               isOntology: false
             progressionFreeSurvival:
-              type: String
+              type: str
               isOntology: false
             recistCriteria:
-              type: String
+              type: str
               isOntology: false
             irecistCriteria:
-              type: String
+              type: str
               isOntology: false
         surgery:
           surgerydetails:
             surgeries:
-              type: List
+              type: list
               isOntology: false
               name:
-                type: String
+                type: str
                 isOntology: false
               date:
-                type: String
+                type: str
                 isOntology: false
-            adverseEventList:
-              type: List
+            adverseEventlist:
+              type: list
               isOntology: false
             adverseEventMedication:
-              type: String
+              type: str
               isOntology: false
       diagnosticeventtype:
         diagnosticdetails:
           molecularpathology:
             ihc:
               selectMarker:
-                type: String
+                type: str
                 isOntology: false
               result:
-                type: String
+                type: str
                 isOntology: false
               cellsPositive:
-                type: Integer
+                type: int
                 isOntology: false
               intensityScore:
-                type: Float
+                type: float
                 isOntology: false
               combinedPositiveScore:
-                type: Float
+                type: float
                 isOntology: false
               tumourProportionScore:
-                type: Float
+                type: float
                 isOntology: false
               allRedScore:
-                type: Float
+                type: float
                 isOntology: false
               cloneOfAntibody:
-                type: String
+                type: str
                 isOntology: false
               jScore:
-                type: Float
+                type: float
                 isOntology: false
               hScore:
-                type: Float
+                type: float
                 isOntology: false
             fish:
               selectMarker:
-                type: String
+                type: str
                 isOntology: false
               result:
-                type: String
+                type: str
                 isOntology: false
               numberOfCopies:
-                type: Integer
+                type: int
                 isOntology: false
               ratio:
-                type: Float
+                type: float
                 isOntology: false
             pcr:
               selectMarker:
-                type: String
+                type: str
                 isOntology: false
               exonTested:
-                type: String
+                type: str
                 isOntology: false
               codonTested:
-                type: String
+                type: str
                 isOntology: false
               result:
-                type: String
+                type: str
                 isOntology: false
             ngs:
               createdOn:
-                type: String
+                type: str
                 isOntology: false
               siteOfLesions:
-                type: List
+                type: list
                 isOntology: false
                 fusion:
-                  type: String
+                  type: str
                   isOntology: false
                 variation_Missense_mutation:
-                  type: List
+                  type: list
                   isOntology: false
                   chromosomalCoordinates:
-                    type: String
+                    type: str
                     isOntology: false
                   exonLocation:
-                    type: String
+                    type: str
                     isOntology: false
                   variant:
-                    type: String
+                    type: str
                     isOntology: false
                 variation_Inframe_deletion:
-                  type: String
+                  type: str
                   isOntology: false
                 variation_Inframe_insertion:
-                  type: String
+                  type: str
                   isOntology: false
                 variation_Indel:
-                  type: String
+                  type: str
                   isOntology: false
                 variation_Splice_site:
-                  type: String
+                  type: str
                   isOntology: false
                 variation_Frame_shift_mutation:
-                  type: String
+                  type: str
                   isOntology: false
                 variation:
-                  type: String
+                  type: str
                   isOntology: false
                 geneName:
-                  type: String
+                  type: str
                   isOntology: false
                 geneMarker:
-                  type: String
+                  type: str
                   isOntology: false
                 clinicalSignificanceOfTheVariant:
-                  type: String
+                  type: str
                   isOntology: false
                 ngsSelectedDrugs:
-                  type: List
+                  type: list
                   isOntology: false
                   drugsRecommended:
-                    type: String
+                    type: str
                     isOntology: false
                   trialDrugsSuggested:
-                    type: String
+                    type: str
                     isOntology: false
                 cnv:
-                  type: String
+                  type: str
                   isOntology: false
               pathwaysInvolved:
-                type: List
+                type: list
                 isOntology: false
               nameOfTheAssay:
-                type: String
+                type: str
                 isOntology: false
               tmb:
-                type: String
+                type: str
                 isOntology: false
               tmbScore:
-                type: Float
+                type: float
                 isOntology: false
               msi:
-                type: String
+                type: str
                 isOntology: false
           selectMethod:
-            type: String
+            type: str
             isOntology: false
           impression:
-            type: String
+            type: str
             isOntology: false
           dateOfTest:
-            type: String
+            type: str
             isOntology: false
           approximateDate:
-            type: String
+            type: str
             isOntology: false
         serumbiomarker:
           date:
-            type: String
+            type: str
             isOntology: false
           approximateDate:
-            type: String
+            type: str
             isOntology: false
           biomarkers:
-              type: List
+              type: list
               isOntology: false
               biomarker:
-                type: String
+                type: str
                 isOntology: false
               biomarkerValue:
-                type: String
+                type: str
                 isOntology: false
               unit:
-                type: String
+                type: str
                 isOntology: false
         pathology:
           lymphNodeRegions:
-            type: String
+            type: str
             isOntology: false
           typeOfSample:
-            type: String
+            type: str
             isOntology: false
           dateOfTest:
-            type: String
+            type: str
             isOntology: false
           grade:
-            type: String
+            type: str
             isOntology: false
           tissue:
-            type: String
+            type: str
             isOntology: false
           margins:
-            type: String
+            type: str
             isOntology: false
           impression:
-            type: String
+            type: str
             isOntology: false
       consultation:
         consultationdetails:
-          type: List
+          type: list
           isOntology: false
           comments:
-            type: String
+            type: str
             isOntology: false
           advise:
-            type: String
+            type: str
             isOntology: false
           eventdate:
-            type: String
+            type: str
             isOntology: false
