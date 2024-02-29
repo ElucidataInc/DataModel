@@ -1,0 +1,13 @@
+Treatment:
+  patientId:
+    type: str
+    isOntology: false
+  arm_name:
+    type: str
+    isOntology: false
+  result_unit_preferred:
+    type: str
+    isOntology: false
+  result_value:
+    type: float
+    isOntology: false
