@@ -10,3 +10,7 @@ Fix:  [08-02-2024]
 Update: [29-02-2024]  
     - Add Treatment entity  
     - Add Treatment attributes  
+
+Update: [01-03-2024]  
+    - Add Files entity  
+    - Add Files attributes

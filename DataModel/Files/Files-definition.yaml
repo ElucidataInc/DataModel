@@ -1,0 +1,28 @@
+Files:
+  file_id:
+    type: str
+    isOntology: false
+  file_name:
+    type: str
+    isOntology: false
+  file_size:
+    type: str
+    isOntology: false
+  md5sum:
+    type: str
+    isOntology: false
+  file_location:
+    type: str
+    isOntology: false
+  file_type:
+    type: str
+    isOntology: false
+  file_format:
+    type: str
+    isOntology: false
+  data_category:
+    type: str
+    isOntology: false
+  
+  
+    
