@@ -1,0 +1,12 @@
+Genomics:
+  VariationType:
+    Mutation:
+      - geneSymbol:
+        type: str
+        isOntology: false
+      - mutationType:
+        type: str
+        isOntology: false
+      - location:
+        type: str
+        isOntology: false
