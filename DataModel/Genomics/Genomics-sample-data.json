@@ -1,0 +1,39 @@
+{
+    "Genomics": {
+      "VariationType": {
+        "Mutation": [
+          {
+            "sampleId": "S12345",
+            "mutations": [
+              {
+                "geneSymbol": "BRCA1",
+                "mutationType": "missense",
+                "location": "exon 13"
+              },
+              {
+                "geneSymbol": "TP53",
+                "mutationType": "nonsense",
+                "location": "exon 7"
+              }
+            ]
+          },
+          {
+            "sampleId": "S12346",
+            "mutations": [
+              {
+                "geneSymbol": "EGFR",
+                "mutationType": "insertion",
+                "location": "exon 19"
+              },
+              {
+                "geneSymbol": "MLH1",
+                "mutationType": "deletion",
+                "location": "exon 5"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+  
