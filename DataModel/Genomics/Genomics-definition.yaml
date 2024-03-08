@@ -1,12 +1,18 @@
 Genomics:
   VariationType:
     Mutation:
-      - geneSymbol:
-        type: str
-        isOntology: false
-      - mutationType:
-        type: str
-        isOntology: false
-      - location:
-        type: str
-        isOntology: false
+      - sampleId:
+          type: str
+          isOntology: false
+      - Mutations:
+          type: list
+          isOntology: false
+        - geneSymbol:
+            type: str
+            isOntology: false
+        - mutationType:
+            type: str
+            isOntology: false
+        - location:
+            type: str
+            isOntology: false

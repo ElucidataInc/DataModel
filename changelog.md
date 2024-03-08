@@ -14,3 +14,7 @@ Update: [29-02-2024]
 Update: [06-03-2024]  
     - Add Genomics entity  
     - Added attributes for mutation data within VariationType sub-entity in genomics
+
+Update: [08-03-2024]  
+    - Updated nesting structure for storing mutations to sample-wise list
+    - Added sampleId attribute
