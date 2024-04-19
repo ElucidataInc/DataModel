@@ -1,0 +1,106 @@
+Donor:
+  donor_id:
+    type: str
+    isOntology: false
+  patientId:
+    type: str
+    isOntology: false
+  patientUuid:
+    type: str
+    isOntology: false
+  bmi:
+    type: float
+    isOntology: false
+  preMenopauseCycleType:
+    type: str
+    isOntology: false
+  preMenopauseCycleDuration:
+    type: str
+    isOntology: false
+  age:
+    type: int
+    isOntology: false
+  gender:
+    type: str
+    isOntology: false
+  menstruation:
+    type: str
+    isOntology: false
+  occupation:
+    type: str
+    isOntology: false
+  ethnicity:
+    type: str
+    isOntology: false
+  height:
+    type: float
+    isOntology: false
+  weight:
+    type: float
+    isOntology: false
+  diet:
+    type: str
+    isOntology: false
+  maritalStatus:
+    type: str
+    isOntology: false
+  numberOfChildren:
+    type: int
+    isOntology: false
+  waistCircumference:
+    type: float
+    isOntology: false
+  baselineHba1c:
+    type: float
+    isOntology: false
+  baselineFpg:
+    type: float
+    isOntology: false
+  race:
+    type: str
+    isOntology: false
+  ethnicityHispanic:
+    type: str
+    isOntology: false
+  asianMajority:
+    type: str
+    isOntology: false
+  diseaseDuration:
+    type: str
+    isOntology: false
+  indication:
+    type: str
+    isOntology: false
+  diseaseEntryCriteria:
+    type: str
+    isOntology: false
+  overweight:
+    type: str
+    isOntology: false
+  obesityClassI:
+    type: str
+    isOntology: false
+  obesityClassII:
+    type: str
+    isOntology: false
+  obesityClassIII:
+    type: str
+    isOntology: false
+  diabetes:
+    type: str
+    isOntology: false
+  prediabetes:
+    type: str
+    isOntology: false
+  dyslipidemia:
+    type: str
+    isOntology: false
+  hypertension:
+    type: str
+    isOntology: false
+  depression:
+    type: str
+    isOntology: false
+  pcos:
+    type: str
+    isOntology: false
