@@ -1,19 +1,34 @@
 Sample:
-  sampleId:
-    type: str
-    isOntology: false
-  patientId:
-    type: str
-    isOntology: false
-  type:
-    type: str
-    isOntology: false
-  preservationMethod:
-    type: str
-    isOntology: false
-  siteOfResection:
-    type: str
-    isOntology: false
-  tissueType:
-    type: str
-    isOntology: false
+  description: >
+    Information related to a biological sample.
+  properties:
+    sampleId:
+      description: >
+        The unique identifier of the sample.
+      type: str
+      isOntology: false
+    patientId:
+      description: >
+        The identifier of the patient associated with the sample.
+      type: str
+      isOntology: false
+    type:
+      description: >
+        The type of sample (e.g., blood, tissue).
+      type: str
+      isOntology: false
+    preservationMethod:
+      description: >
+        Method used for sample preservation.
+      type: str
+      isOntology: false
+    siteOfResection:
+      description: >
+        Site of resection where the sample was obtained.
+      type: str
+      isOntology: false
+    tissueType:
+      description: >
+        Type of tissue in the sample.
+      type: str
+      isOntology: false

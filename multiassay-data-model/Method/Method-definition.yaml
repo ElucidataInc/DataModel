@@ -1,4 +1,9 @@
 Method:
-  dataset_id:
-    type: str
-    isOntology: false
+  description: >
+    Information related to methods used in a dataset.
+  properties:
+    dataset_id:
+      description: >
+        The unique identifier of the dataset associated with the method.
+      type: str
+      isOntology: false

@@ -1,114 +1,162 @@
-Assay:
-  assayType:
-    transcriptomics:
-      rawCountData:
-        - geneSymbol:
-            type: str
-            isOntology: false
-          expressionData:
-            - sample_id:
-                type: str
-                isOntology: false
-              expression_value:
-                type: float
-                isOntology: false
-            type: list
-            isOntology: false
-        type: list
-        isOntology: false
-      normalisedData:
-        - geneSymbol:
-            type: str
-            isOntology: false
-          expressionData:
-            - sample_id:
-                type: str
-                isOntology: false
-              expression_value:
-                type: float
-                isOntology: false
-            type: list
-            isOntology: false
-        type: list
-        isOntology: false
-    proteomics:
-      rawCountData:
-        - geneSymbol:
-            type: str
-            isOntology: false
-          expressionData:
-            - sample_id:
-                type: str
-                isOntology: false
-              expression_value:
-                type: float
-                isOntology: false
-            type: list
-            isOntology: false
-        type: list
-        isOntology: false
-      normalisedData:
-        - geneSymbol:
-            type: str
-            isOntology: false
-          expressionData:
-            - sample_id:
-                type: str
-                isOntology: false
-              expression_value:
-                type: float
-                isOntology: false
-            type: list
-            isOntology: false
-        type: list
-        isOntology: false
-    Cytokine:
-      assayData:
-        - donor_id:
-            type: str
-            isOntology: false
-          sample_id:
-            type: str
-            isOntology: false
-          customVisitDays:
-            type: float
-            isOntology: false
-          biomarkers:
-            - marker:
-                type: str
-                isOntology: false
-              value:
-                type: float
-                isOntology: false
-            type: list
-            isOntology: false
-        type: list
-        isOntology: false
-    ICS:
-      assayData:
-        - donor_id:
-            type: str
-            isOntology: false
-          sample_id:
-            type: str
-            isOntology: false
-          customVisitDays:
-            type: float
-            isOntology: false
-          lymphocytes:
-            type: float
-            isOntology: false
-          viableLymphocytes:
-            type: float
-            isOntology: false
-          biomarkers:
-            - marker:
-                type: str
-                isOntology: false
-              value:
-                type: float
-                isOntology: false
-            type: list
-            isOntology: false
-        type: list
-        isOntology: false
+assay:
+  description: A representation of assay data categorized by assay type.
+  properties:
+    assayType:
+      description: Different types of assays such as transcriptomics, proteomics, cytokine, and ICS.
+      properties:
+        transcriptomics:
+          description: Assay data related to transcriptomics.
+          properties:
+            rawCountData:
+              description: Raw count data for transcriptomics assay.
+              type: array
+              items:
+                type: object
+                properties:
+                  geneSymbol:
+                    description: Symbol of the gene.
+                    type: string
+                  expressionData:
+                    description: Expression data for the gene.
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        sample_id:
+                          description: Identifier for the sample.
+                          type: string
+                        expression_value:
+                          description: Expression value of the gene.
+                          type: number
+            normalisedData:
+              description: Normalized data for transcriptomics assay.
+              type: array
+              items:
+                type: object
+                properties:
+                  geneSymbol:
+                    description: Symbol of the gene.
+                    type: string
+                  expressionData:
+                    description: Expression data for the gene.
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        sample_id:
+                          description: Identifier for the sample.
+                          type: string
+                        expression_value:
+                          description: Expression value of the gene.
+                          type: number
+        proteomics:
+          description: Assay data related to proteomics.
+          properties:
+            rawCountData:
+              description: Raw count data for proteomics assay.
+              type: array
+              items:
+                type: object
+                properties:
+                  geneSymbol:
+                    description: HUGO Symbol of the gene.
+                    type: string
+                  expressionData:
+                    description: Expression data for the gene.
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        sample_id:
+                          description: Identifier for the sample.
+                          type: string
+                        expression_value:
+                          description: Expression value of the gene.
+                          type: number
+            normalisedData:
+              description: Normalized data for proteomics assay.
+              type: array
+              items:
+                type: object
+                properties:
+                  geneSymbol:
+                    description: Symbol of the gene.
+                    type: string
+                  expressionData:
+                    description: Expression data for the gene.
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        sample_id:
+                          description: Identifier for the sample.
+                          type: string
+                        expression_value:
+                          description: Expression value of the gene.
+                          type: number
+        cytokine:
+          description: Assay data related to cytokine.
+          properties:
+            assayData:
+              description: Data related to cytokine assay.
+              type: array
+              items:
+                type: object
+                properties:
+                  donor_id:
+                    description: Identifier for the donor.
+                    type: string
+                  sample_id:
+                    description: Identifier for the sample.
+                    type: string
+                  customVisitDays:
+                    description: Custom visit days.
+                    type: number
+                  biomarkers:
+                    description: Biomarkers data.
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        marker:
+                          description: Biomarker marker.
+                          type: string
+                        value:
+                          description: Biomarker value.
+                          type: number
+        ics:
+          description: Assay data related to ICS.
+          properties:
+            assayData:
+              description: Data related to ICS assay.
+              type: array
+              items:
+                type: object
+                properties:
+                  donor_id:
+                    description: Identifier for the donor.
+                    type: string
+                  sample_id:
+                    description: Identifier for the sample.
+                    type: string
+                  customVisitDays:
+                    description: Custom visit days.
+                    type: number
+                  lymphocytes:
+                    description: Lymphocytes value.
+                    type: number
+                  viableLymphocytes:
+                    description: Viable lymphocytes value.
+                    type: number
+                  biomarkers:
+                    description: Biomarkers data.
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        marker:
+                          description: Biomarker marker.
+                          type: string
+                        value:
+                          description: Biomarker value.
+                          type: number

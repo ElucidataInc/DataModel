@@ -1,40 +1,69 @@
 Publication:
-  dataset_id:
-    type: str
-    isOntology: false
-  url:
-    type: str
-    isOntology: false
-  sourceNumber:
-    type: int
-    isOntology: false
-  authors:
-    type: list
-    isOntology: false
-  publicationYear:
-    type: int
-    isOntology: false
-  title:
-    type: str
-    isOntology: false
-  journal:
-    type: str
-    isOntology: false
-  volume:
-    type: str
-    isOntology: false
-  pages:
-    type: int
-    isOntology: false
-  publicationType:
-    type: str
-    isOntology: false
-  primarySource:
-    type: str
-    isOntology: false
-  firstAuthor:
-    type: str
-    isOntology: false
-  reference:
-    type: str
-    isOntology: false
+  description: >
+    Information related to a publication associated with a dataset.
+  properties:
+    dataset_id:
+      description: >
+        The unique identifier of the dataset associated with the publication.
+      type: str
+      isOntology: false
+    url:
+      description: >
+        The URL or link to the publication.
+      type: str
+      isOntology: false
+    sourceNumber:
+      description: >
+        The source number of the publication.
+      type: int
+      isOntology: false
+    authors:
+      description: >
+        List of authors of the publication.
+      type: list
+      isOntology: false
+    publicationYear:
+      description: >
+        The year of publication.
+      type: int
+      isOntology: false
+    title:
+      description: >
+        The title of the publication.
+      type: str
+      isOntology: false
+    journal:
+      description: >
+        The journal where the publication was published.
+      type: str
+      isOntology: false
+    volume:
+      description: >
+        The volume number of the journal.
+      type: str
+      isOntology: false
+    pages:
+      description: >
+        The page numbers of the publication.
+      type: int
+      isOntology: false
+    publicationType:
+      description: >
+        The type of publication (e.g., article, conference paper).
+      type: str
+      isOntology: false
+    primarySource:
+      description: >
+        Indicates if the publication is the primary source.
+      type: str
+      isOntology: false
+    firstAuthor:
+      description: >
+        The name of the first author of the publication.
+      type: str
+      isOntology: false
+    reference:
+      description: >
+        Additional reference or citation information.
+      type: str
+      isOntology: false

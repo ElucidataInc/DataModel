@@ -1,22 +1,24 @@
 ClinicalHistory:
-  donor_id:
-    type: str
-    isOntology: false
-  patientId:
-    type: str
-    isOntology: false
-  ageAtDiagnosis:
-    type: Integer
-    isOntology: false
-  symptomsBeforeDiagnosis:
-    type: str
-    isOntology: false
-  hereditaryFactor:
-    type: str
-    isOntology: false
-  hereditaryFactorSignificant:
-    type: str
-    isOntology: false
-  synchronousOrMetachronous:
-    type: str
-    isOntology: false
+  description: Clinical history information for a patient.
+  properties:
+    donorId:
+      description: Identifier for the donor.
+      type: string
+    patientId:
+      description: Identifier for the patient.
+      type: string
+    ageAtDiagnosis:
+      description: Age of the patient at diagnosis.
+      type: integer
+    symptomsBeforeDiagnosis:
+      description: Symptoms reported by the patient before diagnosis.
+      type: string
+    hereditaryFactor:
+      description: Hereditary factor related to the diagnosis.
+      type: string
+    hereditaryFactorSignificant:
+      description: Significance of the hereditary factor.
+      type: string
+    synchronousOrMetachronous:
+      description: Type of diagnosis (synchronous or metachronous).
+      type: string

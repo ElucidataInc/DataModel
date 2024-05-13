@@ -1,106 +1,129 @@
 Donor:
-  donor_id:
-    type: str
-    isOntology: false
-  patientId:
-    type: str
-    isOntology: false
-  patientUuid:
-    type: str
-    isOntology: false
-  bmi:
-    type: float
-    isOntology: false
-  preMenopauseCycleType:
-    type: str
-    isOntology: false
-  preMenopauseCycleDuration:
-    type: str
-    isOntology: false
-  age:
-    type: int
-    isOntology: false
-  gender:
-    type: str
-    isOntology: false
-  menstruation:
-    type: str
-    isOntology: false
-  occupation:
-    type: str
-    isOntology: false
-  ethnicity:
-    type: str
-    isOntology: false
-  height:
-    type: float
-    isOntology: false
-  weight:
-    type: float
-    isOntology: false
-  diet:
-    type: str
-    isOntology: false
-  maritalStatus:
-    type: str
-    isOntology: false
-  numberOfChildren:
-    type: int
-    isOntology: false
-  waistCircumference:
-    type: float
-    isOntology: false
-  baselineHba1c:
-    type: float
-    isOntology: false
-  baselineFpg:
-    type: float
-    isOntology: false
-  race:
-    type: str
-    isOntology: false
-  ethnicityHispanic:
-    type: str
-    isOntology: false
-  asianMajority:
-    type: str
-    isOntology: false
-  diseaseDuration:
-    type: str
-    isOntology: false
-  indication:
-    type: str
-    isOntology: false
-  diseaseEntryCriteria:
-    type: str
-    isOntology: false
-  overweight:
-    type: str
-    isOntology: false
-  obesityClassI:
-    type: str
-    isOntology: false
-  obesityClassII:
-    type: str
-    isOntology: false
-  obesityClassIII:
-    type: str
-    isOntology: false
-  diabetes:
-    type: str
-    isOntology: false
-  prediabetes:
-    type: str
-    isOntology: false
-  dyslipidemia:
-    type: str
-    isOntology: false
-  hypertension:
-    type: str
-    isOntology: false
-  depression:
-    type: str
-    isOntology: false
-  pcos:
-    type: str
-    isOntology: false
+  description: >
+    Information related to the donor including demographics, medical history, and lifestyle factors.
+  properties:
+    donor_id:
+      description: >
+        The unique identifier for the donor.
+      type: str
+      isOntology: false
+    patientId:
+      description: >
+        The identifier of the patient associated with the donor, if applicable.
+      type: str
+      isOntology: false
+    patientUuid:
+      description: >
+        The UUID (Universally Unique Identifier) of the patient associated with the donor, if applicable.
+      type: str
+      isOntology: false
+    demographics:
+      description: >
+        Demographic information of the donor.
+      type: object
+      properties:
+        age:
+          description: >
+            The age of the donor in years.
+          type: int
+          isOntology: false
+        gender:
+          description: >
+            The gender of the donor.
+          type: str
+          isOntology: false
+        height:
+          description: >
+            The height of the donor in meters.
+          type: float
+          isOntology: false
+        weight:
+          description: >
+            The weight of the donor in kilograms.
+          type: float
+          isOntology: false
+        bmi:
+          description: >
+            The body mass index (BMI) of the donor, calculated as weight in kilograms divided by height in meters squared.
+          type: float
+          isOntology: false
+        waistCircumference:
+          description: >
+            The circumference of the waist of the donor, measured in centimeters.
+          type: float
+          isOntology: false
+    medical_history:
+      description: >
+        Medical history and conditions of the donor.
+      type: object
+      properties:
+        diseaseDuration:
+          description: >
+            The duration of any diseases or medical conditions experienced by the donor.
+          type: str
+          isOntology: false
+        diabetes:
+          description: >
+            Indicates whether the donor has diabetes (e.g., yes, no).
+          type: str
+          isOntology: false
+        prediabetes:
+          description: >
+            Indicates whether the donor has prediabetes (e.g., yes, no).
+          type: str
+          isOntology: false
+        dyslipidemia:
+          description: >
+            Indicates whether the donor has dyslipidemia (e.g., yes, no).
+          type: str
+          isOntology: false
+        hypertension:
+          description: >
+            Indicates whether the donor has hypertension (e.g., yes, no).
+          type: str
+          isOntology: false
+        depression:
+          description: >
+            Indicates whether the donor has depression (e.g., yes, no).
+          type: str
+          isOntology: false
+        pcos:
+          description: >
+            Indicates whether the donor has polycystic ovary syndrome (PCOS) (e.g., yes, no).
+          type: str
+          isOntology: false
+    lifestyle_factors:
+      description: >
+        Lifestyle factors and habits of the donor.
+      type: object
+      properties:
+        diet:
+          description: >
+            The dietary habits or patterns of the donor.
+          type: str
+          isOntology: false
+        occupation:
+          description: >
+            The occupation or profession of the donor.
+          type: str
+          isOntology: false
+        ethnicity:
+          description: >
+            The ethnicity or ethnic origin of the donor.
+          type: str
+          isOntology: false
+        race:
+          description: >
+            The race or racial category of the donor.
+          type: str
+          isOntology: false
+        maritalStatus:
+          description: >
+            The marital status of the donor (e.g., single, married, divorced).
+          type: str
+          isOntology: false
+        numberOfChildren:
+          description: >
+            The number of children the donor has, if applicable.
+          type: int
+          isOntology: false
