@@ -1,389 +1,459 @@
 Diagnosis:
-  description: Information about diagnosis and diagnostic tests for a patient.
+  description: Comprehensive information regarding the diagnosis and diagnostic tests performed on a patient.
   properties:
     donor_id:
-      description: Identifier for the donor.
+      description: A unique identifier assigned to the donor for tracking purposes in clinical studies.
       type: string
+      comments: Examples: "D12345", "DONOR_001".
     disease:
-      description: Details related to the disease diagnosis.
+      description: Details related to the patient's disease diagnosis, including the primary diagnosis, cancer site, and staging.
       type: object
       properties:
         primaryDiagnosis:
-          description: Primary diagnosis of the disease.
+          description: The main disease or condition diagnosed in the patient.
           type: string
+          comments: Examples: "Breast Cancer", "Lung Cancer".
         cancerSite:
-          description: Site of the cancer.
+          description: The specific location in the body where the cancer originated.
           type: string
+          comments: Examples: "Breast", "Lung", "Prostate".
         cancerLocation:
-          description: Location of the cancer.
+          description: Detailed location of the cancer within the cancer site.
           type: string
+          comments: Examples: "Upper Lobe", "Left Quadrant".
         morphology:
-          description: Morphology of the cancer.
+          description: The structural characteristics of the cancer cells as observed under a microscope.
           type: string
+          comments: Examples: "Adenocarcinoma", "Squamous cell carcinoma".
         laterality:
-          description: Laterality of the cancer.
+          description: Indicates whether the cancer is on the left, right, or both sides of the body.
           type: string
+          comments: Examples: "Left", "Right", "Bilateral".
         tnmStage:
-          description: TNM stage of the cancer.
+          description: The stage of the cancer based on the TNM (Tumor, Node, Metastasis) classification.
           type: string
+          comments: Examples: "T2N1M0", "T3N0M1".
         tumorGrade:
-          description: Grade of the tumor.
+          description: The grade of the tumor, indicating how much the cancer cells differ from healthy cells.
           type: string
+          comments: Examples: "Grade 1", "Grade 3".
         tumorStage:
-          description: Stage of the tumor.
+          description: The overall stage of the tumor, describing the extent of cancer spread.
           type: string
+          comments: Examples: "Stage II", "Stage IV".
     diagnostictests:
-      description: Details of diagnostic tests performed.
+      description: Information about the various diagnostic tests performed on the patient.
       type: object
       properties:
         eventtype:
-          description: Type of diagnostic event.
+          description: The type of diagnostic event, such as treatment-related or purely diagnostic.
           type: object
           properties:
             treatmenteventtype:
-              description: Details of treatment-related diagnostic tests.
+              description: Details about treatment-related diagnostic tests, such as chemotherapy and performance status assessments.
               type: object
               properties:
                 chemotherapy:
-                  description: Details of chemotherapy treatment.
+                  description: Information about chemotherapy treatment, including regimen details and adverse events.
                   type: object
                   properties:
                     chemotherapydetails:
-                      description: Details of chemotherapy regimen.
+                      description: Comprehensive details of the chemotherapy regimen administered to the patient.
                       type: object
                       properties:
                         selectedRegimen:
-                          description: Selected chemotherapy regimen.
+                          description: The specific chemotherapy regimen chosen for the patient.
                           type: string
+                          comments: Examples: "AC-T", "FOLFOX".
                         startDate:
-                          description: Start date of chemotherapy.
+                          description: The date when chemotherapy treatment began.
                           type: string
+                          comments: Examples: "2023-01-15".
                         numberOfCycles:
-                          description: Number of chemotherapy cycles.
+                          description: The total number of chemotherapy cycles planned.
                           type: integer
+                          comments: Examples: 6, 12.
                         cycles:
-                          description: Details of individual chemotherapy cycles.
+                          description: Detailed information about each individual chemotherapy cycle.
                           type: array
                           items:
                             type: object
                             properties:
                               date:
-                                description: Date of the cycle.
+                                description: The date of a specific chemotherapy cycle.
                                 type: string
+                                comments: Examples: "2023-01-15".
                               drugName:
-                                description: Name of the drug.
+                                description: The name of the chemotherapy drug administered.
                                 type: string
+                                comments: Examples: "Doxorubicin", "Cisplatin".
                               dosage:
-                                description: Dosage of the drug.
+                                description: The dosage of the drug administered in the cycle.
                                 type: float
-                          isOntology: false
+                                comments: Examples: 50.5, 100.0.
                         routeOfAdministration:
-                          description: Route of chemotherapy administration.
+                          description: The method by which the chemotherapy drug is administered.
                           type: string
+                          comments: Examples: "Intravenous", "Oral".
                         adverseEventlist:
-                          description: List of adverse events.
+                          description: List of adverse events experienced by the patient during chemotherapy.
                           type: array
                           items:
                             type: string
-                          isOntology: false
+                          comments: Examples: "Nausea", "Hair loss".
                         adverseEventMedication:
-                          description: Adverse event medication.
+                          description: Medication given to manage adverse events caused by chemotherapy.
                           type: string
+                          comments: Examples: "Antiemetics", "Pain relievers".
                 performancestatus:
-                  description: Details of performance status.
+                  description: Information about the patient's performance status, which assesses their ability to perform everyday activities.
                   type: object
                   properties:
                     performancestatusdetails:
-                      description: Details of performance status.
+                      description: Detailed assessment of the patient's performance status, including survival metrics and criteria.
                       type: object
                       properties:
                         diseaseFreeSurvival:
-                          description: Disease-free survival.
+                          description: The length of time after treatment during which the patient remains free of disease symptoms.
                           type: string
+                          comments: Examples: "12 months", "2 years".
                         progressionFreeSurvival:
-                          description: Progression-free survival.
+                          description: The length of time during and after treatment in which the patient's disease does not worsen.
                           type: string
+                          comments: Examples: "8 months", "1 year".
                         recistCriteria:
-                          description: RECIST criteria.
+                          description: Criteria used to evaluate changes in tumor size and response to treatment.
                           type: string
+                          comments: Examples: "Partial response", "Stable disease".
                         irecistCriteria:
-                          description: iRECIST criteria.
+                          description: Immune-related criteria used to evaluate changes in tumor size and response to treatment.
                           type: string
+                          comments: Examples: "iRECIST response", "iRECIST progression".
                 surgery:
-                  description: Details of surgery.
+                  description: Information about surgical procedures performed as part of the patient's treatment.
                   type: object
                   properties:
                     surgerydetails:
-                      description: Details of surgeries.
+                      description: Detailed information about the surgeries the patient has undergone, including adverse events.
                       type: object
                       properties:
                         surgeries:
-                          description: List of surgeries.
+                          description: List of surgeries performed on the patient.
                           type: array
                           items:
                             type: object
                             properties:
                               name:
-                                description: Name of the surgery.
+                                description: The name of the surgical procedure performed.
                                 type: string
+                                comments: Examples: "Mastectomy", "Lobectomy".
                               date:
-                                description: Date of the surgery.
+                                description: The date the surgery was performed.
                                 type: string
-                          isOntology: false
+                                comments: Examples: "2023-01-15".
                         adverseEventlist:
-                          description: List of adverse events.
+                          description: List of adverse events experienced by the patient following surgery.
                           type: array
                           items:
                             type: string
-                          isOntology: false
+                          comments: Examples: "Infection", "Bleeding".
                         adverseEventMedication:
-                          description: Adverse event medication.
+                          description: Medication given to manage adverse events resulting from surgery.
                           type: string
+                          comments: Examples: "Antibiotics", "Pain relievers".
             diagnosticeventtype:
-              description: Details of diagnostic tests.
+              description: Details of various diagnostic tests conducted to diagnose and monitor the disease.
               type: object
               properties:
                 diagnosticdetails:
-                  description: Details of diagnostic tests.
+                  description: Comprehensive details about the diagnostic tests performed, including molecular pathology and imaging tests.
                   type: object
                   properties:
                     molecularpathology:
-                      description: Details of molecular pathology tests.
+                      description: Information about molecular pathology tests conducted to analyze genetic and molecular features of the disease.
                       type: object
                       properties:
                         ihc:
-                          description: Details of immunohistochemistry (IHC) tests.
+                          description: Details of immunohistochemistry (IHC) tests used to detect specific antigens in cells.
                           type: object
                           properties:
                             selectMarker:
-                              description: Selected marker for IHC.
+                              description: The specific marker selected for the IHC test.
                               type: string
+                              comments: Examples: "HER2", "PD-L1".
                             result:
-                              description: Result of the IHC test.
+                              description: The outcome of the IHC test.
                               type: string
+                              comments: Examples: "Positive", "Negative".
                             cellsPositive:
-                              description: Number of positive cells.
+                              description: The number of cells that tested positive for the marker.
                               type: integer
+                              comments: Examples: 100, 500.
                             intensityScore:
-                              description: Intensity score.
+                              description: The intensity of the staining in the IHC test.
                               type: float
+                              comments: Examples: 2.5, 3.0.
                             combinedPositiveScore:
-                              description: Combined positive score.
+                              description: A combined score indicating the extent and intensity of staining.
                               type: float
+                              comments: Examples: 1.5, 2.7.
                             tumourProportionScore:
-                              description: Tumour proportion score.
+                              description: The proportion of tumor cells that tested positive.
                               type: float
+                              comments: Examples: 0.7, 0.9.
                             allRedScore:
-                              description: All red score.
+                              description: The overall score reflecting the IHC test results.
                               type: float
+                              comments: Examples: 4.0, 6.0.
                             cloneOfAntibody:
-                              description: Clone of antibody used.
+                              description: The specific clone of the antibody used in the test.
                               type: string
+                              comments: Examples: "Clone 1A4", "Clone SP263".
                             jScore:
-                              description: J score.
+                              description: A scoring system used to interpret the results of the IHC test.
                               type: float
+                              comments: Examples: 0.5, 0.8.
                             hScore:
-                              description: H score.
+                              description: Another scoring system for the IHC test results.
                               type: float
+                              comments: Examples: 2.0, 3.5.
                         fish:
-                          description: Details of fluorescence in situ hybridization (FISH) tests.
+                          description: Details of fluorescence in situ hybridization (FISH) tests used to detect genetic abnormalities.
                           type: object
                           properties:
                             selectMarker:
-                              description: Selected marker for FISH.
+                              description: The specific marker selected for the FISH test.
                               type: string
+                              comments: Examples: "ALK", "ROS1".
                             result:
-                              description: Result of the FISH test.
+                              description: The outcome of the FISH test.
                               type: string
+                              comments: Examples: "Positive", "Negative".
                             numberOfCopies:
-                              description: Number of copies.
+                              description: The number of copies of the gene or marker detected.
                               type: integer
+                              comments: Examples: 2, 4.
                             ratio:
-                              description: Ratio.
+                              description: The ratio of the marker copies to a reference.
                               type: float
+                              comments: Examples: 1.5, 2.0.
                         pcr:
-                          description: Details of polymerase chain reaction (PCR) tests.
+                          description: Details of polymerase chain reaction (PCR) tests used to amplify and detect DNA sequences.
                           type: object
                           properties:
                             selectMarker:
-                              description: Selected marker for PCR.
+                              description: The specific marker selected for the PCR test.
                               type: string
+                              comments: Examples: "EGFR", "KRAS".
                             exonTested:
-                              description: Exon tested in PCR.
+                              description: The specific exon tested in the PCR analysis.
                               type: string
+                              comments: Examples: "Exon 19", "Exon 21".
                             codonTested:
-                              description: Codon tested in PCR.
+                              description: The specific codon tested in the PCR analysis.
                               type: string
+                              comments: Examples: "Codon 12", "Codon 13".
                             result:
-                              description: Result of the PCR test.
+                              description: The outcome of the PCR test.
                               type: string
+                              comments: Examples: "Mutation detected", "No mutation".
                         ngs:
-                          description: Details of next-generation sequencing (NGS) tests.
+                          description: Details of next-generation sequencing (NGS) tests used to comprehensively analyze genetic variations.
                           type: object
                           properties:
                             createdOn:
-                              description: Date of creation of NGS test.
+                              description: The date when the NGS test was conducted.
                               type: string
+                              comments: Examples: "2023-02-15".
                             siteOfLesions:
-                              description: Site of lesions tested.
+                              description: The specific site of lesions tested using NGS.
                               type: array
                               items:
                                 type: object
                                 properties:
                                   fusion:
-                                    description: Fusion details.
+                                    description: Details about gene fusions detected.
                                     type: string
                                   variation_Missense_mutation:
-                                    description: Details of missense mutation.
+                                    description: Details about missense mutations detected.
                                     type: array
                                     items:
                                       type: object
                                       properties:
                                         chromosomalCoordinates:
-                                          description: Chromosomal coordinates.
+                                          description: The chromosomal location of the mutation.
                                           type: string
+                                          comments: Examples: "17q21.31".
                                         exonLocation:
-                                          description: Exon location.
+                                          description: The exon where the mutation is located.
                                           type: string
+                                          comments: Examples: "Exon 7".
                                         variant:
-                                          description: Variant details.
+                                          description: The specific genetic variant detected.
                                           type: string
+                                          comments: Examples: "V600E".
                                   variation_Inframe_deletion:
-                                    description: Details of inframe deletion.
+                                    description: Details about inframe deletions detected.
                                     type: string
                                   variation_Inframe_insertion:
-                                    description: Details of inframe insertion.
+                                    description: Details about inframe insertions detected.
                                     type: string
                                   variation_Indel:
-                                    description: Details of indel.
+                                    description: Details about indels (insertions or deletions) detected.
                                     type: string
                                   variation_Splice_site:
-                                    description: Details of splice site.
+                                    description: Details about splice site variations detected.
                                     type: string
                                   variation_Frame_shift_mutation:
-                                    description: Details of frame shift mutation.
+                                    description: Details about frame shift mutations detected.
                                     type: string
                                   variation:
-                                    description: Details of variation.
+                                    description: Details about other types of genetic variations detected.
                                     type: string
                                   geneName:
-                                    description: Name of the gene.
+                                    description: The name of the gene where the variation is detected.
                                     type: string
+                                    comments: Examples: "TP53", "BRCA1".
                                   geneMarker:
-                                    description: Marker of the gene.
+                                    description: The specific marker within the gene.
                                     type: string
                                   clinicalSignificanceOfTheVariant:
-                                    description: Clinical significance of the variant.
+                                    description: The clinical significance of the detected genetic variant.
                                     type: string
+                                    comments: Examples: "Pathogenic", "Likely benign".
                                   ngsSelectedDrugs:
-                                    description: Selected drugs based on NGS results.
+                                    description: Drugs selected based on the NGS results to target the specific genetic variations detected.
                                     type: array
                                     items:
                                       type: object
                                       properties:
                                         drugsRecommended:
-                                          description: Recommended drugs.
+                                          description: Drugs recommended based on NGS findings.
                                           type: string
+                                          comments: Examples: "Trastuzumab", "Osimertinib".
                                         trialDrugsSuggested:
-                                          description: Suggested trial drugs.
+                                          description: Experimental or trial drugs suggested based on NGS results.
                                           type: string
+                                          comments: Examples: "Clinical trial NCT12345678".
                             cnv:
-                              description: Copy number variation (CNV) details.
+                              description: Information about copy number variations detected.
                               type: string
+                              comments: Examples: "Amplification", "Deletion".
                             pathwaysInvolved:
-                              description: Pathways involved.
+                              description: Biological pathways involved in the detected genetic variations.
                               type: array
                               items:
                                 type: string
+                                comments: Examples: "PI3K/AKT pathway", "MAPK pathway".
                             nameOfTheAssay:
-                              description: Name of the assay.
+                              description: The name of the NGS assay used.
                               type: string
+                              comments: Examples: "FoundationOne CDx".
                             tmb:
-                              description: Tumor mutational burden (TMB).
+                              description: Tumor mutational burden (TMB) indicating the number of mutations per megabase in the tumor DNA.
                               type: string
+                              comments: Examples: "High", "Low".
                             tmbScore:
-                              description: TMB score.
+                              description: The specific score of tumor mutational burden.
                               type: float
+                              comments: Examples: 10.5, 20.0.
                             msi:
-                              description: Microsatellite instability (MSI).
+                              description: Microsatellite instability (MSI) status indicating the level of genetic hypermutability.
                               type: string
-                      type: string
-                      description: Method used for diagnostic tests.
+                              comments: Examples: "MSI-High", "MSI-Low".
                     impression:
-                      description: Impression of the diagnostic test.
+                      description: Overall impression and interpretation of the diagnostic test results.
                       type: string
+                      comments: Examples: "Consistent with malignancy", "Benign findings".
                     dateOfTest:
-                      description: Date of the diagnostic test.
+                      description: The date when the diagnostic test was performed.
                       type: string
+                      comments: Examples: "2023-02-15".
                     approximateDate:
-                      description: Approximate date of the diagnostic test.
+                      description: An approximate date for when the diagnostic test was performed if the exact date is unknown.
                       type: string
+                      comments: Examples: "Early February 2023".
                 serumbiomarker:
-                  description: Details of serum biomarker tests.
+                  description: Details about serum biomarker tests performed to detect specific proteins or substances in the blood.
                   type: object
                   properties:
                     date:
-                      description: Date of the serum biomarker test.
+                      description: The date when the serum biomarker test was performed.
                       type: string
+                      comments: Examples: "2023-02-15".
                     approximateDate:
-                      description: Approximate date of the serum biomarker test.
+                      description: An approximate date for when the serum biomarker test was performed if the exact date is unknown.
                       type: string
+                      comments: Examples: "Early February 2023".
                     biomarkers:
-                      description: List of biomarkers.
+                      description: List of biomarkers tested in the serum.
                       type: array
                       items:
                         type: object
                         properties:
                           biomarker:
-                            description: Biomarker name.
+                            description: The name of the biomarker tested.
                             type: string
+                            comments: Examples: "CA-125", "PSA".
                           biomarkerValue:
-                            description: Biomarker value.
+                            description: The value or concentration of the biomarker detected in the serum.
                             type: string
+                            comments: Examples: "35 U/mL", "4.0 ng/mL".
                           unit:
-                            description: Unit of the biomarker value.
+                            description: The unit of measurement for the biomarker value.
                             type: string
+                            comments: Examples: "U/mL", "ng/mL".
                 pathology:
-                  description: Details of pathology tests.
+                  description: Detailed information about pathology tests performed to analyze tissue samples.
                   type: object
                   properties:
                     lymphNodeRegions:
-                      description: Lymph node regions involved.
+                      description: The regions of lymph nodes involved in the pathology test.
                       type: string
+                      comments: Examples: "Axillary", "Cervical".
                     typeOfSample:
-                      description: Type of sample tested.
+                      description: The type of tissue sample tested.
                       type: string
+                      comments: Examples: "Biopsy", "Surgical resection".
                     dateOfTest:
-                      description: Date of the pathology test.
+                      description: The date when the pathology test was performed.
                       type: string
+                      comments: Examples: "2023-02-15".
                     grade:
-                      description: Grade of the pathology test.
+                      description: The grade assigned to the pathology findings, indicating the level of abnormality.
                       type: string
+                      comments: Examples: "Low grade", "High grade".
                     tissue:
-                      description: Tissue tested.
+                      description: The type of tissue analyzed in the pathology test.
                       type: string
+                      comments: Examples: "Lung tissue", "Breast tissue".
                     margins:
-                      description: Margins involved.
+                      description: The status of the margins in the pathology test, indicating whether the edges of the tissue sample are free of cancer cells.
                       type: string
+                      comments: Examples: "Clear", "Positive".
                     impression:
-                      description: Impression of the pathology test.
+                      description: Overall impression and interpretation of the pathology test results.
                       type: string
+                      comments: Examples: "Consistent with malignancy", "Benign findings".
             consultation:
-              description: Details of consultation.
+              description: Information about consultations and the advice provided during these sessions.
               type: object
               properties:
                 consultationdetails:
-                  description: Details of consultation.
+                  description: Detailed records of consultation events, including comments and advice from medical professionals.
                   type: array
                   items:
                     type: object
                     properties:
                       comments:
-                        description: Comments from the consultation.
+                        description: Comments from the consultation, summarizing discussions and observations.
                         type: string
+                        comments: Examples: "Patient advised to reduce smoking", "Follow-up recommended in 6 months".
                       advise:
-                        description: Advise from the consultation.
+                        description: Specific advice or recommendations provided during the consultation.
                         type: string
+                        comments: Examples: "Begin physical therapy", "Schedule MRI".
                       eventdate:
-                        description: Date of the consultation event.
+                        description: The date of the consultation event.
                         type: string
+                        comments: Examples: "2023-02-15".

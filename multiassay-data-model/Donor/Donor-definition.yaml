@@ -1,129 +1,129 @@
 Donor:
   description: >
-    Information related to the donor including demographics, medical history, and lifestyle factors.
+    Information related to the donor including demographics, medical history, and lifestyle factors. This information helps in understanding the donor's background, health status, and personal habits, which can be crucial for medical research and treatment planning.
   properties:
     donor_id:
       description: >
-        The unique identifier for the donor.
+        A unique identifier assigned to the donor. This ID is used to track and reference the donor's data throughout medical records and research databases.
       type: str
       isOntology: false
     patientId:
       description: >
-        The identifier of the patient associated with the donor, if applicable.
+        An identifier that links the donor to a specific patient, if the donor is also a patient or related to one. This can be used for correlating donor information with patient treatment and outcomes.
       type: str
       isOntology: false
     patientUuid:
       description: >
-        The UUID (Universally Unique Identifier) of the patient associated with the donor, if applicable.
+        The Universally Unique Identifier (UUID) of the patient associated with the donor, providing a unique and standardized way to identify the patient in various systems and databases.
       type: str
       isOntology: false
     demographics:
       description: >
-        Demographic information of the donor.
+        Basic demographic information about the donor, including age, gender, and physical measurements. This data helps in understanding the donor's general characteristics and can be relevant for assessing health risks and conditions.
       type: object
       properties:
         age:
           description: >
-            The age of the donor in years.
+            The age of the donor in years. Age is a critical factor in many medical conditions and can influence treatment decisions and health assessments.
           type: int
           isOntology: false
         gender:
           description: >
-            The gender of the donor.
+            The gender of the donor, such as male, female, or non-binary. Gender can affect health risks, disease prevalence, and treatment responses.
           type: str
           isOntology: false
         height:
           description: >
-            The height of the donor in meters.
+            The height of the donor in meters. Height is used along with weight to calculate body mass index (BMI), which is an important indicator of health status.
           type: float
           isOntology: false
         weight:
           description: >
-            The weight of the donor in kilograms.
+            The weight of the donor in kilograms. Weight is a vital statistic for determining overall health and for calculating dosages of medications.
           type: float
           isOntology: false
         bmi:
           description: >
-            The body mass index (BMI) of the donor, calculated as weight in kilograms divided by height in meters squared.
+            The body mass index (BMI) of the donor, calculated as weight in kilograms divided by height in meters squared. BMI is a widely used measure to categorize individuals based on body fat and assess potential health risks.
           type: float
           isOntology: false
         waistCircumference:
           description: >
-            The circumference of the waist of the donor, measured in centimeters.
+            The circumference of the donor's waist, measured in centimeters. Waist circumference is used to assess abdominal fat, which is a risk factor for conditions like diabetes and cardiovascular diseases.
           type: float
           isOntology: false
     medical_history:
       description: >
-        Medical history and conditions of the donor.
+        Detailed medical history of the donor, including any chronic conditions, past illnesses, and relevant medical events. This information is crucial for understanding the donor's health background and identifying any factors that may influence their current health status.
       type: object
       properties:
         diseaseDuration:
           description: >
-            The duration of any diseases or medical conditions experienced by the donor.
+            The duration of any diseases or medical conditions the donor has experienced, expressed in terms such as "5 years" or "since childhood." This helps in understanding the chronicity and progression of health issues.
           type: str
           isOntology: false
         diabetes:
           description: >
-            Indicates whether the donor has diabetes (e.g., yes, no).
+            Indicates whether the donor has diabetes, a chronic condition characterized by high blood sugar levels. This can be recorded as 'yes' or 'no,' and is important for assessing risk factors and managing health.
           type: str
           isOntology: false
         prediabetes:
           description: >
-            Indicates whether the donor has prediabetes (e.g., yes, no).
+            Indicates whether the donor has prediabetes, a condition where blood sugar levels are higher than normal but not yet high enough to be diagnosed as diabetes. This early indicator can help in preventive health measures.
           type: str
           isOntology: false
         dyslipidemia:
           description: >
-            Indicates whether the donor has dyslipidemia (e.g., yes, no).
+            Indicates whether the donor has dyslipidemia, a condition marked by abnormal levels of lipids in the blood. This is significant for assessing cardiovascular health risks.
           type: str
           isOntology: false
         hypertension:
           description: >
-            Indicates whether the donor has hypertension (e.g., yes, no).
+            Indicates whether the donor has hypertension, commonly known as high blood pressure. This is a major risk factor for heart disease and stroke and needs to be managed carefully.
           type: str
           isOntology: false
         depression:
           description: >
-            Indicates whether the donor has depression (e.g., yes, no).
+            Indicates whether the donor has been diagnosed with depression, a mental health condition characterized by persistent feelings of sadness and loss of interest. Mental health is an important aspect of overall health.
           type: str
           isOntology: false
         pcos:
           description: >
-            Indicates whether the donor has polycystic ovary syndrome (PCOS) (e.g., yes, no).
+            Indicates whether the donor has polycystic ovary syndrome (PCOS), a hormonal disorder common among women of reproductive age. It is important for reproductive health and can affect other aspects of health.
           type: str
           isOntology: false
     lifestyle_factors:
       description: >
-        Lifestyle factors and habits of the donor.
+        Information about the donor's lifestyle, including diet, occupation, and other habits. Lifestyle factors can significantly impact health and are important for comprehensive health assessments and personalized care.
       type: object
       properties:
         diet:
           description: >
-            The dietary habits or patterns of the donor.
+            The dietary habits or patterns of the donor, such as vegetarian, vegan, low-carb, or high-protein. Diet plays a crucial role in overall health and can influence disease risk and management.
           type: str
           isOntology: false
         occupation:
           description: >
-            The occupation or profession of the donor.
+            The donor's occupation or profession, which can provide insights into potential occupational health risks and socioeconomic factors influencing health.
           type: str
           isOntology: false
         ethnicity:
           description: >
-            The ethnicity or ethnic origin of the donor.
+            The ethnic background or origin of the donor. Ethnicity can influence the prevalence of certain diseases and conditions and is important for health disparities research.
           type: str
           isOntology: false
         race:
           description: >
-            The race or racial category of the donor.
+            The race or racial category of the donor. Race is used in medical research to understand how different racial groups may experience health issues differently.
           type: str
           isOntology: false
         maritalStatus:
           description: >
-            The marital status of the donor (e.g., single, married, divorced).
+            The marital status of the donor, such as single, married, or divorced. Marital status can affect mental and physical health and provide context for social support systems.
           type: str
           isOntology: false
         numberOfChildren:
           description: >
-            The number of children the donor has, if applicable.
+            The number of children the donor has, if applicable. This information can provide context for lifestyle and social factors affecting health.
           type: int
           isOntology: false

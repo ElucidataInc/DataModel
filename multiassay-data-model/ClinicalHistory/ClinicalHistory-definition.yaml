@@ -1,24 +1,31 @@
 ClinicalHistory:
-  description: Clinical history information for a patient.
+  description: Detailed clinical history information for a patient, capturing essential diagnostic and hereditary details.
   properties:
     donorId:
-      description: Identifier for the donor.
+      description: A unique code assigned to the donor for tracking and reference purposes in medical research.
       type: string
+      comments: Examples: "D12345", "DONOR_001".
     patientId:
-      description: Identifier for the patient.
+      description: A unique code assigned to the patient, used to anonymize and manage patient data in clinical records.
       type: string
+      comments: Examples: "P67890", "PATIENT_001".
     ageAtDiagnosis:
-      description: Age of the patient at diagnosis.
+      description: The age at which the patient was first diagnosed with their medical condition, providing context for disease onset.
       type: integer
+      comments: Examples: 45, 60.
     symptomsBeforeDiagnosis:
-      description: Symptoms reported by the patient before diagnosis.
+      description: A description of the symptoms that the patient experienced prior to being diagnosed, offering insight into the clinical presentation of the disease.
       type: string
+      comments: Examples: "Persistent cough", "Unexplained weight loss", "Chronic fatigue".
     hereditaryFactor:
-      description: Hereditary factor related to the diagnosis.
+      description: Information about any genetic or familial factors that may have contributed to the patient's diagnosis, indicating potential inherited risks.
       type: string
+      comments: Examples: "Family history of breast cancer", "Genetic mutation in BRCA1", "Father had heart disease".
     hereditaryFactorSignificant:
-      description: Significance of the hereditary factor.
+      description: An assessment of how significant the hereditary factors are in relation to the patient's condition, indicating the level of impact on the diagnosis.
       type: string
+      comments: Examples: "High risk", "Moderate significance", "Not significant".
     synchronousOrMetachronous:
-      description: Type of diagnosis (synchronous or metachronous).
+      description: Specifies whether the patient's condition involves synchronous (occurring at the same time) or metachronous (occurring at different times) disease presentations, important for understanding the progression of multiple diagnoses.
       type: string
+      comments: Examples: "Synchronous tumors", "Metachronous metastases", "Synchronous primary cancers".
