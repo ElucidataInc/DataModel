@@ -1,4 +1,6 @@
 Dataset:
-  dataset_id:
-    type: str
-    isOntology: false
+  description: Information about a dataset.
+  properties:
+    datasetId:
+      description: Identifier for the dataset.
+      type: string

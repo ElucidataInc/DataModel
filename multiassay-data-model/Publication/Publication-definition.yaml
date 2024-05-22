@@ -1,40 +1,69 @@
 Publication:
-  dataset_id:
-    type: str
-    isOntology: false
-  url:
-    type: str
-    isOntology: false
-  sourceNumber:
-    type: int
-    isOntology: false
-  authors:
-    type: list
-    isOntology: false
-  publicationYear:
-    type: int
-    isOntology: false
-  title:
-    type: str
-    isOntology: false
-  journal:
-    type: str
-    isOntology: false
-  volume:
-    type: str
-    isOntology: false
-  pages:
-    type: int
-    isOntology: false
-  publicationType:
-    type: str
-    isOntology: false
-  primarySource:
-    type: str
-    isOntology: false
-  firstAuthor:
-    type: str
-    isOntology: false
-  reference:
-    type: str
-    isOntology: false
+  description: >
+    Information related to a publication associated with a dataset, including details about authors, publication year, journal, and more.
+  properties:
+    dataset_id:
+      description: >
+        The unique identifier of the dataset associated with the publication. This links the publication to the specific dataset it pertains to.
+      type: str
+      isOntology: false
+    url:
+      description: >
+        The URL or link to the publication. This provides direct access to the publication for reference.
+      type: str
+      isOntology: false
+    sourceNumber:
+      description: >
+        The source number of the publication. This can be used for internal tracking or referencing purposes.
+      type: int
+      isOntology: false
+    authors:
+      description: >
+        List of authors of the publication. This includes the names of all contributors to the publication.
+      type: list
+      isOntology: false
+    publicationYear:
+      description: >
+        The year of publication. This indicates when the publication was released or made available to the public.
+      type: int
+      isOntology: false
+    title:
+      description: >
+        The title of the publication. This provides a brief summary or description of the content of the publication.
+      type: str
+      isOntology: false
+    journal:
+      description: >
+        The journal where the publication was published. This identifies the source or venue of the publication.
+      type: str
+      isOntology: false
+    volume:
+      description: >
+        The volume number of the journal. This provides additional context about the publication within the journal's series.
+      type: str
+      isOntology: false
+    pages:
+      description: >
+        The page numbers of the publication. This indicates the specific pages within the journal where the publication can be found.
+      type: int
+      isOntology: false
+    publicationType:
+      description: >
+        The type of publication, such as article, conference paper, etc. This categorizes the publication based on its format or presentation.
+      type: str
+      isOntology: false
+    primarySource:
+      description: >
+        Indicates if the publication is the primary source. This distinguishes between primary publications and secondary sources like reviews or summaries.
+      type: str
+      isOntology: false
+    firstAuthor:
+      description: >
+        The name of the first author of the publication. This identifies the primary contributor or lead author of the publication.
+      type: str
+      isOntology: false
+    reference:
+      description: >
+        Additional reference or citation information. This may include details about how to cite the publication or reference it in other works.
+      type: str
+      isOntology: false

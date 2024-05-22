@@ -1,12 +1,30 @@
 Genomics:
-  VariationType:
-    Mutation:
-      - geneSymbol:
-        type: str
-        isOntology: false
-      - mutationType:
-        type: str
-        isOntology: false
-      - location:
-        type: str
-        isOntology: false
+  description: >
+    Information related to genomic variations, including details about mutations.
+  properties:
+    VariationType:
+      description: >
+        Type of genomic variation, such as mutations.
+      properties:
+        Mutation:
+          description: >
+            Information about mutations, including gene symbol, mutation type, and location.
+          type: array
+          items:
+            type: object
+            properties:
+              geneSymbol:
+                description: >
+                  Symbol representing the gene associated with the mutation. This provides information about the specific gene affected by the mutation.
+                type: str
+                isOntology: false
+              mutationType:
+                description: >
+                  Type of mutation, such as substitution, deletion, insertion, etc. This describes the nature of the genetic alteration.
+                type: str
+                isOntology: false
+              location:
+                description: >
+                  Location of the mutation within the gene or genome. This helps in pinpointing the exact position of the genetic change.
+                type: str
+                isOntology: false

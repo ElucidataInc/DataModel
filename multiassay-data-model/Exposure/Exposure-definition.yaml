@@ -1,58 +1,119 @@
 Exposure:
-  donor_id:
-    type: str
-    isOntology: false
-  patientId:
-    type: str
-    isOntology: false
-  smoking:
-    type: str
-    isOntology: false
-  smokingOnsetYear:
-    type: int
-    isOntology: false
-  smokingQuitYear:
-    type: int
-    isOntology: false
-  smokingSpecify:
-    type: str
-    isOntology: false
-  smokingFrequency:
-    type: str
-    isOntology: false
-  drinking:
-    type: str
-    isOntology: false
-  drinkingSpecify:
-    type: str
-    isOntology: false
-  drinkingFrequency:
-    type: str
-    isOntology: false
-  isBloodThinningMedications:
-    type: str
-    isOntology: false
-  bloodThinningMedicationSpecify:
-    type: str
-    isOntology: false
-  otherFormsOfTobaccoUse:
-    type: str
-    isOntology: false
-  otherFormsOfTobaccoUseSpecify:
-    type: str
-    isOntology: false
-  backTreatments:
-    type: str
-    isOntology: false
-  failedTreatments:
-    type: str
-    isOntology: false
-  treatmentSwitch:
-    type: str
-    isOntology: false
-  diet:
-    type: str
-    isOntology: false
-  exercise:
-    type: str
-    isOntology: false
+  description: >
+    Information related to exposures and lifestyle factors of the donor. This includes habits such as smoking and alcohol consumption, medication usage, medical history, and other lifestyle aspects that may affect the donor's health and risk factors.
+  properties:
+    donorId:
+      description: >
+        The unique identifier assigned to the donor. This ID is used to track and reference the donor's data within medical records and research databases.
+      type: str
+      isOntology: false
+    patientId:
+      description: >
+        The identifier of the patient associated with the donor, if the donor is also a patient or related to one. This allows for correlation of donor information with patient treatment and outcomes.
+      type: str
+      isOntology: false
+    smoking:
+      description: >
+        Detailed information regarding the smoking habits of the donor. This includes whether the donor smokes, the duration of smoking, and the frequency, which are important for assessing the impact of smoking on health.
+      type: object
+      properties:
+        isSmoker:
+          description: >
+            Indicates whether the donor currently smokes. Possible values are 'yes' or 'no'.
+          type: str
+          isOntology: false
+        onsetYear:
+          description: >
+            The year when the donor began smoking. Knowing the onset year helps in understanding the duration of exposure to smoking.
+          type: int
+          isOntology: false
+        quitYear:
+          description: >
+            The year when the donor quit smoking, if applicable. This information helps to assess the duration and cessation of smoking.
+          type: int
+          isOntology: false
+        frequency:
+          description: >
+            How often the donor smokes, such as 'daily', 'occasionally', or other specified frequencies. This helps in quantifying the exposure to smoking.
+          type: str
+          isOntology: false
+        otherForms:
+          description: >
+            Information about other forms of tobacco use by the donor, such as cigars, pipes, or chewing tobacco.
+          type: object
+          properties:
+            specify:
+              description: >
+                Additional details about the other forms of tobacco use by the donor. This can include types of products used and frequency.
+              type: str
+              isOntology: false
+    alcoholConsumption:
+      description: >
+        Detailed information regarding the alcohol consumption habits of the donor. This includes whether the donor drinks alcohol, the frequency of consumption, and any additional details.
+      type: object
+      properties:
+        isDrinker:
+          description: >
+            Indicates whether the donor consumes alcohol. Possible values are 'yes' or 'no'.
+          type: str
+          isOntology: false
+        frequency:
+          description: >
+            How often the donor consumes alcohol, such as 'daily', 'occasionally', or other specified frequencies. This helps in understanding the level of alcohol exposure.
+          type: str
+          isOntology: false
+        specify:
+          description: >
+            Additional details about the donor's alcohol consumption habits. This can include types of alcoholic beverages consumed and patterns of drinking.
+          type: str
+          isOntology: false
+    medication:
+      description: >
+        Information about the medications used by the donor, particularly focusing on blood-thinning medications. Medication usage can have significant implications for the donor's health and treatment plans.
+      type: object
+      properties:
+        isTakingBloodThinning:
+          description: >
+            Indicates whether the donor is currently taking blood-thinning medications. Possible values are 'yes' or 'no'.
+          type: str
+          isOntology: false
+        bloodThinningMedicationSpecify:
+          description: >
+            Details about the specific blood-thinning medications taken by the donor, including names and dosages.
+          type: str
+          isOntology: false
+    medicalHistory:
+      description: >
+        Detailed information about the donor's medical history, including past treatments and any ongoing health issues. This history helps in understanding the donor's health background and any potential risk factors.
+      type: object
+      properties:
+        backProblems:
+          description: >
+            Indicates whether the donor has undergone treatments for back-related issues. Possible values are 'yes' or 'no'.
+          type: str
+          isOntology: false
+        failedTreatments:
+          description: >
+            Details about any treatments that have failed for the donor. This can provide insights into chronic conditions or resistant health issues.
+          type: str
+          isOntology: false
+        treatmentSwitch:
+          description: >
+            Indicates whether there has been a switch in treatments for the donor. This information can help track changes in treatment strategies and their outcomes.
+          type: str
+          isOntology: false
+    lifestyle:
+      description: >
+        Information about the donor's lifestyle, including diet and exercise habits. Lifestyle factors play a crucial role in overall health and can influence the risk of developing various conditions.
+      type: object
+      properties:
+        diet:
+          description: >
+            Information about the donor's dietary habits, such as type of diet (e.g., vegetarian, vegan, low-carb). Diet is a key factor in health and disease prevention.
+          type: str
+          isOntology: false
+        exercise:
+          description: >
+            Information about the donor's exercise habits, including frequency, type, and duration of physical activity. Regular exercise is important for maintaining health and preventing diseases.
+          type: str
+          isOntology: false
