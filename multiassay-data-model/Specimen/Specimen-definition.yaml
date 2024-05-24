@@ -1,9 +1,0 @@
-Specimen:
-  description: >
-    Information related to a specimen.
-  properties:
-    specimen_id:
-      description: >
-        The unique identifier of the specimen.
-      type: str
-      isOntology: false
