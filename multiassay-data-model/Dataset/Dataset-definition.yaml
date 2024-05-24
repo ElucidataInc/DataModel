@@ -1,6 +1,0 @@
-Dataset:
-  description: Information about a dataset.
-  properties:
-    datasetId:
-      description: Identifier for the dataset.
-      type: string

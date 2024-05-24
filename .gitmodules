@@ -1,4 +1,0 @@
-
-[submodule "ehr-data-model"]
-	path = ehr-data-model
-	url = https://github.com/ElucidataInc/ehr-data-model
