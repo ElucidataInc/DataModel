@@ -1,7 +1,5 @@
 Publication:
-  description: Describes the core details of the project like project ID, summary,
-    overall design, publication related details and any other supplementary links
-    associated with the project
+  description: Describes the details of the publication from which the experiment has been taken. Details include abtract, author information, pubication year and link
   properties:
     project_id:
       description: Primary key or unique identified for a project
@@ -16,7 +14,7 @@ Publication:
         lung adenocarcinoma (LUAD) is a challenge. This study analyzes the effects
         of trametinib on Id1 protein, a key factor involved in the KRAS oncogenic
         pathway, and investigates the role of Id1 in the acquired resistance to
-        trametinib as well as the synergistic anticancer effect of trametinib
+        trametinib as well as the synergistic anticancer effect of trametinib 
         combined with immunotherapy in KRAS-mutant LUAD. Methods: We evaluated
         the effects of trametinib on KRAS-mutant LUAD by Western blot, RNA-seq
         and different syngeneic mouse models. Genetic modulation of Id1 expression
