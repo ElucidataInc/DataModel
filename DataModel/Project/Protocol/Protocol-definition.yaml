@@ -10,34 +10,38 @@ Protocol:
         description: Foreign key or unique identifier to map to donor ID
         type: string
         pattern: "^DO-[0-9]{4}$"
-        example: "DO-31724"
+        example: DO-31724
       project_id:
         description: Foreign key or unique identifier to map a project
         type: string
         pattern: "^P[0-9]{3}$"
-        example: "P024"
+        example: P024
       protocol_id:
         description: Primary key or unique identifier for the protocol ID
         type: string
         pattern: "^PRT[0-9]{3}$"
-        example: "PRT451"
+        example: PRT451
       protocol_name:
         description: Describes the experiment procedure or methods organized in a standardized format that can be executed in a laboratory environment.
         type: string
-        example: "Single cell sequencing protocol"
+        example: Single cell sequencing protocol
       protocol_description:
         description: Protocols define step-by-step procedures and include a list of the materials needed to perform the experiment.
         type: string
-        example: "Prepare Media from stocks, Add 485 µl Clone Medium to ionomycin vial; add 490 µl Clone Medium to PMA vial, mix and transfer 5µl of diluted PMA to ionomycin vial yielding the final solution. Collect spleens from mice and place each in a small petri dish containing 5ml Clone Medium. Isolate lymphocytes using the syringe puncture method. Wash and lyse rbcs with ACT.
+        example: Prepare Media from stocks, Add 485 µl Clone Medium to ionomycin vial; 
+          add 490 µl Clone Medium to PMA vial, mix and transfer 5µl of diluted PMA to 
+          ionomycin vial yielding the final solution. Collect spleens from mice and 
+          place each in a small petri dish containing 5ml Clone Medium. Isolate 
+          lymphocytes using the syringe puncture method. Wash and lyse rbcs with ACT.
           Wash with Clone Medium and resuspend in 2ml Clone Medium. Place exactly
           1ml in one well of a 12 well plate. Add an additional 1ml of Clone Medium
           to the well. Can store spleen suspensions in 12 well plate overnight in
           refrigerator. Use remaining spleen cells for phenotype FACS if desired -
-          wash with Staining Buffer to remove Clone Medium."
+          wash with Staining Buffer to remove Clone Medium.
       protocol_core:
         description: Core protocol-level information
         type: string
-        example: "Prepare Media from stocks, Add 485 µl Clone Medium to ionomycin vial;
+        example: Prepare Media from stocks, Add 485 µl Clone Medium to ionomycin vial;
           add 490 µl Clone Medium to PMA vial, mix and transfer 5µl of diluted PMA
           to ionomycin vial yielding the final solution. Collect spleens from mice
           and place each in a small petri dish containing 5ml Clone Medium. Isolate
@@ -46,7 +50,7 @@ Protocol:
           1ml in one well of a 12 well plate. Add an additional 1ml of Clone Medium
           to the well. Can store spleen suspensions in 12 well plate overnight in
           refrigerator. Use remaining spleen cells for phenotype FACS if desired -
-          wash with Staining Buffer to remove Clone Medium."
+          wash with Staining Buffer to remove Clone Medium.
     analysis:
       description: Analysis related information of the protocol
       properties:
@@ -57,7 +61,7 @@ Protocol:
       matrix_transformation:
         description: Information related to protocols that transforms a matrix
         type: string
-        example: "r2"
+        example: r2
         ontology:
           type: string
           description: Link to the ontology file
@@ -65,7 +69,7 @@ Protocol:
       bioinformatics_software:
         description: A wide array of computer programs and tools designed to manage, analyze, and interpret biological data
         type: string
-        example: "Cellranger"
+        example: Cellranger
         Ontology:
           type: string
           description: Link to the ontology file
@@ -73,7 +77,7 @@ Protocol:
       bioinformatics_software_version:
         description: Version of software used
         type: string
-        example: "v2.0.1"
+        example: v2.0.1
         ontology:
           type: string
           description: Link to the ontology file
@@ -82,14 +86,14 @@ Protocol:
         description: Ensembl release version accession number or NCBI RefSeq assembly
           version used for gene annotation
         type: string
-        example: "GCF_000001405.40"
+        example: GCF_000001405.40
     sequencing:
       description: Sequence related information of the protocol
       properties:
       chemistry_kit:
         description: Chemistry/Reagent kit used in the protocol
         type: string
-        example: "Ion Total RNASeq Kit v2"
+        example: Ion Total RNASeq Kit v2
         ontology:
           type: string
           description: Link to the ontology file
@@ -99,7 +103,7 @@ Protocol:
           single-cell RNA or DNA, outlining the steps for library construction and
           amplification.
         type: string
-        example: "Stage I - Preparation of single-cell lysates"
+        example: Stage I - Preparation of single-cell lysates
         enum:
         - Stage I - Preparation of single-cell lysates
         - Stage II - Lysate cleanup and reverse transcription of mRNA species
@@ -114,7 +118,7 @@ Protocol:
       sampling_technique:
         description: The method/procedure used for collecting samples
         type: string
-        example: "Biopsy"
+        example: Biopsy
         ontology:
           type: string
           description: Link to the ontology file
@@ -123,7 +127,7 @@ Protocol:
         description: The sequencing platform used to generate single-cell sequencing
           data.
         type: string
-        example: "Illumina NexSeq 2000"
+        example: Illumina NexSeq 2000
         ontology:
           type: string
           description: Link to the ontology file
@@ -132,7 +136,7 @@ Protocol:
         description: Describes the methodology employed for sequencing, such as single
           cell RNA-seq, ATAC-seq, or DNA sequencing.
         type: string
-        example: "scRNA-Seq"
+        example: scRNA-Seq
         ontology:
           type: string
           description: Link to the ontology file
@@ -143,7 +147,7 @@ Protocol:
       formation_method:
         description: Method used to form cell aggregates
         type: string
-        example: "suspension cultures"
+        example: suspension cultures
         ontology:
           type: string
           description: Link to the ontology file
@@ -160,7 +164,7 @@ Protocol:
       method_collection:
         description: Method used to collect the biomaterial
         type: string
-        example: "Biopsy"
+        example: Biopsy
         ontology:
           type: string
           description: Link to the ontology file
@@ -168,7 +172,7 @@ Protocol:
       reagents:
         description: A list of purchased reagents used in this protocol
         type: array
-        example: "SMART CDS Primer II A, SMARTer II A Oligo, SMARTScribe Reverse Transcriptase"
+        example: SMART CDS Primer II A, SMARTer II A Oligo, SMARTScribe Reverse Transcriptase
         ontology:
           type: string
           description: Link to the ontology file
@@ -177,11 +181,11 @@ Protocol:
         description: Method applied to cell culture to induce a specific differentiation
           response
         type: string
-        example: "Inductive Co-Culture"
+        example: Inductive Co-Culture
       media_differentiation:
         description: Culture media used to induce a specific differentiation response
         type: string
-        example: "StemPro-34 Serum-Free Medium"
+        example: StemPro-34 Serum-Free Medium
         ontology:
           type: string
           description: Link to the ontology file
@@ -190,7 +194,7 @@ Protocol:
         description: Small molecules added to stem cell medium to induce a specific
           differentiation response
         type: string
-        example: "Retinoic Acid"
+        example: Retinoic Acid
         ontology:
           type: string
           description: Link to the ontology file
@@ -201,11 +205,12 @@ Protocol:
         type: float
         format: numeric
         example: 95
-        lower_value: 0.0
+        upper_limit: 100.0
+        lower_limit: 0.0
       target_pathway:
         description: Targeted pathway for specific differentiation response
         type: string
-        example: "Hedgehog signaling pathway"
+        example: Hedgehog signaling pathway
         ontology:
           type: string
           description: Link to the ontology file
@@ -214,7 +219,7 @@ Protocol:
         description: Method used to validate origin cell successfully differentiated
           to target cell
         type: string
-        example: "Pancreatic Cell DTZ Detection Assay"
+        example: Pancreatic Cell DTZ Detection Assay
         ontology:
           type: string
           description: Link to the ontology file
@@ -222,7 +227,7 @@ Protocol:
       validation_result:
         description: Result confirming successful differentiation to target cell type
         type: string
-        example: "CD103 Positive"
+        example: CD103 Positive
         ontology:
           type: string
           description: Link to the ontology file
@@ -230,7 +235,7 @@ Protocol:
       markers:
         description: A list of markers used to enrich for or against certain cells
         type: string
-        example: "CD4+ CD8-"
+        example: CD4+ CD8-
         ontology:
           type: string
           description: Link to the ontology file
@@ -240,8 +245,8 @@ Protocol:
         type: float
         format: numeric
         example: 70
-        upper_value: 10000.0
-        lower_value: 0.01
+        upper_limit: 10000.0
+        lower_limit: 0.01
         units:
           description: Unit is a quantity of constant magnitude which is used to measure
             the magnitudes of other quantities of the same manner
@@ -252,8 +257,8 @@ Protocol:
         type: float
         format: numeric
         example: 90
-        upper_value: 10000.0
-        lower_value: 0.01
+        upper_limit: 10000.0
+        lower_limit: 0.01
         units:
           description: Unit is a quantity of constant magnitude which is used to measure
             the magnitudes of other quantities of the same manner
@@ -263,7 +268,7 @@ Protocol:
         description: Induction method applied to primary cell culture to induce pluripotent
           stem cell generation
         type: string
-        example: "lentivirus"
+        example: lentivirus
         ontology:
           type: string
           description: Link to the ontology file
@@ -272,7 +277,7 @@ Protocol:
         description: Reprogramming factors added to primary cell culture to induce
           pluripotency
         type: string
-        example: "POU5F1"
+        example: POU5F1
         ontology:
           type: string
           description: Link to the ontology file
@@ -280,12 +285,12 @@ Protocol:
       ipsc_induction_kit:
         description: Kit used to induce pluripotent stem cell generation
         type: string
-        example: "Human iPS Cell Reprogramming Episomal Kit"
+        example: Human iPS Cell Reprogramming Episomal Kit
       pluripotency_test:
         description: Description of how pluripotency was tested in induced pluripotent
           stem cells
         type: string
-        example: "Teratoma formation"
+        example: Teratoma formation
         ontology:
           type: string
           description: Link to the ontology file
@@ -303,9 +308,6 @@ Protocol:
       pluripotency_vector_removed:
         description: Whether a viral vector was removed after induction
         type: boolean
-        enum:
-        - 'True'
-        - 'False'
     imaging_preparation_protocol:
       description: Image preperation related information of protocol
       properties:
@@ -324,7 +326,7 @@ Protocol:
           that are informative about the broader anatomical context/location of the
           sample
         type: string
-        example: "M0"
+        example: M0
         ontology:
           type: string
           description: Link to the ontology file
@@ -333,7 +335,7 @@ Protocol:
         description: Fiducial markers for the alignment of images taken across multiple
           rounds of imaging
         type: string
-        example: "beads"
+        example: beads
         ontology:
           type: string
           description: Link to the ontology file
@@ -346,11 +348,11 @@ Protocol:
       microscope_setup_description:
         description: Description of the microscope setup
         type: string
-        example: "Motorized stage (SCAN IM 112 x 74, Marzhauser)"
+        example: Motorized stage (SCAN IM 112 x 74, Marzhauser)
       microscopy_technique:
         description: The type of microscopy
         type: string
-        example: "Fluroscence"
+        example: Fluroscence
         ontology:
           type: string
           description: Link to the ontology file
@@ -358,7 +360,7 @@ Protocol:
       magnification:
         description: Magnification of the objective used for imaging
         type: string
-        example: "60x"
+        example: 60x
       numerical_aperture:
         description: Numerical aperture of the objective
         type: float
@@ -367,7 +369,7 @@ Protocol:
       immersion_medium_type:
         description: Immersion medium used for imaging
         type: string
-        example: "oil"
+        example: oil
         ontology:
           type: string
           description: Link to the ontology file
@@ -428,10 +430,10 @@ Protocol:
       channel:
         description: Information about each channel used in the imaging protocol
         type: array
-        example: "red"
+        example: red
       probe:
         description: Information about each probe in the imaging experiment
         type: array
-        example: "CNA35-OG488"
+        example: CNA35-OG488
   type: object
   version: 1.0.0
