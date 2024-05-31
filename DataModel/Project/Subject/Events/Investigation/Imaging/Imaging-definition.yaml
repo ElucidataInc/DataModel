@@ -1,0 +1,321 @@
+Imaging:
+  description: Describes the various techniques of viewing the inside of the body
+    to help figure out the causes of an illness or injury and confirm a diagnosis
+  properties:
+        event_id:
+          description: Foreign key or unique identifier to map a patient to an event
+          type: string
+          pattern: "^EVT[0-9]{3}$"
+          example: EVT-20201
+        treatment_id:
+          description: Foreign key or unique identifier for this treatment
+          type: string
+          pattern: "^TR-[0-9]{6,7}$"
+          example: TR-7391493
+        diagnosis_id:
+          description: Foreign key or unique identifier for the specific diagnosis
+          type: string
+          pattern: "^DGN[0-9]{3}$"
+          example: DGN3457
+        specimen_id:
+          description: Foreign key or unique identifier to map a specimen
+          type: string
+          pattern: "^SP-[0-9]{6,7}$"
+          example: SP-7391493
+        donor_id:
+          description: Foreign key or unique identifier to map to donor
+          type: string
+          pattern: "^DO-[0-9]{4}$"
+          example: DO-056148
+        result_id:
+          description: Primary key or unique identifier for the result from imaging
+          type: string
+          pattern: "^R-[0-9]{3,4}$"
+          example: R-231
+        cell_type:
+          description: The specific type of cell being analyzed or observed in a sample,
+            such as epithelial cells or lymphocytes
+          type: string
+          example: epithelial cells
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://obofoundry.org/ontology/cl.html
+        percentage_cell_infiltration:
+          description: The percentage of tissue area occupied by infiltrating cells,
+            indicating the level of immune cell infiltration into the tissue
+          type: float
+          format: numeric
+          example: 12
+          lower_limit: 0.0
+          upper_limit: 100.0
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: '%'
+            encoding: UTF-8
+        cell_count:
+          description: The total count of cells within a specified area or volume
+            of tissue, typically measured per unit area or volume
+          type: integer
+          format: numeric
+          example: 150
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: cells/mm²
+            encoding: UTF-8
+        nucleus_size:
+          description: The size of the cell nucleus, often measured in micrometers
+            (μm), which can indicate cellular activity or abnormality
+          type: float
+          example: 12.5
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: µm²
+            encoding: UTF-8
+        stain_intensity:
+          description: The intensity of staining in histological or immunohistochemical
+            samples, reflecting the abundance or presence of specific molecules or
+            structures
+          type: string
+          enum:
+          - Staining Intensity 0
+          - Staining Intensity 2+
+          - Staining Intensity 1+
+          - Staining Intensity 4+
+          - Staining Intensity 3+
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://bioportal.bioontology.org/ontologies/NCIT?p=classes&conceptid=http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C127762
+        epithelium_thickness:
+          description: The thickness of epithelial tissue layers, which can vary based
+            on the tissue type and pathological conditions.
+          type: float
+          example: 50
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: µm
+            encoding: UTF-8
+        histologic_type:
+          description: The classification of tissue based on its microscopic structure
+            and appearance, such as adenocarcinoma or squamous cell carcinoma
+          type: string
+          example: Rhabdoid
+          enum:
+          - Rhabdoid
+          - Sarcomatoid
+          - Unclassified features
+        microarray_coordinates:
+          description: The coordinates or location information of spots or features
+            on a microarray slide used for gene expression analysis
+          type: string
+          example: 3C9
+        percent_cell_type:
+          description: The percentage of a specific cell type (e.g., tumor cells,
+            immune cells) relative to the total cell population in a sample
+          type: string
+          example: tumor
+        percent_necrosis:
+          description: The percentage of tissue necrosis, indicating the extent of
+            cell death in a tissue sample
+          type: float
+          format: numeric
+          example: 11.11
+          lower_limit: 0.0
+          upper_limit: 100.0
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: '%'
+            encoding: UTF-8
+        prostate_chip_count:
+          description: The number of microarray chips or slides used for analyzing
+            gene expression or biomarkers in prostate tissue samples
+          type: integer
+          format: numeric
+          example: 12
+        tissue_microarray_coordinates:
+          description: The coordinates or location information of spots or features
+            on a tissue microarray slide used for molecular analysis
+          type: string
+          example: 3C9, 4C9
+        is_ffpe:
+          description: Indicates whether the tissue sample is formalin-fixed paraffin-embedded
+            (FFPE), which is a common preservation method in histology
+          type: boolean
+        tissue_type:
+          description: The type of tissue or organ from which the sample is obtained,
+            such as prostate tissue, lung tissue, or lymph node tissue
+          type: string
+          example: malignant
+          enum:
+          - malignant
+          - benign
+          - non-cancerous
+        ihc_score:
+          description: The scoring system used in immunohistochemistry (IHC) analysis
+            to assess protein expression levels or cellular markers
+          type: integer
+          format: numeric
+          example: 3
+        organ_imaging_site:
+          description: The anatomical site or organ imaged during medical imaging
+            procedures, such as the brain, abdomen, or chest
+          type: string
+          example: Thorax
+        type_of_Imaging:
+          description: The modality or type of medical imaging used, such as CT scan,
+            MRI, ultrasound, or PET scan
+          type: string
+          example: MRI
+        contrast_agent_used:
+          description: The type of contrast agent (if any) used during imaging studies
+            to enhance visualization of structures or abnormalities
+          type: string
+          example: gadolinium
+        date_of_scanning:
+          description: The date when the imaging study was conducted or when the images
+            were acquired in YYYY-MM-DD format
+          type: string
+          example: 2020-10-21
+        imaging_evidence_of_lesion:
+          description: The presence or evidence of a lesion or abnormality detected
+            during medical imaging examinations
+          type: string
+          example: Bening
+          enum:
+          - Bening
+          - Malignant
+        lymph_nodes_detected:
+          description: The number of lymph nodes detected or identified in imaging
+            studies, which can be important in cancer staging and diagnosis
+          type: boolean
+        region_of_lymph_node:
+          description: The specific anatomical region or location of a lymph node,
+            often described relative to nearby structures or landmarks
+          type: string
+          example: axilla
+        region_of_lymph_node_length:
+          description: The length or size measurement of a lymph node in imaging studies,
+            typically reported in millimeters (mm)
+          type: integer
+          format: numeric
+          example: 22
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: mm
+            encoding: UTF-8
+        region_of_lymph_node_width:
+          description: The width or diameter measurement of a lymph node in imaging
+            studies, typically reported in millimeters (mm)
+          type: integer
+          format: numeric
+          example: 7
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: mm
+            encoding: UTF-8
+        rads_score:
+          description: The Radiologic Assessment Determination Score (RADS) used in
+            radiology to classify imaging findings based on likelihood of malignancy
+            or other criteria
+          type: integer
+          format: numeric
+          example: 3
+        other_abnormalities:
+          description: Any additional abnormalities or findings noted during imaging
+            studies that are not specifically categorized in other terms
+          type: string
+        ct_system_imaging:
+          description: The specific imaging system or equipment used for CT scans,
+            such as CT scanner model or manufacturer
+          type: string
+        count_of_series:
+          description: Count of series generated per imaging study
+          type: integer
+          format: numeric
+          example: 45636
+        count_of_images:
+          description: Count of instances (images) generated per imaging study
+          type: integer
+          format: numeric
+          example: 45637
+        radiology_note:
+          description: Recognition findings described by radiology specialists
+          type: string
+          example: Nonspecific patchy ground glass opacification and septal thickening
+            bilateral upper lobes and superior segment of left lower lobe likely infectious
+            or inflammatory in etiology; Mild cardiomegaly, diffuse atherosclerosis
+        radiology_image_id:
+          description: Unique ID of each image, acting as the primary key of the Radiology
+            image table
+          type: integer
+          format: numeric
+          example: 235
+        radiology_occurrence_id:
+          description: Unique ID for each image shooting, acting as the primary key
+            of the Radiology study table
+          type: integer
+          format: numeric
+          example: 765
+        radiology_series_id:
+          description: Unique ID of each series
+          type: integer
+          format: numeric
+          example: 123
+        file_path:
+          description: File path of each image files
+          type: string
+        body_part_source_value:
+          description: Value indicating the photographed body part
+          type: string
+          example: 0018, 0015
+        laterality_concept_id:
+          description: Image shooting direction (anatomical plane)
+          type: string
+          example: R, B, L
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://bioportal.bioontology.org/ontologies/NCIT/?p=classes&conceptid=http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C25185
+        series_type_source_value:
+          description: Additional source values describing the series
+          type: string
+        series_type_concept_id:
+          description: Value indicating the type of the series
+          type: string
+        series_total_number:
+          description: Number of images constituting each series
+          type: integer
+          format: numeric
+        series_serial_number:
+          description: Order of images within each series
+          type: integer
+          format: numeric
+        image_resolution_rows:
+          description: Image resolution (number of horizontal pixels)
+          type: integer
+          format: numeric
+          example: 512
+        image_resolution_columns:
+          description: Image resolution (number of vertical pixels)
+          type: integer
+          format: numeric
+          example: 600
+        CT_slice_thickness:
+          description: Thickness of CT image slide
+          type: float
+          example: 1.24
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: mm
+            encoding: UTF-8
+  type: object
+  version: 1.0.0
