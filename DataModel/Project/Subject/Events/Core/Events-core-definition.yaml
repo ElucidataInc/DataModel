@@ -1,0 +1,33 @@
+Events-core:
+  description: Lists any significant occurrence or activity that is recorded within
+    a patient's health record. Contains information like project ID, donor ID, event
+    ID and event type.
+  properties:
+        project_id:
+          description: Foreign key or unique identifier to map a project
+          type: string
+          pattern: "^P[0-9]{3}$"
+          example: P012
+        donor_id:
+          description: Foreign key or unique identifier for a patient
+          type: string
+          pattern: "^DO-[0-9]{4}$"
+          example: D001
+        event_id:
+          description: Primary key or unique identifier for a event
+          type: string
+          pattern: "^EVT[0-9]{3}$"
+          example: E001
+        event_type:
+          description: Describing the events occurence for a patient
+          type: string
+          example: Diagnosis
+          enum:
+          - Diagnosis
+          - Treatment
+          - Laboratory test
+          - Follow-up
+          - ELISA
+          - PCR
+  type: object
+  version: 1.0.0
