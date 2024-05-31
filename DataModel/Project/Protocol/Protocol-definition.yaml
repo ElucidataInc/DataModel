@@ -62,26 +62,14 @@ Protocol:
         description: Information related to protocols that transforms a matrix
         type: string
         example: r2
-        ontology:
-          type: string
-          description: Link to the ontology file
-          url: https://bioportal.bioontology.org/ontologies/ATOM?p=classes&conceptid=http%3A%2F%2Furi.interlex.org%2Ftgbugs%2Furis%2Freadable%2Fatlas%2FTransformationMatrix
       bioinformatics_software:
         description: A wide array of computer programs and tools designed to manage, analyze, and interpret biological data
         type: string
         example: Cellranger
-        Ontology:
-          type: string
-          description: Link to the ontology file
-          url: https://bioportal.bioontology.org/ontologies/NGBO?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FNGBO_6000410
       bioinformatics_software_version:
         description: Version of software used
         type: string
         example: v2.0.1
-        ontology:
-          type: string
-          description: Link to the ontology file
-          url: https://bioportal.bioontology.org/ontologies/NCIT?p=classes&conceptid=http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C111093
       gene_annotation_version:
         description: Ensembl release version accession number or NCBI RefSeq assembly
           version used for gene annotation
@@ -94,10 +82,6 @@ Protocol:
         description: Chemistry/Reagent kit used in the protocol
         type: string
         example: Ion Total RNASeq Kit v2
-        ontology:
-          type: string
-          description: Link to the ontology file
-          url: https://bioportal.bioontology.org/ontologies/NCIT?p=classes&conceptid=http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C42793
       library_protocol:
         description: Specifies the protocol for preparing sequencing libraries from
           single-cell RNA or DNA, outlining the steps for library construction and
@@ -111,36 +95,20 @@ Protocol:
         - Stage IV - Nextera XT sequencing-library construction
         - Stage V - Pooling and DNA SPRI bead cleanup
         - Stage VI - Sequencing
-        ontology:
-          type: string
-          description: Link to the ontology file
-          url: https://bioportal.bioontology.org/ontologies/NCIT?p=classes&conceptid=http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C41111
       sampling_technique:
         description: The method/procedure used for collecting samples
         type: string
         example: Biopsy
-        ontology:
-          type: string
-          description: Link to the ontology file
-          url: https://bioportal.bioontology.org/ontologies/NCIT?p=classes&conceptid=http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C71492
       sequencer:
         description: The sequencing platform used to generate single-cell sequencing
           data.
         type: string
         example: Illumina NexSeq 2000
-        ontology:
-          type: string
-          description: Link to the ontology file
-          url: https://bioportal.bioontology.org/ontologies/BIRNLEX?p=classes&conceptid=http%3A%2F%2Fbioontology.org%2Fprojects%2Fontologies%2Fbirnlex%23birnlex_2408
       sequencing_technology:
         description: Describes the methodology employed for sequencing, such as single
           cell RNA-seq, ATAC-seq, or DNA sequencing.
         type: string
         example: scRNA-Seq
-        ontology:
-          type: string
-          description: Link to the ontology file
-          url: https://bioportal.bioontology.org/ontologies/GFVO?p=classes&conceptid=https%3A%2F%2Fwww.codamono.com%2Fbiointerchange%2Fgfvo%23SequencingTechnologyPlatform
     sample_collection:
       description: Sample collection related information of the protocol
       properties:
@@ -148,19 +116,10 @@ Protocol:
         description: Method used to form cell aggregates
         type: string
         example: suspension cultures
-        ontology:
-          type: string
-          description: Link to the ontology file
-          url: https://bioportal.bioontology.org/ontologies/ENM?p=classes&conceptid=http%3A%2F%2Fpurl.enanomapper.org%2Fonto%2FENM_9000002
       cell_uniformity:
         description: Description of the cell aggregates uniformity after formation
         type: string
-        example: Mostly homogenous embryoid bodies of variable cell numbers; Low-homogeneity
-          in morphology and size
-        ontology:
-          type: string
-          description: Link to the ontology file
-          url: https://bioportal.bioontology.org/ontologies/IOBC?p=classes&conceptid=http%3A%2F%2Fpurl.jp%2Fbio%2F4%2Fid%2F201106089792994038
+        example: Mostly homogenous embryoid bodies of variable cell numbers
       method_collection:
         description: Method used to collect the biomaterial
         type: string
@@ -173,10 +132,6 @@ Protocol:
         description: A list of purchased reagents used in this protocol
         type: array
         example: SMART CDS Primer II A, SMARTer II A Oligo, SMARTScribe Reverse Transcriptase
-        ontology:
-          type: string
-          description: Link to the ontology file
-          url: https://bioportal.bioontology.org/ontologies/SNOMEDCT?p=classes&conceptid=http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FSNOMEDCT%2F337340002
       method_differentiation:
         description: Method applied to cell culture to induce a specific differentiation
           response
@@ -186,10 +141,6 @@ Protocol:
         description: Culture media used to induce a specific differentiation response
         type: string
         example: StemPro-34 Serum-Free Medium
-        ontology:
-          type: string
-          description: Link to the ontology file
-          url: https://bioportal.bioontology.org/ontologies/EFO?p=classes&conceptid=http%3A%2F%2Fwww.ebi.ac.uk%2Fefo%2FEFO_0000579
       small_molecules:
         description: Small molecules added to stem cell medium to induce a specific
           differentiation response
@@ -198,7 +149,7 @@ Protocol:
         ontology:
           type: string
           description: Link to the ontology file
-          url: https://bioportal.bioontology.org/ontologies/EDAM?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Ftopic_0154
+          url: https://pubchem.ncbi.nlm.nih.gov/
       target_cell_yield:
         description: Percent of target cells obtained after directed differentiation
           of origin cell
@@ -211,27 +162,15 @@ Protocol:
         description: Targeted pathway for specific differentiation response
         type: string
         example: Hedgehog signaling pathway
-        ontology:
-          type: string
-          description: Link to the ontology file
-          url: https://bioportal.bioontology.org/ontologies/NCIT/?p=classes&conceptid=http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C20633
       validation_method:
         description: Method used to validate origin cell successfully differentiated
           to target cell
         type: string
         example: Pancreatic Cell DTZ Detection Assay
-        ontology:
-          type: string
-          description: Link to the ontology file
-          url: https://bioportal.bioontology.org/ontologies/NCIT?p=classes&conceptid=http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C115542
       validation_result:
         description: Result confirming successful differentiation to target cell type
         type: string
         example: CD103 Positive
-        ontology:
-          type: string
-          description: Link to the ontology file
-          url: https://bioportal.bioontology.org/ontologies/NCIT?p=classes&conceptid=http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C16237
       markers:
         description: A list of markers used to enrich for or against certain cells
         type: string
@@ -269,19 +208,11 @@ Protocol:
           stem cell generation
         type: string
         example: lentivirus
-        ontology:
-          type: string
-          description: Link to the ontology file
-          url: https://bioportal.bioontology.org/ontologies/NCIT?p=classes&conceptid=http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C61367
       reprogramming_factors:
         description: Reprogramming factors added to primary cell culture to induce
           pluripotency
         type: string
         example: POU5F1
-        ontology:
-          type: string
-          description: Link to the ontology file
-          url: https://bioportal.bioontology.org/ontologies/MESH?p=classes&conceptid=http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FMESH%2FD065150
       ipsc_induction_kit:
         description: Kit used to induce pluripotent stem cell generation
         type: string
@@ -291,10 +222,6 @@ Protocol:
           stem cells
         type: string
         example: Teratoma formation
-        ontology:
-          type: string
-          description: Link to the ontology file
-          url: https://bioportal.bioontology.org/ontologies/PLOSTHES?p=classes&conceptid=http%3A%2F%2Flocalhost%2Fplosthes.2017-1%236180
       percent_pluripotency:
         description: Percent of iPSCs that passed the pluripotency test
         type: float
@@ -327,19 +254,11 @@ Protocol:
           sample
         type: string
         example: M0
-        ontology:
-          type: string
-          description: Link to the ontology file
-          url: https://bioportal.bioontology.org/ontologies/OCHV?p=classes&conceptid=http%3A%2F%2Fsbmi.uth.tmc.edu%2Fontology%2Fochv%2325102
       fiducial_marker:
         description: Fiducial markers for the alignment of images taken across multiple
           rounds of imaging
         type: string
         example: beads
-        ontology:
-          type: string
-          description: Link to the ontology file
-          url: https://bioportal.bioontology.org/ontologies/NCIT?p=classes&conceptid=http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C82602
       expansion_factor:
         description: Factor by which the imaged tissue was expanded in one dimension
         type: integer
@@ -370,10 +289,6 @@ Protocol:
         description: Immersion medium used for imaging
         type: string
         example: oil
-        ontology:
-          type: string
-          description: Link to the ontology file
-          url: https://bioportal.bioontology.org/ontologies/NCIT?p=classes&conceptid=http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C182013
       immersion_medium_refractive_index:
         description: Refractive index of the immersion medium used for imaging
         type: float
