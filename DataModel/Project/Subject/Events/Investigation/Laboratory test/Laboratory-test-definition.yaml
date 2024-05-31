@@ -1,0 +1,147 @@
+Laboratory-test:
+  description: Describes the details of the laboratory tests taken by a patient and
+    their interpretation
+  properties:
+        donor_id:
+          description: Foreign key or unique identifier to map donor
+          type: string
+          pattern: "^DO-[0-9]{4}$"
+          example: DO-31724
+        result_id:
+          description: Primary key or unique identifier to map the result
+          type: string
+          pattern: "^R-[0-9]{6,7}$"
+          example: R-7391493
+        event_id:
+          description: Foreign key or unique identifier to map a patient to an event
+          type: string
+          pattern: "^EVT[0-9]{3}$"
+          example: EVT-20201124
+        specimen_id:
+          description: Foreign key or unique identifier to map a specimen
+          type: string
+          pattern: "^SP-[0-9]{7}$"
+          example: SP-7391493
+        order_date:
+          description: Date when the lab test was ordered in YYYY-MM-DD format
+          type: string
+          pattern: "^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$"
+          example: 2021-03-09
+        test_type:
+          description: Type of lab test taken by the patient
+          type: string
+          example: Biopsy
+          enum:
+          - Lipid panel
+          - Thyroid function tests
+          - CBC test
+          - Creatinine test
+          - G6PD test
+          - Liver panel
+          - Prothrombin time
+          - Urinalysis
+          - Basic metabolic panel
+          - Blood test
+          - Pregnancy test
+          - Ham test
+          - Amniocentesis
+          - Biopsy
+          - Estrogen levels test
+          - HbA1c test
+          - Magnesium blood test
+          - Serological test
+          - Urine tests
+        test_date:
+          description: Date when the lab test was performed in YYYY-MM-DD
+          type: string
+          pattern: "^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$"
+          example: 2023-02-11
+        test_name:
+          description: Name or code of lab tests to ensure accurate tracking, analysis,
+            and interpretation of diagnostic results
+          type: string
+          example: CBC
+        reference_range:
+          description: Set of values to interpret a patients lab test results
+          type: float
+          example: 4000
+          lower_limit: 0.0
+        interpretation:
+          description: Interpretation and analysis of lab test results in relation
+            to current clinical condition.
+          type: string
+          example: Normal
+          enum:
+          - Normal
+          - Abnormal
+          - Critical
+        comments:
+          description: Additional comments or notes for the tests taken
+          type: string
+          example: No abnormalities
+        panel_name:
+          description: Group of lab tests that are commonly ordered together to evaluate
+            a specific aspect of health or diagnose certain conditions
+          type: string
+          example: CBC panel
+        tests_included:
+          description: List of individual tests or panels included in this panel
+          type: string
+          example: WBC, RBC, Platelets
+        panel_description:
+          description: Description of the panel or group of related lab tests.
+          type: string
+          example: Complete Blood Count with Differential
+        result_unit_preferred:
+          description: Standardized unit of measure the test
+          type: string
+          example: μg/mL
+          enum:
+          - M
+          - mg
+          - mg/mL
+          - mM
+          - ng/mL
+          - nM
+          - percent
+          - pfu
+          - pM
+          - rad
+          - U/mL
+          - units
+          - μg
+          - μg/kg
+          - μg/mL
+          - μM
+        result_unit_reported:
+          description: Unit of measure reported in the test
+          type: string
+          example: μg/mL
+          enum:
+          - M
+          - mg
+          - mg/mL
+          - mM
+          - ng/mL
+          - nM
+          - percent
+          - pfu
+          - pM
+          - rad
+          - U/mL
+          - units
+          - μg
+          - μg/kg
+          - μg/mL
+          - μM
+        result_value_preferred:
+          description: Standardized numerical result value
+          type: float
+          example: 7
+          lower_limit: 0.0
+        result_value_reported:
+          description: Numerical result value as reported in test
+          type: string
+          example: 7 milligrams per deciliter
+  type: object
+  version: 1.0.0
