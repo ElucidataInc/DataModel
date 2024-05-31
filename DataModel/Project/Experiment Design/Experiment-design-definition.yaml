@@ -3,7 +3,7 @@ Experiment-design:
     as the total number of samples, comparison groups, and the hypothesis
   properties:
       donor_id:
-        description: Foreign key or unique identifier to map to donor ID
+        description: Foreign key or unique identifier to map to donor
         type: string
         pattern: "^DO-[0-9]{4}$"
         example: D001
@@ -27,12 +27,8 @@ Experiment-design:
         - Population Study
         - Randomized Controlled Trial
         - Non-Randomized Controlled Trial
-        ontology_link:
-          type: string
-          description: Link to the ontology file
-          url: https://bioportal.bioontology.org/ontologies/NCIT?p=classes&conceptid=http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C164799
       protocol_id:
-        description: Foreign key or unique identifier to map to protocol used
+        description: Foreign key or unique identifier to map to the protocol
         type: string
         pattern: "^PRT[0-9]{3}$"
         example: PRT451
@@ -56,19 +52,11 @@ Experiment-design:
         - Treatment group
         - Disease cohort
         - Healthy cohort
-        ontology_link:
-          type: string
-          description: Link to the ontology file
-          url: https://bioportal.bioontology.org/ontologies/NCIT?p=classes&conceptid=http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C49156
       genetic_modification:
         description: This field represents the type of genetic modification done
           on the sample.
         type: string
         example: Gene knockout
-        ontology_link:
-          type: string
-          description: Link to the ontology file
-          url: https://bioportal.bioontology.org/ontologies/BIODIVTHES?p=classes&conceptid=http%3A%2F%2Fdata.loterre.fr%2Fark%3A%2F67375%2FBLH-W5Q078JD-4
       hypothesis:
         description: Describes the hypothesis for the study
         type: string
