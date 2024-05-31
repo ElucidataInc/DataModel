@@ -58,6 +58,6 @@
     Changed:
     - A thing was changed
 
-### 2. For non-developers
+### 2. For non-developers only
 
 We currently do not have a mechanism for contributions from non-team members/non-developers. However, if you are willing to contribute towards the development of this project, drop an email with your requirements to pawan.verma@elucidata.io or krutika.gaonkar@elucidata.io
