@@ -3,49 +3,29 @@ Project-core:
     overall design, publication related details and any other supplementary links
     associated with the project
   properties:
-    properties:
       project_id:
-        description: Primary key or unique identified for a project
+        description: Primary key or unique identifier for a project
         type: string
-        pattern: "^DO-[0-9]{4}$"
-        example: "P034"
+        pattern: "^P[0-9]{3}$"
+        example: P034
       summary:
-        description: Summary of the experiment from which the project has been derived
+        description: Summary of the study which provides information about the key objectives and results from the publication
         type: string
-        example: "The identification of novel therapeutic strategies to overcome
-            the intrinsic or acquired resistance to trametinib in mutant KRAS lung
-            adenocarcinoma (LUAD) is a major challenge. This study analyzes the effects
-            of trametinib in Id1, a key factor involved in the oncogenic KRAS pathway,
-            and investigates the Id1 role in acquire resistance and synergy with immunotherapy
-            in KRAS-driven LUAD. Restoring the antitumor immune response by blocking
-            programmed-cell death protein 1 (PD-1) and programmed-cell death-ligand
-            1 (PD-L1) pathway represents a major breakthrough in non-small-cell lung
-            cancer (NSCLC) treatment. Nevertheless, a high proportion of LUAD patients
-            with KRAS alterations remain refractory to this therapy. Material and
-            Methods: To explore whether MEK1/2 inhibition reduces Id1 expression,
-            in vitro and in vivo experiments were conducted in KRAS-mutant NSCLC cells
-            and murine models. RNAseq analysis was performed to elucidate the pathways
-            involved in Id1 inhibition. Apoptosis and PD-L1 expression was measured
-            by flow cytometry. Synergy of trametinib combined with anti-PD1 was investigated
-            in KRAS-mutant LUAD mouse models. Results: Using preclinical syngeneic
-            KRAS-mutant lung cancer mouse models, we demonstrate that trametinib synergizes
-            with PD-1 blockade to reduce lung cancer progression and increase mice
-            overall survival. This antitumor activity was linked to the degradation
-            of Id1 via proteasome, and an enhanced INF-Y-mediated PD-L1 tumor cell
-            expression in KRAS-mutant tumor cells. This effect required CD8+ T cells,
-            boosted the intratumoral CD8+/Treg ratio, reducing the intratumoral Treg/CD4+
-            ratio. Conclusions: Our data may support the role of Id1 in the trametinib
-            antitumoral effect, sustaining the mitogen-activated protein kinases (MAPK)
-            signaling pathway involved in the trametinib acquired resistance cells
-            and sensitizing KRAS-mutant lung tumors to PD-1 inhibitors, through PD-L1
-            overexpression."
+        example: The identification of novel therapeutic strategies to overcome the intrinsic 
+            or acquired resistance to trametinib in mutant KRAS lung adenocarcinoma (LUAD) is a major challenge. 
+            This study analyzes the effects of trametinib in Id1, a key factor involved in the oncogenic KRAS 
+            pathway, and investigates the Id1 role in acquire resistance and synergy with immunotherapy in KRAS-driven 
+            LUAD. Restoring the antitumor immune response by blocking programmed-cell death protein 1 (PD-1) and 
+            programmed-cell death-ligand 1 (PD-L1) pathway represents a major breakthrough in non-small-cell lung 
+            cancer (NSCLC) treatment. Nevertheless, a high proportion of LUAD patients with KRAS alterations remain 
+            refractory to this therapy.
       overall_design:
         description: Overall design of the experiment as given by the author
         type: string
-        example: "In order to investigate the molecular mechanisms involved in the
+        example: In order to investigate the molecular mechanisms involved in the
             trametinib-mediated Id1 downregulation, a global transcriptomic profiling
             using RNA sequencing analysis was performed on murine CMT167 and KLA lung
-            cancer cells treated or not with trametinib"
+            cancer cells treated or not with trametinib
       donor_derived_dataset:
         description: Whether the dataset has been derived from a donor or not
         type: boolean
@@ -53,23 +33,19 @@ Project-core:
         - True
         - False
         - NA
-        ontology_link:
-          type: string
-          description: Link to the ontology file
-          url: https://bioportal.bioontology.org/ontologies/HRAVS?p=classes&conceptid=https%3A%2F%2Fpurl.humanatlas.io%2Fvocab%2Fhravs%23HRAVS_1002101
       organism:
         description: The organism from which the samples were derived
         type: string
-        example: "Homo sapiens"
+        example: Homo sapiens
         ontology_link:
           type: string
           description: Link to the ontology file
-          url: https://bioportal.bioontology.org/ontologies/ORTH?p=classes&conceptid=http%3A%2F%2Fpurl.org%2Fnet%2Forth%23Organism
+          url: https://www.ebi.ac.uk/ols4/ontologies/ncbitaxon
       cell_line:
-        description: Identifier of the cell lines from which the samples were derived for this experiment
+        description: Specific population of cells that can maintain in vitro culture for an extended period of time and are used to derive samples for an experiment
         type: string
         pattern: "^CVCL_[0-9]{4}$"
-        example: "CVCL_0030"
+        example: CVCL_0030
         ontology_link:
           type: string
           description: Link to the ontology file
@@ -77,11 +53,11 @@ Project-core:
       author_cell_type:
         description: Cell types as curated from the publication/source for this experiment
         type: string
-        example: "CMT167 cell"
+        example: CMT167 cell
         ontology_link:
           type: string
           description: Link to the ontology file
-          url: https://bioportal.bioontology.org/ontologies/CCF?p=classes&conceptid=http%3A%2F%2Fpurl.org%2Fccf%2FCellType
+          url: https://obofoundry.org/ontology/cl.html
       source_link:
         description: Link to source from where the data was fetched given as a url
         type: string
