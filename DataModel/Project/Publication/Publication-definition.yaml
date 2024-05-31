@@ -1,10 +1,10 @@
 Publication:
-  description: Describes the experiment's publication related information such as abstract, authors, PUBMED ID and publication link. 
+  description: Describes the publication related information such as abstract, authors, PUBMED ID and the publication link. 
   properties:
     project_id:
       description: Primary key or unique identifier for a project
       type: string
-      pattern: "^DO-[0-9]{4}$"
+      pattern: "^P[0-9]{3}$"
       example: P034
     abstract:
       description: Abstract of the publication associated with the dataset.
@@ -74,12 +74,8 @@ Publication:
       type: integer
       format: numeric
       example: 38643157
-      ontology_link:
-        type: string
-        description: Link to the ontology file
-        url: https://bioportal.bioontology.org/ontologies/OBI?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FOBI_0001617
     total_number_of_cells:
-      description: Total number of cells in a dataset
+      description: Total number of cells present in a dataset
       type: integer
       format: numeric
       example: 150000
