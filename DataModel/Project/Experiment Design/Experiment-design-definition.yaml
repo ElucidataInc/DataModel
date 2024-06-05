@@ -5,12 +5,10 @@ Experiment-design:
       donor_id:
         description: Foreign key or unique identifier to map to donor
         type: string
-        pattern: "^DO-[0-9]{4}$"
         example: D001
       experiment_id:
         description: Primary key or unique identifier associated with the experiment
         type: string
-        pattern: "^EXPT[0-9]{3}$"
         example: EXPT045
       experiment_type:
         description: Describes the experimental design
@@ -30,12 +28,10 @@ Experiment-design:
       protocol_id:
         description: Foreign key or unique identifier to map to the protocol
         type: string
-        pattern: "^PRT[0-9]{3}$"
         example: PRT451
       project_id:
-        description: Foregin key to map to project
+        description: Foregin key or unique identifier to map to project
         type: string
-        pattern: "^P[0-9]{3}$"
         example: P024
       total_number_of_samples:
         description: Total number of samples in a dataset
