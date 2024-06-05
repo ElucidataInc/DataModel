@@ -4,7 +4,6 @@ Publication:
     project_id:
       description: Primary key or unique identifier for a project
       type: string
-      pattern: "^P[0-9]{3}$"
       example: P034
     abstract:
       description: Abstract of the publication associated with the dataset.
