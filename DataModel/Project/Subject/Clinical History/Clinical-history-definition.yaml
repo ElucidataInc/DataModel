@@ -4,12 +4,10 @@ Clinical-history:
         donor_id:
           description: Foreign donor ID or unique identifier to map donor information
           type: string
-          pattern: "^DO-[0-9]{4}$"
           example: DO-001
         clinical_history_id:
           description: Unique identifier for clinical history record
           type: string
-          pattern: "^CH[0-9]{3}$"
           example: CH001
         age_at_diagnosis:
           description: Age of the patient at the time of diagnosis
@@ -58,7 +56,6 @@ Clinical-history:
           - Left
           - Right
           - Bilateral
-          - N/A
           ontology_link:
             type: string
             description: Link to the ontology file
