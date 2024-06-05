@@ -7,19 +7,16 @@ Protocol:
       description: Core properties of the protocol
       properties:
       donor_id:
-        description: Foreign key or unique identifier to map to donor ID
+        description: Foreign key or unique identifier to map to donor
         type: string
-        pattern: "^DO-[0-9]{4}$"
         example: DO-31724
       project_id:
         description: Foreign key or unique identifier to map a project
         type: string
-        pattern: "^P[0-9]{3}$"
         example: P024
       protocol_id:
-        description: Primary key or unique identifier for the protocol ID
+        description: Primary key or unique identifier for the protocol
         type: string
-        pattern: "^PRT[0-9]{3}$"
         example: PRT451
       protocol_name:
         description: Describes the experiment procedure or methods organized in a standardized format that can be executed in a laboratory environment.
