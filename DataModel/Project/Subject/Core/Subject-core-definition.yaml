@@ -4,12 +4,10 @@ Subject-core:
       project_id:
         description: Foreign key or unique identifier to map a project
         type: string
-        pattern: "^P[0-9]{3}$"
         example: P024
       donor_id:
         description: Primary key for a patient
         type: string
-        pattern: "^DO-[0-9]{4}$"
         example: D001
       age:
         description: The age of the organism in years
@@ -28,7 +26,7 @@ Subject-core:
         ontology_link:
           type: string
           description: Link to the ontology file
-          url: EFO
+          url: https://www.ebi.ac.uk/efo/
       developmental_stage:
         description: Represents the stage of development/formation of the embryo
           of humans and mice
@@ -43,7 +41,7 @@ Subject-core:
         ontology_link:
           type: string
           description: Link to the ontology file
-          url: EFO, Uberon
+          url: https://www.ebi.ac.uk/efo/, https://www.ebi.ac.uk/ols4/ontologies/uberon
       gender:
         description: Gender of the organism from which the sample was derived
         type: string
@@ -51,22 +49,22 @@ Subject-core:
         enum:
         - Male
         - Female
-        - NA
         ontology_link:
           type: string
           description: Link to the ontology file
-          url: EFO, PATO
+          url: https://www.ebi.ac.uk/ols4/ontologies/gsso
       maritial_status:
         description: Marital status at the time of sampling
         type: string
         example: Married
         enum:
         - Married
-        - Unmarried
+        - Single
+        - Divorced
         ontology_link:
           type: string
           description: Link to the ontology file
-          url: EFO, PATO, CMO
+          url: https://www.ebi.ac.uk/ols4/ontologies/snomed/classes/http%253A%252F%252Fsnomed.info%252Fid%252F87915002
       pre_menopause_cycle_type:
         description: Type of pre-menopause cycle 
         type: string
@@ -74,19 +72,11 @@ Subject-core:
         enum:
         - Regular
         - Irregular
-        ontology_link:
-          type: string
-          description: Link to the ontology file
-          url: EFO, PATO, OBI
       pre_menopause_cycle_duration:
         description: Duration of the pre-menopause
         type: string
         example: 28
         lower_limit: 0
-        ontology_link:
-          type: string
-          description: Link to the ontology file
-          url: EFO, PATO, OBI
       menstruation:
         description: Menstruation status of Donor
         type: string
@@ -94,11 +84,6 @@ Subject-core:
         enum:
         - Menstruating
         - Not menstruating
-        - NA
-        ontology_link:
-          type: string
-          description: Link to the ontology file
-          url: EFO, PATO, OBI
       occupation:
         description: Occupation of the subject
         type: string
@@ -106,24 +91,20 @@ Subject-core:
         ontology_link:
           type: string
           description: Link to the ontology file
-          url: EFO, PATO, CMO, OBI
+          url: https://www.ebi.ac.uk/ols4/ontologies/occo
       cohort:
         description: Group of individuals included in the study or dataset, which
           may have implications for data analysis and interpretation 
         type: string
         example: Study Group A
-        ontology_link:
-          type: string
-          description: Link to the ontology file
-          url: EFO, OBI, DOID
       strain_characteristics:
         description: Characteristics of the mouse strain
         type: string
-        example: Wild-type
+        example: Wildtype
         ontology_link:
           type: string
           description: Link to the ontology file
-          url: EFO, PATO, CMO, ENVO
+          url: https://www.ebi.ac.uk/ols4/ontologies/ncit, https://sites.google.com/site/environmentontology/
       strain:
         description: The name of the mouse strain
         type: string
@@ -131,7 +112,7 @@ Subject-core:
         ontology_link:
           type: string
           description: Link to the ontology file
-          url: EFO, PATO, CMO, ENVO
+          url: https://www.ebi.ac.uk/ols4/ontologies/clo, https://www.ebi.ac.uk/ols4/ontologies/efo, 
       country_of_origin:
         description: Country of origin or nationality of the patient, which may
           provide insights into geographic variations in disease incidence or environmental
@@ -141,77 +122,57 @@ Subject-core:
         ontology_link:
           type: string
           description: Link to the ontology file
-          url: EFO, ENVO, GEO
+          url: https://www.ebi.ac.uk/ols4/ontologies/geo, https://www.ebi.ac.uk/ols4/ontologies/envo
       race:
-        description: Categorization of humans based on shared physical or social
-          qualities into groups generally viewed as distinct within a given society
+        description: A geographic ancestral origin category that is assigned to a population group based mainly on physical characteristics that are thought to be distinct and inherent.
         type: string
-        example: Caucasian
+        example: Asian
         enum:
-        - Black
-        - East Asian
-        - Hispanic
-        - Middle Eastern
-        - Native American
-        - Pacific Islander
-        - South Asian
-        - Southeast Asian
+        - African
+        - African Caribbea
+        - American Indian or Alaska Native
+        - Asian
+        - Asian American
+        - Australian
+        - Black or African American
+        - Caribbean Indian
+        - Eskimo
+        - European
+        - Hispanic or Latino
+        - Latin American
+        - Mediterranean
+        - Middle Eastern or North African
+        - Multiracial
+        - Native Hawaiian or Other Pacific Islander
+        - New Zealander
+        - North American
+        - Other Race
+        - South or Central American Indian
         - White
         ontology_link:
           type: string
           description: Link to the ontology file
-          url: EFO, PATO, CMO, HPO (Human Phenotype Ontology)
+          url: https://www.ebi.ac.uk/ols4/ontologies/ncit/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FNCIT_C17049?lang=en
       ethinicity:
-        description: Cultural expression and identification of people of different
-          geographic regions, including their customs, history, language, and religion.
+        description: A social group characterized by a distinctive social and cultural tradition that is maintained from generation to generation.
         type: string
-        example: Non-Hispanic
-        enum:
-        - American
-        - African American
-        - Arab
-        - Asian
-        - Black
-        - Black African
-        - Chinese
-        - Esan
-        - Eskimo
-        - European
-        - Gambian
-        - Han Chinese
-        - Hispanic
-        - Indian
-        - Japanese
-        - Luhya
-        - Maasai
-        - Mende
-        - Native Hawaiian
-        - Yoruba
+        example: Yi Chinese
         ontology_link:
           type: string
           description: Link to the ontology file
-          url: EFO, PATO, CMO, HPO
+          url: https://www.ebi.ac.uk/ols4/ontologies/ncit/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FNCIT_C16564
       number_of_children:
         description: Number of children
-        type: string
-        example: 2, 3, 1
-        lower_limit: 0.0
-        ontology_link:
-          type: string
-          description: Link to the ontology file
-          url: EFO, PATO, CMO, HPO
+        type: integer
+        example: 2
+        lower_limit: 0
       pregnancy:
         description: Whether preganant?
         type: boolean
-        example: 'No'
+        example: True
         enum:
-        - 'True'
-        - 'False'
-        - NA
-        ontology_link:
-          type: string
-          description: Link to the ontology file
-          url: EFO, PATO, CMO, HPO
+        - True
+        - False
       cause_of_death:
         description: Cause of death
         type: string
@@ -219,6 +180,6 @@ Subject-core:
         ontology_link:
           type: string
           description: Link to the ontology file
-          url: EFO, PATO, CMO, DO, HPO
+          url: https://www.disease-ontology.org/, https://hpo.jax.org/
   type: object
   version: 1.0.0
