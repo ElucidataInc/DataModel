@@ -28,9 +28,6 @@ Project-core:
       donor_derived_dataset:
         description: Whether the dataset has been derived from a donor or not
         type: boolean
-        enum:
-        - True
-        - False
       organism:
         description: The organism from which the samples were derived
         type: string
