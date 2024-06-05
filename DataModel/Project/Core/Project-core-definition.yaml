@@ -6,7 +6,6 @@ Project-core:
       project_id:
         description: Primary key or unique identifier for a project
         type: string
-        pattern: "^P[0-9]{3}$"
         example: P034
       summary:
         description: Summary of the study which provides information about the key objectives and results from the publication
@@ -32,7 +31,6 @@ Project-core:
         enum:
         - True
         - False
-        - NA
       organism:
         description: The organism from which the samples were derived
         type: string
