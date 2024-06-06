@@ -6,13 +6,13 @@ Family-history:
         donor_id:
           description: Foreign key or unique identifier to map donor information
           type: string
-          pattern: "^DO-[0-9]{4}$"
           example: DO-31724
         relationship_age_at_diagnosis:
           description: Age of the patient's relative at the time of diagnosis
           type: integer
           format: numeric
           example: 50
+          lower_limit: 0
           units:
             description: Unit is a quantity of constant magnitude which is used to
               measure the magnitudes of other quantities of the same manner
@@ -25,7 +25,7 @@ Family-history:
           enum:
           - Male
           - Female
-          - NA
+          - Other
         relationship_primary_diagnosis:
           description: Primary diagnosis for the relative
           type: string
@@ -37,7 +37,8 @@ Family-history:
         relatives_with_cancer_history_count:
           description: Count of relatives with history of cancer
           type: integer
-          format: 2
+          format: numeric
+          example: 2
         brca_carrier:
           description: Indicate whether donor is a carrier of a mutation in a BRCA
             gene. A mutation in this gene is associated with an increased risk of
@@ -127,12 +128,13 @@ Family-history:
           example: years
         exposure_duration_of_relative:
           description: Time associated with rate of exposure for the relative
-          type: string
-          example: 30
-        exposure_frequency_of_relative:
-          description: Frequency of the exposure for the relative
           type: integer
           format: numeric
+          example: 30
+          lower_limit: 0
+        exposure_frequency_of_relative:
+          description: Frequency of the exposure for the relative
+          type: string
           enum:
           - Once
           - Multiple
