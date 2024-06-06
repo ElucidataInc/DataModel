@@ -4,7 +4,6 @@ Trial:
       project_id:
         description: Primary key or unique identifier for a project
         type: string
-        pattern: "^P[0-9]{3}$"
         example: P034
       author_trial:
         description: The individual or group responsible for designing, conducting,
@@ -87,6 +86,7 @@ Trial:
           recruitment period, treatment period, follow-up period, and data analysis
           timeline.
         type: float
+        format: numeric
         example: 20
         upper_limit: 100.0
         lower_limit: 0.0
