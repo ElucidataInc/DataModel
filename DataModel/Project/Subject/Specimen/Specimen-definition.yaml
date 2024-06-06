@@ -8,17 +8,14 @@ Specimen:
         donor_id:
           description: Foreign key or unique identifier to map to donor
           type: string
-          pattern: "^DO-[0-9]{4}$"
           example: D-056
         diagnosis_id:
           description: Foreign key or unique identifier to map a project
           type: string
-          pattern: "^DI-[0-9]{5}$"
           example: DI-034
         event_id:
           description: Foreign key or unique identifier to map a patient to an event
           type: string
-          pattern: "^EVT[0-9]{3}$"
           example: EVT-123
         tissue:
           description: Group of cells that work together to perform a specific function in an organism. Here it would be the tissue from which the samples were derived
@@ -179,7 +176,7 @@ Specimen:
           ontology_link:
             type: string
             description: Link to the ontology file
-            url: UBERON
+            url: https://www.ebi.ac.uk/ols4/ontologies/uberon
         cell_morphology:
           description: Features relating to the morphology of the cells for the cell line
           type: string
@@ -192,6 +189,7 @@ Specimen:
         confluency:
           description: The percent a plate surface is covered by cells
           type: float
+          format: numeric
           example: 60
           units:
             description: Unit is a quantity of constant magnitude which is used to
@@ -205,7 +203,7 @@ Specimen:
         date_established:
           description: Date when the cell line was established
           type: string
-          pattern: '"^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$"'
+          pattern: "^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$"
           example: 1995-05-10
         disease:
           description: Short description of any disease association to the cell type
@@ -241,6 +239,7 @@ Specimen:
           description: Numeric value that represents the percentage of infiltration
             by tumor cells in a sample
           type: float
+          format: numeric
           lower_limit: 0.0
           upper_limit: 100.0
           units:
@@ -252,6 +251,7 @@ Specimen:
           description: Numeric value to represent the percentage of tumor nuclei in
             a malignant neoplasm sample or specimen
           type: float
+          format: numeric
           lower_limit: 0.0
           upper_limit: 100.0
           units:
@@ -279,6 +279,7 @@ Specimen:
           description: Numeric value that represents the percentage of prostatic involvement
             found in a specific tissue sample
           type: float
+          format: numeric
           example: 7
           lower_limit: 0.0
           upper_limit: 100.0
@@ -381,7 +382,7 @@ Specimen:
           - Not Applicable
         biospecimen_anatomic_site:
           description: Text term that represents the name of the primary disease site
-            of the submitted tumor sampl
+            of the submitted tumor sample
           type: string
           example: Gland
           enum:
@@ -472,6 +473,7 @@ Specimen:
           description: Numeric value that represents the current weight of the sample,
             measured in milligrams.
           type: float
+          format: numeric
           example: 76.8
           units:
             description: Unit is a quantity of constant magnitude which is used to
@@ -761,7 +763,7 @@ Specimen:
           - Rhabdoid tumor (kidney) (RT)
           - Rhabdomyosarcoma
           - Soft tissue sarcoma
-          - non-rhabdomyosarcoma
+          - Non-rhabdomyosarcoma
           - Wilms tumor (WT)
           ontology_link:
             type: string
@@ -820,10 +822,6 @@ Specimen:
           description: The unit of time in which the post resection interval is expressed
           type: string
           example: day
-          ontology_link:
-            type: string
-            description: Link to the ontology file
-            url: OWL
         pre_final_slice_preservation_method:
           description: Tissue preservation method used prior to final slicing
           type: string
@@ -838,10 +836,6 @@ Specimen:
             expressed
           type: string
           example: day
-          ontology_link:
-            type: string
-            description: Link to the ontology file
-            url: OWL
         permeabilisation_time:
           description: The permeabilisation time in time units that the tissue was
             exposed to
@@ -857,10 +851,6 @@ Specimen:
           description: The unit in which permeabilisation time is expressed
           type: string
           example: mins
-          ontology_link:
-            type: string
-            description: Link to the ontology file
-            url: OWL
     Read group:
       description: Used to keep track of the different sources of sequencing data within a single sequencing experiment
       properties:
@@ -874,7 +864,6 @@ Specimen:
           enum:
           - True
           - False
-          - NA
         library_name:
           description: Name or identifier assigned to a library in a sequencing experiment
           type: string
@@ -1076,7 +1065,6 @@ Specimen:
           enum:
           - True
           - False
-          - NA
         instrument_model:
           description: Specific model of sequencing instrument used.
           type: string
@@ -1243,7 +1231,7 @@ Specimen:
             uom: gm
             encoding: UTF-8
         analyte_quantity:
-          description: The quantity in micrograms (ug) of the analyte(s) derived from
+          description: The quantity in micrograms (μg) of the analyte(s) derived from
             the analyte(s) shipped for sequencing and characterization.
           type: integer
           format: numeric
@@ -1251,10 +1239,10 @@ Specimen:
           units:
             description: Unit is a quantity of constant magnitude which is used to
               measure the magnitudes of other quantities of the same manner
-            uom: ug
+            uom: μg
             encoding: UTF-8
         analyte_volume:
-          description: The volume in microliters (ul) of the aliquot(s) derived from
+          description: The volume in microliters (μl) of the aliquot(s) derived from
             the analyte(s) shipped for sequencing and characterization.
           type: integer
           format: numeric
@@ -1262,7 +1250,7 @@ Specimen:
           units:
             description: Unit is a quantity of constant magnitude which is used to
               measure the magnitudes of other quantities of the same manner
-            uom: ul
+            uom: μl
             encoding: UTF-8
         concentration:
           description: Numeric value that represents the concentration of an analyte
@@ -1323,7 +1311,7 @@ Specimen:
       description: Portion of a specimen that has been divided from the original specimen for the purpose of analysis, storage, or distribution
       properties:
         aliqout_quantity:
-          description: The quantity in micrograms (ug) of the aliquot(s) derived from
+          description: The quantity in micrograms (μg) of the aliquot(s) derived from
             the analyte(s) shipped for sequencing and characterization
           type: integer
           format: numeric
@@ -1331,10 +1319,10 @@ Specimen:
           units:
             description: Unit is a quantity of constant magnitude which is used to
               measure the magnitudes of other quantities of the same manner
-            uom: ug
+            uom: μg
             encoding: UTF-8
         aliquot_volume:
-          description: The volume in microliters (ul) of the aliquot(s) derived from
+          description: The volume in microliters (μl) of the aliquot(s) derived from
             the analyte(s) shipped for sequencing and characterization
           type: integer
           format: numeric
@@ -1342,17 +1330,17 @@ Specimen:
           units:
             description: Unit is a quantity of constant magnitude which is used to
               measure the magnitudes of other quantities of the same manner
-            uom: ul
+            uom: μl
             encoding: UTF-8
         amount:
           description: Weight in grams or volume in mL.
-          type: integer
+          type: float
           format: numeric
           example: 0.5
           units:
             description: Unit is a quantity of constant magnitude which is used to
               measure the magnitudes of other quantities of the same manner
-            uom: gm
+            uom: gm, mL
             encoding: UTF-8
         no_matched_normal_low_pass_wgs:
           description: There will be no matched normal low pass WGS aliquots for this
@@ -1362,7 +1350,6 @@ Specimen:
           enum:
           - True
           - False
-          - NA
         no_matched_normal_target_sequencing:
           description: There will be no matched normal Targeted Sequencing aliquots
             for this case that can be used for variant calling purposes. The GDC may
@@ -1371,7 +1358,6 @@ Specimen:
           enum:
           - True
           - False
-          - NA
         no_matched_normal_wgs:
           description: There will be no matched normal WGS aliquots for this case
             that can be used for variant calling purposes. The GDC may elect to use
@@ -1380,7 +1366,6 @@ Specimen:
           enum:
           - True
           - False
-          - NA
         no_matched_normal_wxs:
           description: There will be no matched normal WXS aliquots for this case
             that can be used for variant calling purposes. The GDC may elect to use
@@ -1389,7 +1374,6 @@ Specimen:
           enum:
           - True
           - False
-          - NA
         selected_normal_low_pass_wgs:
           description: Denotes which low-pass WGS normal aliquot the submitter prefers
             to use for variant calling. Only one normal per experimental strategy
@@ -1398,7 +1382,6 @@ Specimen:
           enum:
           - True
           - False
-          - NA
         selected_normal_targeted_sequencing:
           description: Denotes which targeted_sequencing normal aliquot the submitter
             prefers to use for variant calling. Only one normal per experimental strategy
@@ -1407,7 +1390,6 @@ Specimen:
           enum:
           - True
           - False
-          - NA
         selected_normal_wgs:
           description: Denotes which WGS normal aliquot the submitter prefers to use
             for variant calling. Only one normal per experimental strategy per case
@@ -1416,7 +1398,6 @@ Specimen:
           enum:
           - True
           - False
-          - NA
         selected_normal_wxs:
           description: Denotes which WXS normal aliquot the submitter prefers to use
             for variant calling. Only one normal per experimental strategy per case
@@ -1425,6 +1406,5 @@ Specimen:
           enum:
           - True
           - False
-          - NA
   type: object
   version: 1.0.0
