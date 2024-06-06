@@ -5,32 +5,26 @@ Biomarker:
         donor_id:
           description: Foreign Key or unique identifier referencing patient
           type: string
-          pattern: "^DO-[0-9]{4}$"
           example: DO-31724
         result_id:
           description: Primary Key or unique identifier mapping result
           type: string
-          pattern: "^R-[0-9]{6,7}$"
           example: R-7391493
         event_id:
           description: Primary key or unique identifier to map a patient to an event
           type: string
-          pattern: "^EVT[0-9]{3}$"
           example: EV-20201124
         treatment_id:
           description: Primary key or unique identifier for this treatment
           type: string
-          pattern: "^TR-[0-9]{6,7}$"
           example: TR-7391493
         diagnosis_id:
           description: Primary key or unique identifier for the specific diagnosis
           type: string
-          pattern: "^DI-[0-9]{5}$"
           example: DI-93143
         biomarker_id:
           description: Primary key or unique identifier for biomarker
           type: string
-          pattern: "^BI-[0-9]{6}$"
           example: BI-343242
         biomarker_status:
           description: Status of the biomarker
@@ -40,7 +34,6 @@ Biomarker:
           - Positive
           - Negative
           - Unknown
-          - Not available
         method_of_biomarker_detection:
           description: Methodology used for checking tissue, blood, or other body fluid for certain genes, proteins, or other molecules that may be a sign of a disease or condition
           type: string
@@ -85,7 +78,8 @@ Biomarker:
           example: chrX:1234567
         quantification_value:
           description: Quantifcation value for the reported biomarker
-          type: string
+          type: integer
+          format: numeric
           example: 200
           lower_limit: 0
         quantification_unit:
@@ -98,7 +92,8 @@ Biomarker:
           example: BCR-ABL1
         reported_amplification:
           description: Copy number of the gene
-          type: string
+          type: integer
+          format: numeric
           example: 3
         reported_fusion:
           description: Fused protein product reported by FISH, IHC
