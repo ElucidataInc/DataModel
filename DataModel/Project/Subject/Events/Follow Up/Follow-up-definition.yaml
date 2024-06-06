@@ -5,20 +5,17 @@ Follow-up:
         donor_id:
           description: Foreign key or unique identifier to map donor
           type: string
-          pattern: "^DO-[0-9]{4}$"
           example: D001
         event_id:
-          description: Foreign key or unique identity to map a patient to an event
+          description: Foreign key or unique identifier to map a patient to an event
           type: string
-          pattern: "^EVT[0-9]{3}$"
           example: EV20201124
         treatment_id:
           description: Foreign key or unique identifier to map a treatment event
           type: string
-          pattern: "^TR-[0-9]{6,7}$"
           example: TR-980743
         follow_up_id:
-          description: Primary Key or unique dentifier for follow-up
+          description: Primary Key or unique identifier for follow-up
           type: string
           example: FU-001
         date_of_last_follow_up:
@@ -34,7 +31,6 @@ Follow-up:
           enum:
           - Active
           - Dead
-          - NA
         status_of_remission:
           description: Indicates whether a reduction or disappearance of the signs
             and symptoms of a disease has occured in a patient
@@ -43,21 +39,19 @@ Follow-up:
           enum:
           - Remission
           - Relapse
-          - NA
         date_of_death:
           description: Date when the patient passed away in YYYY-MM-DD format
           type: string
           pattern: "^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$"
           example: 2023-09-25
-          lower_limit: 0000-00-00
         non_fatal_myocardial_infraction:
           description: Patient status if they have suffered from a non fatal heart attack
-          type: string
-          example: NA
+          type: boolean
+          example: True
         non_fatal_stroke:
           description: Patient status if they have suffered from a stroke
-          type: string
-          example: NA
+          type: boolean
+          example: False
         status_of_progression:
           description: Current state of a patients disease in terms of its advancement
             or regression
@@ -67,7 +61,6 @@ Follow-up:
           - Progressing
           - Stable
           - Regressing
-          - NA
         status_of_recurrence:
           description: Presense of relapse of the patients disease
           type: string
