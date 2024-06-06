@@ -5,17 +5,14 @@ Exposure:
         donor_id:
           description: Foreign key or unique identifier to map donor
           type: string
-          pattern: "^DO[0-9]{4}$"
           example: D001
         exposure_id:
           description: Primary key or unique identifier for exposure
           type: string
-          pattern: "^EXP[0-9]{3}$"
           example: EXP001
         event_id:
-          description: Foreign key to map a patient to an event
+          description: Foreign key or unique identifier to map a patient to an event
           type: string
-          pattern: "^EVT[0-9]{3}$"
           example: EVT001
         exposure_type:
           description: Classification of how individuals come into contact with various
@@ -72,6 +69,7 @@ Exposure:
         diet_duration:
           description: Years associated with the diet
           type: float
+          format: numeric
           example: 3
           lower_limit: 0.0
           units:
@@ -89,7 +87,7 @@ Exposure:
           type: integer
           format: numeric
           example: 10
-          lower_limit: 0.0
+          lower_limit: 0
           units:
             description: Unit is a quantity of constant magnitude which is used to
               measure the magnitudes of other quantities of the same manner
