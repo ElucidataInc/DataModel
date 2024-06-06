@@ -5,22 +5,18 @@ Laboratory-test:
         donor_id:
           description: Foreign key or unique identifier to map donor
           type: string
-          pattern: "^DO-[0-9]{4}$"
           example: DO-31724
         result_id:
           description: Primary key or unique identifier to map the result
           type: string
-          pattern: "^R-[0-9]{6,7}$"
           example: R-7391493
         event_id:
           description: Foreign key or unique identifier to map a patient to an event
           type: string
-          pattern: "^EVT[0-9]{3}$"
           example: EVT-20201124
         specimen_id:
           description: Foreign key or unique identifier to map a specimen
           type: string
-          pattern: "^SP-[0-9]{7}$"
           example: SP-7391493
         order_date:
           description: Date when the lab test was ordered in YYYY-MM-DD format
@@ -64,6 +60,7 @@ Laboratory-test:
         reference_range:
           description: Set of values to interpret a patients lab test results
           type: float
+          format: numeric
           example: 4000
           lower_limit: 0.0
         interpretation:
@@ -137,6 +134,7 @@ Laboratory-test:
         result_value_preferred:
           description: Standardized numerical result value
           type: float
+          format: numeric
           example: 7
           lower_limit: 0.0
         result_value_reported:
