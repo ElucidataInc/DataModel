@@ -5,32 +5,26 @@ Imaging:
         event_id:
           description: Foreign key or unique identifier to map a patient to an event
           type: string
-          pattern: "^EVT[0-9]{3}$"
           example: EVT-20201
         treatment_id:
           description: Foreign key or unique identifier for this treatment
           type: string
-          pattern: "^TR-[0-9]{6,7}$"
           example: TR-7391493
         diagnosis_id:
           description: Foreign key or unique identifier for the specific diagnosis
           type: string
-          pattern: "^DGN[0-9]{3}$"
           example: DGN3457
         specimen_id:
           description: Foreign key or unique identifier to map a specimen
           type: string
-          pattern: "^SP-[0-9]{6,7}$"
           example: SP-7391493
         donor_id:
           description: Foreign key or unique identifier to map to donor
           type: string
-          pattern: "^DO-[0-9]{4}$"
           example: DO-056148
         result_id:
           description: Primary key or unique identifier for the result from imaging
           type: string
-          pattern: "^R-[0-9]{3,4}$"
           example: R-231
         cell_type:
           description: The specific type of cell being analyzed or observed in a sample,
@@ -69,6 +63,7 @@ Imaging:
           description: The size of the cell nucleus, often measured in micrometers
             (μm), which can indicate cellular activity or abnormality
           type: float
+          format: numeric
           example: 12.5
           units:
             description: Unit is a quantity of constant magnitude which is used to
@@ -94,6 +89,7 @@ Imaging:
           description: The thickness of epithelial tissue layers, which can vary based
             on the tissue type and pathological conditions.
           type: float
+          format: numeric
           example: 50
           units:
             description: Unit is a quantity of constant magnitude which is used to
@@ -311,6 +307,7 @@ Imaging:
         CT_slice_thickness:
           description: Thickness of CT image slide
           type: float
+          format: numeric
           example: 1.24
           units:
             description: Unit is a quantity of constant magnitude which is used to
