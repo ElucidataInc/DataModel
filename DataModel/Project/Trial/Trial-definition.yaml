@@ -1,0 +1,193 @@
+Trial:
+    description: Describes the details of the clinical trial from which the experiment might be taken. Details include trial design, principal investigators, sponsors and duration.
+    properties:
+      project_id:
+        description: Primary key or unique identifier for a project
+        type: string
+        example: P034
+      author_trial:
+        description: The individual or group responsible for designing, conducting,
+          and reporting the clinical trial.
+        type: string
+        example: Gil-Bazo, I., Ajona, D.
+      registry_name:
+        description: The official database or registry where the clinical trial
+          information is registered and accessible to the public.
+        type: string
+        example: NCT
+      registry_trail_id:
+        description: The unique identifier assigned to a clinical trial in a registry,
+          allowing for tracking and reference purposes.
+        type: string
+        pattern: "^NCT[0-9]{8}$"
+        example: NCT03131687
+      location:
+        description: The physical location(s) where the clinical trial is conducted,
+          including healthcare facilities, research institutions, and geographical
+          regions.
+        type: string
+        example: United States
+      region:
+        description: The geographic area(s) or country/countries where the clinical
+          trial is conducted, indicating the scope of the study population.
+        type: string
+        example: Los Angeles, San Diego
+      sponsor:
+        description: The organization or entity responsible for initiating, funding,
+          and overseeing the clinical trial.
+        type: string
+        example: Eli Lily
+      trial_year:
+        description: The calendar year in which the clinical trial is initiated
+          or registered, providing temporal context for the study.
+        type: integer
+        format: numeric
+        example: 2023
+        lower_limit: 1900
+        units:
+          description: Unit is a quantity of constant magnitude which is used to
+            measure the magnitudes of other quantities of the same manner
+          uom: year
+          encoding: UTF-8
+      trial_design:
+        description: The overall plan or framework detailing the study protocol,
+          including study objectives, participant eligibility criteria, interventions,
+          outcomes, and data collection methods.
+        type: string
+        example: The purpose of this study is to evaluate the efficacy of the study
+            drug tirzepatide in participants with type 2 diabetes mellitus.
+      trial_blinding:
+        description: The method used to conceal treatment allocation (e.g., single-blind,
+          double-blind, open-label) to minimize bias and ensure study integrity.
+        type: string
+        example: double-blind
+        enum:
+        - single-blind
+        - double-blind
+      primary_purpose:
+        description: The main objective or goal of the clinical trial, such as assessing
+          efficacy, safety, pharmacokinetics, or patient-reported outcomes.
+        type: string
+        example: prevention
+        enum:
+        - treatment
+        - prevention
+      primary_drug:
+        description: The investigational drug, therapeutic agent, or intervention
+          being evaluated as the primary focus of the clinical trial.
+        type: string
+        example: Dulaglutide
+        ontology_link:
+          type: string
+          description: Link to the ontology file
+          url: https://go.drugbank.com/
+      trial_duration:
+        description: The timeframe or duration of the clinical trial, including
+          recruitment period, treatment period, follow-up period, and data analysis
+          timeline.
+        type: float
+        format: numeric
+        example: 20
+        upper_limit: 100.0
+        lower_limit: 0.0
+        units:
+          description: Unit is a quantity of constant magnitude which is used to
+            measure the magnitudes of other quantities of the same manner
+          uom: months
+          encoding: UTF-8
+      trail_phase:
+        description: The stage of clinical development (e.g., Phase I, Phase II,
+          Phase III, Phase IV) indicating the level of evidence and regulatory context
+          of the trial.
+        type: string
+        example: Phase I
+        enum:
+        - Phase I
+        - Phase II
+        - Phase III
+        - Phase IV
+        - Pilot
+      treatement_duration:
+        description: The length of time during which participants receive the study
+          intervention or treatment regimen.
+        type: integer
+        format: numeric
+        example: 20
+        upper_limit: 100
+        lower_limit: 0
+      condition_studied_trial:
+        description: The medical condition, disease, or indication under investigation
+          in the clinical trial.
+        type: string
+        example: Diabetes
+      intervention_agent:
+        description: The specific drug, device, procedure, or intervention administered
+          to participants as part of the clinical trial protocol.
+        type: string
+        example: Drug
+      objectives:
+        description: The specific aims, research questions, or hypotheses that the
+          clinical trial aims to address through data collection and analysis.
+        type: string
+        example: Change from baseline in HbA1c
+      sponsoring_organization:
+        description: The entity, institution, or company providing financial support
+          and resources for the clinical trial.
+        type: string
+        example: Eli Lily
+      target_enrollment:
+        description: The anticipated number of participants or subjects to be
+          enrolled in the clinical trial, indicating the sample size and statistical
+          power of the study.
+        type: integer
+        format: numeric
+        example: 245
+        lower_limit: 0
+      number_arm:
+        description: Number of arms and cohorts in the trial
+        type: integer
+        format: numeric
+        example: 3
+        lower_limit: 0
+      placebo_control:
+        description: Describes whether the control arm is placebo treated, i.e, an inactive substance, treatment or procedure that is intended to provide baseline measurements for the experimental protocol of a clinical trial.
+        type: boolean
+      principal_investigator:
+        description: A person who has the primary responsibility for the conduct of a clinical study and study-related personnel at a study site.
+        type: string
+        example: Thomas J Fahey
+      recruiting_status:
+        description: The recruiting status of the trial
+        type: string
+        example: Recruiting
+        enum:
+        - Recruiting
+        - Non-recruiting
+        - Completed
+        - Active but not recruiting
+      intervention_other_than_drug:
+        description: Any intervention used other than drug
+        type: string
+        example: Surgery
+      observational_studies:
+        description: Describes whether the study is an observational study, i.e, research study in which researchers collect information from participants or look at data that was already collected.
+        type: boolean
+      funder_type:
+        description: Any agency providing funds for the given trial
+        type: string
+        example: NIH
+        enum:
+        - NIH
+        - Other Federal agency
+        - Industry
+        - Others
+      study_documents:
+        description: Documentation available for the given study
+        type: string
+        example: Study protocol
+        enum:
+        - Study protocol
+        - Statistical analysis plan
+        - Informed consent forms
+    type: object
+    version: 1.0.0

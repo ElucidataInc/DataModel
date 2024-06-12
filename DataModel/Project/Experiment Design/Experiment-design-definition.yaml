@@ -1,0 +1,75 @@
+Experiment-design:
+  description: Describes the experimental design of a study, including details such
+    as the total number of samples, comparison groups, and the hypothesis
+  properties:
+      donor_id:
+        description: Foreign key or unique identifier to map to donor
+        type: string
+        example: D001
+      experiment_id:
+        description: Primary key or unique identifier associated with the experiment
+        type: string
+        example: EXPT045
+      experiment_type:
+        description: Describes the experimental design
+        type: string
+        example: Between-Subjects Design
+        enum:
+        - Between-Subjects Design
+        - Within Subject Design
+        - Cross Sectional Design
+        - Longitudinal Design
+        - Cohort Study
+        - Case-Control Study
+        - Ecological Study
+        - Population Study
+        - Randomized Controlled Trial
+        - Non-Randomized Controlled Trial
+      protocol_id:
+        description: Foreign key or unique identifier to map to the protocol
+        type: string
+        example: PRT451
+      project_id:
+        description: Foregin key or unique identifier to map to project
+        type: string
+        example: P024
+      total_number_of_samples:
+        description: Total number of samples in a dataset
+        type: integer
+        format: numeric
+        example: 40
+        lower_value: 1
+      comparison_groups:
+        description: Cohorts studied in the experiment
+        type: string
+        example: Control group
+        enum:
+        - Control group
+        - Treatment group
+        - Disease cohort
+        - Healthy cohort
+      genetic_modification:
+        description: This field represents the type of genetic modification done
+          on the sample.
+        type: string
+        example: Gene knockout
+      hypothesis:
+        description: Describes the hypothesis for the study
+        type: string
+        example: Drug X reduces tumor size
+      timecourse_value:
+        description: The numerical value in Timecourse unit associated with a time
+          interval used in the experiment
+        type: integer
+        format: numeric
+        example: 7
+      timecourse_unit:
+        description: The unit in which the Timecourse value is expressed
+        type: string
+        example: days
+      timecourse_relevance:
+        description: Relevance of the Timecourse value/unit to the experiment
+        type: string
+        example: monitor decrease in CRP levels
+  type: object
+  version: 1.0.0

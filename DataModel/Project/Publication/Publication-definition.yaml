@@ -1,0 +1,83 @@
+Publication:
+  description: Describes the publication related information such as abstract, authors, PUBMED ID and the publication link. 
+  properties:
+    project_id:
+      description: Primary key or unique identifier for a project
+      type: string
+      example: P034
+    abstract:
+      description: Abstract of the publication associated with the dataset.
+      type: string
+      example: Background - The identification of novel therapeutic strategies to overcome resistance
+        to overcome resistance to the MEK inhibitor trametinib in mutant KRAS
+        lung adenocarcinoma (LUAD) is a challenge. This study analyzes the effects
+        of trametinib on Id1 protein, a key factor involved in the KRAS oncogenic
+        pathway, and investigates the role of Id1 in the acquired resistance to
+        trametinib as well as the synergistic anticancer effect of trametinib
+        combined with immunotherapy in KRAS-mutant LUAD. Methods - We evaluated
+        the effects of trametinib on KRAS-mutant LUAD by Western blot, RNA-seq
+        and different syngeneic mouse models. Genetic modulation of Id1 expression
+        was performed in KRAS-mutant LUAD cells by lentiviral or retroviral transductions
+        of specific vectors. Cell viability was assessed by cell proliferation
+        and colony formation assays. PD-L1 expression and apoptosis were measured
+        by flow cytometry. The anti-tumor efficacy of the combined treatment with
+        trametinib and PD-1 blockade was investigated in KRAS-mutant LUAD mouse
+        models, and the effects on the tumor immune infiltrate were analyzed by
+        flow cytometry and immunohistochemistry. Results - We found that trametinib
+        activates the proteasome-ubiquitin system to downregulate Id1 in KRAS-mutant
+        LUAD tumors. Moreover, we found that Id1 plays a major role in the acquired
+        resistance to trametinib treatment in KRAS-mutant LUAD cells. Using two
+        preclinical syngeneic KRAS-mutant LUAD mouse models, we found that trametinib
+        synergizes with PD-1/PD-L1 blockade to hamper lung cancer progression
+        and increase survival. This anti-tumor activity depended on trametinib-mediated
+        Id1 reduction and was associated with a less immunosuppressive tumor microenvironment
+        and increased PD-L1 expression on tumor cells. Conclusions - Our data demonstrate
+        that Id1 expression is involved in the resistance to trametinib and in
+        the synergistic effect of trametinib with anti-PD-1 therapy in KRAS-mutant
+        LUAD tumors. These findings suggest a potential therapeutic approach for
+        immunotherapy-refractory KRAS-mutant lung cancers.
+    authors:
+      description: List of authors for the associated publication as given in the APA format
+      type: string
+      example: Puyalto, A., Rodríguez-Remírez, M., López, I., Macaya, I.
+    journal:
+      description: Journal in which the associated study was published
+      type: string
+      example: Molecular Cancer
+    publication_link:
+      description: Link to the publication associated with the dataset. If the
+        associated publication information is not available, then this field provides
+        the link to the data source providing more information on the dataset.
+      type: string
+      format: alphanumeric
+      example: https://pubmed.ncbi.nlm.nih.gov/38643157/
+    publication_title:
+      description: Title of the publication associated with the dataset
+      type: string
+      example: Trametinib sensitizes KRAS-mutant lung adenocarcinoma tumors to
+       PD-1/PD-L1 axis blockade via Id1 downregulation
+    publication_year:
+      description: Year in which the dataset was published
+      type: integer
+      format: numeric
+      example: 2023
+      lower_limit: 1900
+      units:
+        description: Unit is a quantity of constant magnitude which is used to
+          measure the magnitudes of other quantities of the same manner
+        uom: year
+        encoding: UTF-8
+    pubmed_id:
+      description: Unique PUBMED identifier of the publication associated with
+        the dataset
+      type: integer
+      format: numeric
+      example: 38643157
+    total_number_of_cells:
+      description: Total number of cells present in a dataset
+      type: integer
+      format: numeric
+      example: 150000
+      lower_limit: 0.0
+  type: object
+  version: 1.0.0

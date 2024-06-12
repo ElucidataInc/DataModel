@@ -1,0 +1,146 @@
+Exposure:
+  description: Describes the various types of exposures, their duration, and other
+    details related to diet and exercise
+  properties:
+        donor_id:
+          description: Foreign key or unique identifier to map donor
+          type: string
+          example: D001
+        exposure_id:
+          description: Primary key or unique identifier for exposure
+          type: string
+          example: EXP001
+        event_id:
+          description: Foreign key or unique identifier to map a patient to an event
+          type: string
+          example: EVT001
+        exposure_type:
+          description: Classification of how individuals come into contact with various
+            hazardous substances or environmental factors
+          type: string
+          example: Coal dust
+          enum:
+          - Smoking
+          - Alcohol
+          - Asbestos
+          - Coal dust
+          - Respirable crystaline silica
+          - Secondhand smoke as child
+          - Radon exposure
+          - Marijuana
+          - Virus
+          - Allergen
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://bioportal.bioontology.org/ontologies/NCIT?p=classes&conceptid=http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C157103
+        exposure_unit:
+          description: Unit used to measure exposure
+          type: string
+          example: months
+        exposure_duration:
+          description: Time associated with exposure
+          type: integer
+          format: numeric
+          example: 17
+          lower_limit: 0
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: months
+            encoding: UTF-8
+        exposure_frequency:
+          description: Frequency of exposure
+          type: string
+          example: once
+          enum:
+          - once
+          - multiple
+          - none
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: day
+            encoding: UTF-8
+        diet:
+          description: General diet of the donor
+          type: string
+          example: Mediterranean
+        diet_duration:
+          description: Years associated with the diet
+          type: float
+          format: numeric
+          example: 3
+          lower_limit: 0.0
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: years
+            encoding: UTF-8
+        exercise:
+          description: Bodily activity that enhances or maintains physical fitness
+            and overall health and wellness of the donor
+          type: string
+          example: Jogging
+        exercise_specify:
+          description: Years associated with the exercise regime
+          type: integer
+          format: numeric
+          example: 10
+          lower_limit: 0
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: years
+            encoding: UTF-8
+        time_between_waking_and_first_exposure:
+          description: Details of first tobacco use in months
+          type: integer
+          format: numeric
+          example: 15
+          lower_limit: 0
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: months
+            encoding: UTF-8
+        exposure_category:
+          description: Describe the patients current level of exposure as self-reported
+            by the donor
+          type: string
+          example: Occasional (< once a month)
+          enum:
+          - Daily
+          - None
+          - Not applicable
+          - Occasional (< once a month)
+          - Social  (> once a month
+          - < once a week)
+          - Unknown
+          - Weekly (>=1x a week)
+        exercise_frequency:
+          description: Indicate how many times per week the donor exercises for at
+            least 30 minutes
+          type: string
+          example: Less than once a month
+          enum:
+          - Never
+          - Less than once a month
+          - 1-3 times a month
+          - Not applicable
+          - Once or twice a week
+          - Most days but not every day
+          - Every day
+          - Unknown
+        exercise_intensity:
+          description: Indicate the intensity of exercise
+          type: string
+          example: Low - No increase in the heart beat and no perspiration
+          enum:
+          - Low - No increase in the heart beat and no perspiration
+          - Moderate - Increase in the heart beat slightly with some light perspiration
+          - Vigorous - Increase in the heart beat substantially with heavy perspiration
+          - Not applicable
+          - Unknown
+  type: object
+  version: 1.0.0

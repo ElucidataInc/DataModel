@@ -1,0 +1,185 @@
+Subject-core:
+  description: Describes information such as age gender, race, and other core details related to the subject
+  properties:
+      project_id:
+        description: Foreign key or unique identifier to map a project
+        type: string
+        example: P024
+      donor_id:
+        description: Primary key for a patient
+        type: string
+        example: D001
+      age:
+        description: The age of the organism in years
+        type: integer
+        format: numeric
+        example: 35
+        lower_limit: 0
+      age_unit:
+        description: Unit in with the age is measured
+        type: string
+        example: years
+      developmental_stage_unit:
+        description: Represents the unit used for denoting the development stage
+        type: string
+        example: stage
+        ontology_link:
+          type: string
+          description: Link to the ontology file
+          url: https://www.ebi.ac.uk/efo/
+      developmental_stage:
+        description: Represents the stage of development/formation of the embryo
+          of humans and mice
+        type: string
+        example: fetal
+        enum:
+        - fetal
+        - neonatal
+        - adolescent
+        - adult
+        - geriatric
+        ontology_link:
+          type: string
+          description: Link to the ontology file
+          url: https://www.ebi.ac.uk/efo/, https://www.ebi.ac.uk/ols4/ontologies/uberon
+      gender:
+        description: Gender of the organism from which the sample was derived
+        type: string
+        example: Female
+        enum:
+        - Male
+        - Female
+        ontology_link:
+          type: string
+          description: Link to the ontology file
+          url: https://www.ebi.ac.uk/ols4/ontologies/gsso
+      maritial_status:
+        description: Marital status at the time of sampling
+        type: string
+        example: Married
+        enum:
+        - Married
+        - Single
+        - Divorced
+        ontology_link:
+          type: string
+          description: Link to the ontology file
+          url: https://www.ebi.ac.uk/ols4/ontologies/snomed/classes/http%253A%252F%252Fsnomed.info%252Fid%252F87915002
+      pre_menopause_cycle_type:
+        description: Type of pre-menopause cycle 
+        type: string
+        example: Regular, Irregular
+        enum:
+        - Regular
+        - Irregular
+      pre_menopause_cycle_duration:
+        description: Duration of the pre-menopause
+        type: string
+        example: 28
+        lower_limit: 0
+      menstruation:
+        description: Menstruation status of Donor
+        type: string
+        example: Menstruating
+        enum:
+        - Menstruating
+        - Not menstruating
+      occupation:
+        description: Occupation of the subject
+        type: string
+        example: Engineer
+        ontology_link:
+          type: string
+          description: Link to the ontology file
+          url: https://www.ebi.ac.uk/ols4/ontologies/occo
+      cohort:
+        description: Group of individuals included in the study or dataset, which
+          may have implications for data analysis and interpretation 
+        type: string
+        example: Study Group A
+      strain_characteristics:
+        description: Characteristics of the mouse strain
+        type: string
+        example: Wildtype
+        ontology_link:
+          type: string
+          description: Link to the ontology file
+          url: https://www.ebi.ac.uk/ols4/ontologies/ncit, https://sites.google.com/site/environmentontology/
+      strain:
+        description: The name of the mouse strain
+        type: string
+        example: C57BL/6
+        ontology_link:
+          type: string
+          description: Link to the ontology file
+          url: https://www.ebi.ac.uk/ols4/ontologies/clo, https://www.ebi.ac.uk/ols4/ontologies/efo, 
+      country_of_origin:
+        description: Country of origin or nationality of the patient, which may
+          provide insights into geographic variations in disease incidence or environmental
+          factors.
+        type: string
+        example: USA
+        ontology_link:
+          type: string
+          description: Link to the ontology file
+          url: https://www.ebi.ac.uk/ols4/ontologies/geo, https://www.ebi.ac.uk/ols4/ontologies/envo
+      race:
+        description: A geographic ancestral origin category that is assigned to a population group based mainly on physical characteristics that are thought to be distinct and inherent.
+        type: string
+        example: Asian
+        enum:
+        - African
+        - African Caribbea
+        - American Indian or Alaska Native
+        - Asian
+        - Asian American
+        - Australian
+        - Black or African American
+        - Caribbean Indian
+        - Eskimo
+        - European
+        - Hispanic or Latino
+        - Latin American
+        - Mediterranean
+        - Middle Eastern or North African
+        - Multiracial
+        - Native Hawaiian or Other Pacific Islander
+        - New Zealander
+        - North American
+        - Other Race
+        - South or Central American Indian
+        - White
+        ontology_link:
+          type: string
+          description: Link to the ontology file
+          url: https://www.ebi.ac.uk/ols4/ontologies/ncit/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FNCIT_C17049?lang=en
+      ethinicity:
+        description: A social group characterized by a distinctive social and cultural tradition that is maintained from generation to generation.
+        type: string
+        example: Yi Chinese
+        ontology_link:
+          type: string
+          description: Link to the ontology file
+          url: https://www.ebi.ac.uk/ols4/ontologies/ncit/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FNCIT_C16564
+      number_of_children:
+        description: Number of children
+        type: integer
+        example: 2
+        lower_limit: 0
+      pregnancy:
+        description: Whether preganant?
+        type: boolean
+        example: True
+        enum:
+        - True
+        - False
+      cause_of_death:
+        description: Cause of death
+        type: string
+        example: hysterectomy, stroke, Kidney disease, neonatal condition
+        ontology_link:
+          type: string
+          description: Link to the ontology file
+          url: https://www.disease-ontology.org/, https://hpo.jax.org/
+  type: object
+  version: 1.0.0
