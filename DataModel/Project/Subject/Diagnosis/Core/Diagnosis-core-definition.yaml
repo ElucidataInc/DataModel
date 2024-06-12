@@ -6,17 +6,14 @@ Diagnosis-core:
         donor_id:
           description: Foreign key or unique identifier to map to donor
           type: string
-          pattern: "^DO-[0-9]{4}$"
           example: D003
         event_id:
           description: Foreign key or unique identifier to map a patient to an event
           type: string
-          pattern: "^EVT[0-9]{3}$"
           example: EVT001
         diagnosis_id:
           description: An ID or unique identifier for the specific diagnosis
           type: string
-          pattern: "^DGN[0-9]{3}$"
           example: DGN001
         disease:
           description: Name of the disease or medical condition
@@ -190,12 +187,11 @@ Diagnosis-core:
         extranodal_involvement:
           description: Presence of disease in tissues or organs outside of the primary
             lymph nodes
-          type: string
-          example: No
+          type: boolean
+          example: True
           enum:
-          - Yes
-          - No
-          - Not Applicable
+          - True
+          - False
         enneking_msts_metastasis:
           description: Metastasis status according to Enneking-MSTS criteria
           type: string
@@ -219,11 +215,10 @@ Diagnosis-core:
         gastric_esophageal_junction_involvement:
           description: Involvement of the gastric-esophageal junction
           type: string
-          example: No
+          example: True
           enum:
-          - Yes
-          - No
-          - Not Applicable
+          - True
+          - False
         gleason_patterns_percent:
           description: Percentage of Gleason patterns that can help in determining
             the aggressiveness of prostate cancer if present in a tissue sample
@@ -239,11 +234,10 @@ Diagnosis-core:
         goblet_cells_columnar_mucosa_present:
           description: Presence of goblet cells in columnar mucosa
           type: string
-          example: Present
+          example: True
           enum:
-          - Present
-          - Absent
-          - Not Applicable
+          - True
+          - False
         international_prognostic_index:
           description: Prognostic tool useful for non-Hodgkin lymphoma samples
           type: string
@@ -281,11 +275,10 @@ Diagnosis-core:
             encoding: UTF-8
         lymph_nodes_examined_status:
           description: Indicate if lymph nodes were examined for metastases.
-          type: string
+          example: True
           enum:
-          - Yes
-          - No
-          - Not Applicable
+          - True
+          - False
         lymph_nodes_examined_method:
           description: Method used to examine lymph nodes
           type: string
@@ -296,7 +289,8 @@ Diagnosis-core:
           - Imaging
         number_lymph_nodes_positive:
           description: Number of lymph nodes positive
-          type: string
+          type: integer
+          format: numeric
           example: 1
         lymph_node_examined_site:
           description: Sites or areas where lymph nodes were involved
@@ -307,12 +301,10 @@ Diagnosis-core:
           - Lymph Nodes Clear - Inguinal
         metastasis_at_diagnosis:
           description: Presence of metastasis at the time of diagnosis
-          type: string
-          example: Present
+          texample: True
           enum:
-          - Present
-          - Absent
-          - Not Applicable
+          - True
+          - False
         metastasis_at_diagnosis_site:
           description: Site(s) of metastasis at the time of diagnosis
           type: string
