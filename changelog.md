@@ -1,16 +1,18 @@
-# CHANGELOG.md
+# CHANGELOG
 
-## Pre-Release
+All notable changes to this project will be documented in this file.
 
-Fix:  [08-02-2024]  
+## Unreleased [06-03-2024]
+
+Fix:   
     - Add missing ngs attributes to Diagnosis Entity  
     - Added List data type attributes to support longitudnal data  
     - Removed patientId attribute  
   
-Update: [29-02-2024]  
+Added:  
     - Add Treatment entity  
     - Add Treatment attributes  
 
-Update: [06-03-2024]  
+Added:   
     - Add Genomics entity  
     - Added attributes for mutation data within VariationType sub-entity in genomics
