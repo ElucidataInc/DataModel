@@ -20,9 +20,8 @@ Events-core:
           type: string
           example: Diagnosis
           enum:
-          - Diagnosis
+          - Encounter
           - Treatment
-          - Laboratory test
-          - Follow-up
+          - Procedure
   type: object
   version: 1.0.0
