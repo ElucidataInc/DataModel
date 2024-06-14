@@ -3,14 +3,14 @@ Diagnosis-core:
     subject n based on clinical evidence and reasoning. Details include type of diseases,
     methods of diagnosis, classification of diseases and symptoms.
   properties:
-        donor_id:
-          description: Foreign key or unique identifier to map to donor
+        subject_id:
+          description: The unique id provided to the entity being investigated. A subject can be a patient, human or non-human donor.
           type: string
-          example: D003
-        event_id:
-          description: Foreign key or unique identifier to map a patient to an event
+          example: SUBJECT ID is an alphanumeric string that is globally unique identifier for the entity being investigated.
+        observation_id:
+          description: A foreign key or unique identifier linking an observation or data point to an event involving a patient or subject.
           type: string
-          example: EVT001
+          example: "OBS001"
         diagnosis_id:
           description: An ID or unique identifier for the specific diagnosis
           type: string

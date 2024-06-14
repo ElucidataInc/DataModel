@@ -4,13 +4,13 @@ Events-core:
     ID and event type.
   properties:
         project_id:
-          description: Foreign key or unique identifier to map a project
+          description: the unique id provided to the experimental study or project that is governed by an investigator.
           type: string
-          example: P012
-        donor_id:
-          description: Foreign key or unique identifier for a patient
+          example: PROJECT ID is an alphanumeric string that is globally unique identifier for the project or study.
+        subject_id:
+          description: The unique id provided to the entity being investigated. A subject can be a patient, human or non-human donor.
           type: string
-          example: D001
+          example: SUBJECT ID is an alphanumeric string that is globally unique identifier for the entity being investigated.
         event_id:
           description: Primary key or unique identifier for a event
           type: string

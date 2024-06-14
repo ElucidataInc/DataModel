@@ -5,10 +5,10 @@ Specimen:
     core:
       description: Core details related to specimen
       properties:
-        donor_id:
-          description: Foreign key or unique identifier to map to donor
+        subject_id:
+          description: The unique id provided to the entity being investigated. A subject can be a patient, human or non-human donor.
           type: string
-          example: D-056
+          example: SUBJECT ID is an alphanumeric string that is globally unique identifier for the entity being investigated.
         diagnosis_id:
           description: Foreign key or unique identifier to map a project
           type: string

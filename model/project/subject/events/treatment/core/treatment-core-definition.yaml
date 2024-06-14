@@ -2,10 +2,10 @@ Treatment-core:
   description: Describes the therapeutic agents, therapies, or procedures used to
     treat a medical condition.
   properties:
-        donor_id:
-          description: Foreign key or unique identifier to map to donor
+        subject_id:
+          description: The unique id provided to the entity being investigated. A subject can be a patient, human or non-human donor.
           type: string
-          example: D31724
+          example: SUBJECT ID is an alphanumeric string that is globally unique identifier for the entity being investigated.
         treatment_id:
           description: Primary key unique identifier for this treatment
           type: string

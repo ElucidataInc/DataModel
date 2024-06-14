@@ -3,10 +3,10 @@ Family-history:
     This includes a relative's disease and cancer histories, exposure to toxic substances
     and their durations
   properties:
-        donor_id:
-          description: Foreign key or unique identifier to map donor information
+        subject_id:
+          description: The unique id provided to the entity being investigated. A subject can be a patient, human or non-human donor.
           type: string
-          example: DO-31724
+          example: SUBJECT ID is an alphanumeric string that is globally unique identifier for the entity being investigated.
         relationship_age_at_diagnosis:
           description: Age of the patient's relative at the time of diagnosis
           type: integer

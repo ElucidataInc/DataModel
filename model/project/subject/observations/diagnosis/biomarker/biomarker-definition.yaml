@@ -2,18 +2,18 @@ Biomarker:
   description: Describes information regarding protein biomarkers/molecules that serve
     as indicators of specific processes or conditions of the subject
   properties:
-        donor_id:
-          description: Foreign Key or unique identifier referencing patient
+        subject_id:
+          description: The unique id provided to the entity being investigated. A subject can be a patient, human or non-human donor.
           type: string
-          example: DO-31724
+          example: SUBJECT ID is an alphanumeric string that is globally unique identifier for the entity being investigated.
         result_id:
           description: Primary Key or unique identifier mapping result
           type: string
           example: R-7391493
-        event_id:
-          description: Primary key or unique identifier to map a patient to an event
+        observation_id:
+          description: A foreign key or unique identifier linking an observation or data point to an event involving a patient or subject.
           type: string
-          example: EV-20201124
+          example: "OBS001"
         treatment_id:
           description: Primary key or unique identifier for this treatment
           type: string

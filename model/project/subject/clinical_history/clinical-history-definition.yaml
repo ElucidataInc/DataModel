@@ -1,10 +1,10 @@
 Clinical-history:
   description: Describes the information related to the patient's past symptoms, diagnoses, and treatments
   properties:
-        donor_id:
-          description: Foreign donor ID or unique identifier to map donor information
+        subject_id:
+          description: The unique id provided to the entity being investigated. A subject can be a patient, human or non-human donor.
           type: string
-          example: DO-001
+          example: SUBJECT ID is an alphanumeric string that is globally unique identifier for the entity being investigated.
         clinical_history_id:
           description: Unique identifier for clinical history record
           type: string
