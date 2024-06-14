@@ -1,0 +1,135 @@
+@startyaml trial  
+  trial:
+    properties:
+      project_id:
+        type: string
+        example: P034
+      author_trial:
+        type: string
+        example: Gil-Bazo, I., Ajona, D.
+      registry_name:
+        type: string
+        example: NCT
+      registry_trail_id:
+        type: string
+        pattern: "^NCT[0-9]{8}$"
+        example: NCT03131687
+      location:
+        type: string
+        example: United States
+      region:
+        type: string
+        example: Los Angeles, San Diego
+      sponsor:
+        type: string
+        example: Eli Lily
+      trial_year:
+        type: integer
+        format: numeric
+        example: 2023
+        lower_limit: 1900
+        units:
+          uom: year
+          encoding: UTF-8
+      trial_design:
+        type: string
+        example: The purpose of this study is to evaluate the efficacy of the study drug tirzepatide in participants with type 2 diabetes mellitus.
+      trial_blinding:
+        type: string
+        example: double-blind
+        enum:
+        - single-blind
+        - double-blind
+      primary_purpose:
+        type: string
+        example: prevention
+        enum:
+        - treatment
+        - prevention
+      primary_drug:
+        type: string
+        example: Dulaglutide
+        ontology_link:
+          type: string
+          description: Link to the ontology file
+          url: https://go.drugbank.com/
+      trial_duration:
+        type: float
+        format: numeric
+        example: 20
+        upper_limit: 100.0
+        lower_limit: 0.0
+        units:
+          uom: months
+          encoding: UTF-8
+      trail_phase:
+        type: string
+        example: Phase I
+        enum:
+        - Phase I
+        - Phase II
+        - Phase III
+        - Phase IV
+        - Pilot
+      treatement_duration:
+        type: integer
+        format: numeric
+        example: 20
+        upper_limit: 100
+        lower_limit: 0
+      condition_studied_trial:
+        type: string
+        example: Diabetes
+      intervention_agent:
+        type: string
+        example: Drug
+      objectives:
+        type: string
+        example: Change from baseline in HbA1c
+      sponsoring_organization:
+        type: string
+        example: Eli Lily
+      target_enrollment:
+        type: integer
+        format: numeric
+        example: 245
+        lower_limit: 0
+      number_arm:
+        type: integer
+        format: numeric
+        example: 3
+        lower_limit: 0
+      placebo_control:
+        type: boolean
+      principal_investigator:
+        type: string
+        example: Thomas J Fahey
+      recruiting_status:
+        type: string
+        example: Recruiting
+        enum:
+        - Recruiting
+        - Non-recruiting
+        - Completed
+        - Active but not recruiting
+      intervention_other_than_drug:
+        type: string
+        example: Surgery
+      observational_studies:
+        type: boolean
+      funder_type:
+        type: string
+        example: NIH
+        enum:
+        - NIH
+        - Other Federal agency
+        - Industry
+        - Others
+      study_documents:
+        type: string
+        example: Study protocol
+        enum:
+        - Study protocol
+        - Statistical analysis plan
+        - Informed consent forms
+@endyaml
