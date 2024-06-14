@@ -1,0 +1,165 @@
+SC-Spatial-Transcriptomics:
+  description: This assay technology combines single-cell RNA sequencing with spatial
+    information, allowing researchers to analyze gene expression profiles while preserving
+    the spatial context of the cells within a tissue
+  properties:
+        protocol_id:
+          description: Foreign key or unique identifier for the protocol
+          type: string
+          example: PRT451
+        event_id:
+          description: Foreign key or unique identifier to map a patient to an event
+          type: string
+          example: EV-20201124
+        file_id:
+          description: Foreign key or unique identifier to map a file
+          type: string
+          example: F-7391493
+        specimen_id:
+          description: Foreign key or unique identifier to map a specimen
+          type: string
+          example: SP-7391493
+        total_counts:
+          description: Refers to the total number of RNA molecules (or transcripts)
+            detected within a specific spatial location or spot on a tissue section
+          type: float
+          format: numeric
+          example: 745
+          lower_limit: 0.0
+          upper_limit: 162868.0
+        percentage_dropouts:
+          description: Refers to the proportion of genes that are not detected (i.e.,
+            have zero counts) in a given spatial location or spot within a tissue
+            section
+          type: float
+          example: 57.3
+          lower_limit: 0.0
+          upper_limit: 100.0
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: '%'
+            encoding: UTF-8
+        total_cells:
+          description: Refers to the total number of individual cells that are present
+            within a specific spatial location or spot on a tissue section and have
+            been successfully captured and analyzed
+          type: float
+          format: numeric
+          example: 496
+          lower_limit: 0.0
+          upper_limit: 1162.0
+        mean_counts:
+          description: Refers to the average number of RNA molecules (or transcripts)
+            detected per gene across all cells within a specific spatial location
+            or spot
+          type: float
+          example: 0.426
+          lower_limit: 0.0
+          upper_limit: 140.1618
+        gene_id:
+          description: A unique identifier assigned to genes within the NCBI Gene
+            database
+          type: integer
+          format: numeric
+          example: 26155
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://geneontology.org/
+        gene_name:
+          description: A standardized, universally accepted shorthand notation used
+            to uniquely identify genes - HGNC
+          type: string
+          example: NOC2L
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://genenames.org/
+        ensemble_id:
+          description: A unique identifier assigned to various biological entities
+            such as genes, transcripts, proteins, and regulatory features within the
+            Ensembl database
+          type: string
+          example: ENSG00000188976
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://asia.ensembl.org/Help/View?id=285
+        mean:
+          description: Mean value per gene
+          type: float
+          example: 0.36
+          lower_limit: 0.0
+          upper_limit: 2.3
+        highly_variable_gene:
+          description: A boolean value that indicates whether a particular gene is
+            considered highly variable across the cells
+          type: boolean
+          example: True
+          enum:
+          - True
+          - False
+        spatially_variable_gene:
+          description: A boolean value that indicates whether a particular gene is
+            considered spatially variable gene
+          type: boolean
+          example: True
+          enum:
+          - True
+          - False
+        mean_expression_in_spatial_domain:
+          description: Description of the mean expression of gene across spots assigned
+            to a spatial domain
+          type: string
+          example: Spatial domain not computed for this dataset
+        median_expression_in_spatial_domain:
+          description: Description of the mean expression of gene across spots assigned
+            to a spatial domain
+          type: string
+          example: Spatial domain not computed for this dataset
+        mean_expression_in_cluster:
+          description: Description of the mean expression of gene in spots assigned
+            to a cluster
+          type: string
+          example: Cluster 5 ~ 0.24, Cluster 1 ~ 0.25, Cluster 4 ~ 0.36, Cluster
+            0 ~ 0.46, Cluster 3 ~ 0.4, Cluster 6 ~ 0.39, Cluster 2 ~ 0.39
+        median_expression_in_cluster:
+          description: Description of the mean expression of gene in spots assigned
+            to a cluster
+          type: string
+          example: Cluster 5 ~ 0.0, Cluster 1 ~ 0.0, Cluster 4 ~ 0.0, Cluster 0 ~
+            0.48, Cluster 3 ~ 0.36, Cluster 6 ~ 0.0, Cluster 2 ~ 0.0
+        mean_expression_in_annotated_region:
+          description: Description of the mean count of gene across spots assigned
+            a particular annotation
+          type: string
+          example: Normal + stroma + lymphocytes Region ~ 0.27, Stroma + adipose
+            tissue Region ~ 0.2, Stroma Region ~ 0.35, DCIS Region ~ 0.46, Lymphocytes
+            Region ~ 0.31, Invasive cancer + lymphocytes Region ~ 0.41
+        median_expression_in_annotated_region:
+          description: Description of the median count of gene across spots assigned
+            a particular annotation
+          type: string
+          example: Normal + stroma + lymphocytes Region ~ 0.0, Stroma + adipose tissue
+            Region ~ 0.0, Stroma Region ~ 0.0, DCIS Region ~ 0.47, Lymphocytes Region
+            ~ 0.0, Invasive cancer + lymphocytes Region ~ 0.0
+        mitochondrial_gene:
+          description: A boolean value that indicates whether a particular gene is
+            considered a mitochondrial gene
+          type: boolean
+          example: False
+          enum:
+          - True
+          - False
+        gene_info:
+          description: Brief description of the gene
+          type: string
+          example: The protein encoded by this gene acts as a homotetramer to catalyze
+            diacetyl reductase and L-xylulose reductase reactions. The encoded protein
+            may play a role in the uronate cycle of glucose metabolism and in the
+            cellular osmoregulation in the proximal renal tubules. Defects in this
+            gene are a cause of pentosuria. Two transcript variants encoding different
+            isoforms have been found for this gene.[provided by RefSeq, Aug 2010]
+  type: object
+  version: 1.0.0
