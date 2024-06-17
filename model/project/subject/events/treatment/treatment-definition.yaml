@@ -1,4 +1,4 @@
-Treatment-core:
+treatment:
   description: Describes the therapeutic agents, therapies, or procedures used to
     treat a medical condition.
   properties:

@@ -1,0 +1,143 @@
+@startyaml Family-history
+  Family-history:
+    description: Describes the health information about a patient’s close relatives.
+      This includes a relative's disease and cancer histories, exposure to toxic substances
+      and their durations
+    properties:
+          subject_id:
+            description: The unique id provided to the entity being investigated. A subject can be a patient, human or non-human donor.
+            type: string
+            example: SUBJECT ID is an alphanumeric string that is globally unique identifier for the entity being investigated.
+          relationship_age_at_diagnosis:
+            description: Age of the patient's relative at the time of diagnosis
+            type: integer
+            format: numeric
+            example: 50
+            lower_limit: 0
+            units:
+              description: Unit is a quantity of constant magnitude which is used to
+                measure the magnitudes of other quantities of the same manner
+              uom: year
+              encoding: UTF-8
+          relationship_gender:
+            description: Gender of the relative
+            type: string
+            example: Male
+            enum:
+            - Male
+            - Female
+            - Other
+          relationship_primary_diagnosis:
+            description: Primary diagnosis for the relative
+            type: string
+            example: Diabetes
+          relative_with_cancer_history:
+            description: Relationship of the patient with a relative who has cancer history
+            type: string
+            example: Father
+          relatives_with_cancer_history_count:
+            description: Count of relatives with history of cancer
+            type: integer
+            format: numeric
+            example: 2
+          brca_carrier:
+            description: Indicate whether donor is a carrier of a mutation in a BRCA
+              gene. A mutation in this gene is associated with an increased risk of
+              familial breast and ovarian cancer.
+            type: string
+            example: BRCA1
+            enum:
+            - BRCA1
+            - BRCA2
+            - Both BRCA1 and BRCA2
+            - Not present
+            - Not applicable
+            - Unknown
+          relatives_vital_status:
+            description: Relative's last known state of living or deceased
+            type: string
+            example: Alive
+            enum:
+            - Alive
+            - Deceased
+            - Unknown
+          cause_of_death_of_relatives:
+            description: Indicate the cause of the death of the relative
+            type: string
+            example: COVID
+            ontology_link:
+              type: string
+              description: Link to the ontology file
+              url: https://bioportal.bioontology.org/ontologies/NCIT?p=classes&conceptid=http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C81239
+          relatives_survival_time:
+            description: Indicate how long, in days, the relative survived from the
+              time they were diagnosed with cancer.
+            type: integer
+            format: numeric
+            example: 150
+            units:
+              description: Unit is a quantity of constant magnitude which is used to
+                measure the magnitudes of other quantities of the same manner
+              uom: days
+              encoding: UTF-8
+          family_line:
+            description: Identification of the maternal or paternal family line in the
+              relationship
+            type: string
+            example: Maternal
+          date_of_birth_of_relative:
+            description: Date of birth of relative in YYYY-MM-DD
+            type: string
+            pattern: "^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$"
+            example: 1990-08-09
+          age_at_death_of_relative:
+            description: Age at which the relative died
+            type: integer
+            format: numeric
+            example: 87
+            units:
+              description: Unit is a quantity of constant magnitude which is used to
+                measure the magnitudes of other quantities of the same manner
+              uom: year
+              encoding: UTF-8
+          biomarkers_of_disease_in_relative:
+            description: Biomarkers of disease present in the patient's relative
+            type: string
+            example: EGFR mutation
+          exposure_type_of_relative:
+            description: Exposure to agents that could result in a disease condition
+            type: string
+            example: Smoking
+            enum:
+            - Smoking
+            - Alcohol
+            - Asbestos
+            - Coal dust
+            - Respirable crystaline silica
+            - Secondhand smoke as child
+            - Radon exposure
+            - Marijuana
+            - Virus
+            - Allergen
+            ontology_link:
+              type: string
+              description: Link to the ontology file
+              url: https://bioportal.bioontology.org/ontologies/NCIT?p=classes&conceptid=http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C157103
+          exposure_unit_of_relative:
+            description: Unit associated with rate of exposure for the relative
+            type: string
+            example: years
+          exposure_duration_of_relative:
+            description: Time associated with rate of exposure for the relative
+            type: integer
+            format: numeric
+            example: 30
+            lower_limit: 0
+          exposure_frequency_of_relative:
+            description: Frequency of the exposure for the relative
+            type: string
+            enum:
+            - Once
+            - Multiple
+            - None
+@endyaml
