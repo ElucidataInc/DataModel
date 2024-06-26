@@ -1,0 +1,91 @@
+ELISA:
+  description: This assay technique is designed for detecting and quantifying soluble
+    substances such as peptides, proteins, antibodies, and hormones
+  properties:
+        donor_id:
+          description: Foreign key or unique identifier to map donor
+          type: string
+          example: DO-31724
+        result_id:
+          description: Primary key or unique identifier to map the result
+          type: string
+          example: R-7391493
+        event_id:
+          description: Foreign key or unique identifier to map a patient to an event
+          type: string
+          example: EV-20201124
+        specimen_id:
+          description: Foreign key or unique identifier to map a specimen
+          type: string
+          example: SP-123456
+        analyte_accession:
+          description: Foreign key or unique identifier to map the analyte
+          type: string
+          example: AN-34567
+        analyte_preferred:
+          description: Preferred analyte name
+          type: string
+          example: Albumin
+        analyte_reported:
+          description: Reported analyte name
+          type: string
+          example: ALB
+        comments:
+          description: Free text to expand upon details of the assay
+          type: string
+          example: Stored at -20°C
+        unit_preferred:
+          description: The preferred units for various components and measurements
+            essential for ensuring accuracy and consistency in the procedure
+          type: string
+          example: mg/mL
+          enum:
+          - M
+          - mg
+          - mg/mL
+          - mM
+          - ng/mL
+          - nM
+          - percent
+          - pfu
+          - pM
+          - rad
+          - U/mL
+          - units
+          - μg
+          - μg/kg
+          - μg/mL
+          - μM
+        unit_reported:
+          description: The reported units for various components and measurements
+            in the procedure
+          type: string
+          example: milligrams per deciliter
+        value_preferred:
+          description: Standardized value
+          type: float
+          format: numeric
+          example: 6.5
+          lower_limit: 0.0
+        value_reported:
+          description: Reported value
+          type: float
+          format: numeric
+          example: 5.5
+          lower_limit: 0.0
+        study_time_collected:
+          description: Time at which the sample was collected during the study
+          type: float
+          format: numeric
+          example: 12.5
+          lower_limit: 0.0
+        study_time_collected_unit:
+          description: Unit of time for sample collection
+          type: string
+          example: hours
+          enum:
+          - hours
+          - min
+          - sec
+  type: object
+  version: 1.0.0

@@ -1,0 +1,351 @@
+@startyaml Protocol
+Protocol:
+  description: Describes the protocols followed in a study, including details such
+    as the cell capture system, library protocol, the chemistry kit and sampling technique
+    used, as well as sequencing related information.
+  properties:
+    core:
+      description: Core properties of the protocol
+      properties:
+      donor_id:
+        description: Foreign key or unique identifier to map to donor
+        type: string
+        example: DO-31724
+      project_id:
+        description: Foreign key or unique identifier to map a project
+        type: string
+        example: P024
+      protocol_id:
+        description: Primary key or unique identifier for the protocol
+        type: string
+        example: PRT451
+      protocol_name:
+        description: Describes the experiment procedure or methods organized in a standardized format that can be executed in a laboratory environment.
+        type: string
+        example: Single cell sequencing protocol
+      protocol_description:
+        description: Protocols define step-by-step procedures and include a list of the materials needed to perform the experiment.
+        type: string
+        example: Prepare Media from stocks, Add 485 µl Clone Medium to ionomycin vial; 
+          add 490 µl Clone Medium to PMA vial, mix and transfer 5µl of diluted PMA to 
+          ionomycin vial yielding the final solution. Collect spleens from mice and 
+          place each in a small petri dish containing 5ml Clone Medium. Isolate 
+          lymphocytes using the syringe puncture method. Wash and lyse rbcs with ACT.
+          Wash with Clone Medium and resuspend in 2ml Clone Medium. Place exactly
+          1ml in one well of a 12 well plate. Add an additional 1ml of Clone Medium
+          to the well. Can store spleen suspensions in 12 well plate overnight in
+          refrigerator. Use remaining spleen cells for phenotype FACS if desired -
+          wash with Staining Buffer to remove Clone Medium.
+      protocol_core:
+        description: Core protocol-level information
+        type: string
+        example: Prepare Media from stocks, Add 485 µl Clone Medium to ionomycin vial;
+          add 490 µl Clone Medium to PMA vial, mix and transfer 5µl of diluted PMA
+          to ionomycin vial yielding the final solution. Collect spleens from mice
+          and place each in a small petri dish containing 5ml Clone Medium. Isolate
+          lymphocytes using the syringe puncture method. Wash and lyse rbcs with ACT.
+          Wash with Clone Medium and resuspend in 2ml Clone Medium. Place exactly
+          1ml in one well of a 12 well plate. Add an additional 1ml of Clone Medium
+          to the well. Can store spleen suspensions in 12 well plate overnight in
+          refrigerator. Use remaining spleen cells for phenotype FACS if desired -
+          wash with Staining Buffer to remove Clone Medium.
+    analysis:
+      description: Analysis related information of the protocol
+      properties:
+      computational_method:
+        description: A URL to a versioned workflow and versioned execution environment
+        type: string
+        format: alphanumeric
+      matrix_transformation:
+        description: Information related to protocols that transforms a matrix
+        type: string
+        example: r2
+      bioinformatics_software:
+        description: A wide array of computer programs and tools designed to manage, analyze, and interpret biological data
+        type: string
+        example: Cellranger
+      bioinformatics_software_version:
+        description: Version of software used
+        type: string
+        example: v2.0.1
+      gene_annotation_version:
+        description: Ensembl release version accession number or NCBI RefSeq assembly
+          version used for gene annotation
+        type: string
+        example: GCF_000001405.40
+    sequencing:
+      description: Sequence related information of the protocol
+      properties:
+      chemistry_kit:
+        description: Chemistry/Reagent kit used in the protocol
+        type: string
+        example: Ion Total RNASeq Kit v2
+      library_protocol:
+        description: Specifies the protocol for preparing sequencing libraries from
+          single-cell RNA or DNA, outlining the steps for library construction and
+          amplification.
+        type: string
+        example: Stage I - Preparation of single-cell lysates
+        enum:
+        - Stage I - Preparation of single-cell lysates
+        - Stage II - Lysate cleanup and reverse transcription of mRNA species
+        - Stage III - Performing whole transcriptome amplification) and post-PCR cleanup
+        - Stage IV - Nextera XT sequencing-library construction
+        - Stage V - Pooling and DNA SPRI bead cleanup
+        - Stage VI - Sequencing
+      sampling_technique:
+        description: The method/procedure used for collecting samples
+        type: string
+        example: Biopsy
+      sequencer:
+        description: The sequencing platform used to generate single-cell sequencing
+          data.
+        type: string
+        example: Illumina NexSeq 2000
+      sequencing_technology:
+        description: Describes the methodology employed for sequencing, such as single
+          cell RNA-seq, ATAC-seq, or DNA sequencing.
+        type: string
+        example: scRNA-Seq
+    sample_collection:
+      description: Sample collection related information of the protocol
+      properties:
+      formation_method:
+        description: Method used to form cell aggregates
+        type: string
+        example: suspension cultures
+      cell_uniformity:
+        description: Description of the cell aggregates uniformity after formation
+        type: string
+        example: Mostly homogenous embryoid bodies of variable cell numbers
+      method_collection:
+        description: Method used to collect the biomaterial
+        type: string
+        example: Biopsy
+        ontology:
+          type: string
+          description: Link to the ontology file
+          url: https://bioportal.bioontology.org/ontologies/NCIT?p=classes&conceptid=http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C70700
+      reagents:
+        description: A list of purchased reagents used in this protocol
+        type: array
+        example: SMART CDS Primer II A, SMARTer II A Oligo, SMARTScribe Reverse Transcriptase
+      method_differentiation:
+        description: Method applied to cell culture to induce a specific differentiation
+          response
+        type: string
+        example: Inductive Co-Culture
+      media_differentiation:
+        description: Culture media used to induce a specific differentiation response
+        type: string
+        example: StemPro-34 Serum-Free Medium
+      small_molecules:
+        description: Small molecules added to stem cell medium to induce a specific
+          differentiation response
+        type: string
+        example: Retinoic Acid
+        ontology:
+          type: string
+          description: Link to the ontology file
+          url: https://pubchem.ncbi.nlm.nih.gov/
+      target_cell_yield:
+        description: Percent of target cells obtained after directed differentiation
+          of origin cell
+        type: float
+        format: numeric
+        example: 95
+        upper_limit: 100.0
+        lower_limit: 0.0
+      target_pathway:
+        description: Targeted pathway for specific differentiation response
+        type: string
+        example: Hedgehog signaling pathway
+      validation_method:
+        description: Method used to validate origin cell successfully differentiated
+          to target cell
+        type: string
+        example: Pancreatic Cell DTZ Detection Assay
+      validation_result:
+        description: Result confirming successful differentiation to target cell type
+        type: string
+        example: CD103 Positive
+      markers:
+        description: A list of markers used to enrich for or against certain cells
+        type: string
+        example: CD4+ CD8-
+        ontology:
+          type: string
+          description: Link to the ontology file
+          url: https://bioportal.bioontology.org/ontologies/LOINC?p=classes&conceptid=http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FLNC%2FLP7783-6
+      minimum_size:
+        description: Minimum cell or organelle size passing selection, in microns
+        type: float
+        format: numeric
+        example: 70
+        upper_limit: 10000.0
+        lower_limit: 0.01
+        units:
+          description: Unit is a quantity of constant magnitude which is used to measure
+            the magnitudes of other quantities of the same manner
+          uom: µm
+          encoding: UTF-8
+      maximum_size:
+        description: Maximum cell or organelle size passing selection, in microns
+        type: float
+        format: numeric
+        example: 90
+        upper_limit: 10000.0
+        lower_limit: 0.01
+        units:
+          description: Unit is a quantity of constant magnitude which is used to measure
+            the magnitudes of other quantities of the same manner
+          uom: µm
+          encoding: UTF-8
+      method_induction:
+        description: Induction method applied to primary cell culture to induce pluripotent
+          stem cell generation
+        type: string
+        example: lentivirus
+      reprogramming_factors:
+        description: Reprogramming factors added to primary cell culture to induce
+          pluripotency
+        type: string
+        example: POU5F1
+      ipsc_induction_kit:
+        description: Kit used to induce pluripotent stem cell generation
+        type: string
+        example: Human iPS Cell Reprogramming Episomal Kit
+      pluripotency_test:
+        description: Description of how pluripotency was tested in induced pluripotent
+          stem cells
+        type: string
+        example: Teratoma formation
+      percent_pluripotency:
+        description: Percent of iPSCs that passed the pluripotency test
+        type: float
+        format: numeric
+        example: 97.2
+        units:
+          description: Unit is a quantity of constant magnitude which is used to measure
+            the magnitudes of other quantities of the same manner
+          uom: '%'
+          encoding: UTF-8
+      pluripotency_vector_removed:
+        description: Whether a viral vector was removed after induction
+        type: boolean
+    imaging_preparation_protocol:
+      description: Image preperation related information of protocol
+      properties:
+      slice_thickness:
+        description: Thickness of the imaged slice in micrometres
+        type: integer
+        format: numeric
+        example: 14
+        units:
+          description: Unit is a quantity of constant magnitude which is used to measure
+            the magnitudes of other quantities of the same manner
+          uom: µm
+          encoding: UTF-8
+      internal_anatomical_structures:
+        description: Internal (landmark) structures visible in the overview image
+          that are informative about the broader anatomical context/location of the
+          sample
+        type: string
+        example: M0
+      fiducial_marker:
+        description: Fiducial markers for the alignment of images taken across multiple
+          rounds of imaging
+        type: string
+        example: beads
+      expansion_factor:
+        description: Factor by which the imaged tissue was expanded in one dimension
+        type: integer
+        format: numeric
+        example: 3
+      microscope_setup_description:
+        description: Description of the microscope setup
+        type: string
+        example: Motorized stage (SCAN IM 112 x 74, Marzhauser)
+      microscopy_technique:
+        description: The type of microscopy
+        type: string
+        example: Fluroscence
+        ontology:
+          type: string
+          description: Link to the ontology file
+          url: https://bioportal.bioontology.org/ontologies/SNOMEDCT?p=classes&conceptid=http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FSNOMEDCT%2F278289002
+      magnification:
+        description: Magnification of the objective used for imaging
+        type: string
+        example: 60x
+      numerical_aperture:
+        description: Numerical aperture of the objective
+        type: float
+        format: numeric
+        example: 1.3
+      immersion_medium_type:
+        description: Immersion medium used for imaging
+        type: string
+        example: oil
+      immersion_medium_refractive_index:
+        description: Refractive index of the immersion medium used for imaging
+        type: float
+        format: numeric
+        example: 1.5
+      pixel_size:
+        description: Pixel size in nanometers
+        type: integer
+        format: numeric
+        example: 109
+        units:
+          description: Unit is a quantity of constant magnitude which is used to measure
+            the magnitudes of other quantities of the same manner
+          uom: nm
+          encoding: UTF-8
+      number_of_tiles:
+        description: Number of XY tiles in the experiment
+        type: integer
+        format: numeric
+        example: 2000
+      tile_size_y:
+        description: Y size of the tile in micrometers
+        type: integer
+        format: numeric
+        example: 100
+        units:
+          description: Unit is a quantity of constant magnitude which is used to measure
+            the magnitudes of other quantities of the same manner
+          uom: µm
+          encoding: UTF-8
+      tile_size_x:
+        description: X size of the tile in micrometers
+        type: integer
+        format: numeric
+        example: 100
+        units:
+          description: Unit is a quantity of constant magnitude which is used to measure
+            the magnitudes of other quantities of the same manner
+          uom: µm
+          encoding: UTF-8
+      z_stack_step_size:
+        description: Z-stack step size in nanometers
+        type: integer
+        format: numeric
+        example: 200
+        units:
+          description: Unit is a quantity of constant magnitude which is used to measure
+            the magnitudes of other quantities of the same manner
+          uom: nm
+          encoding: UTF-8
+      overlapping_tiles:
+        description: Whether tiles were collected with overlap
+        type: boolean
+      channel:
+        description: Information about each channel used in the imaging protocol
+        type: array
+        example: red
+      probe:
+        description: Information about each probe in the imaging experiment
+        type: array
+        example: CNA35-OG488
+@endyaml

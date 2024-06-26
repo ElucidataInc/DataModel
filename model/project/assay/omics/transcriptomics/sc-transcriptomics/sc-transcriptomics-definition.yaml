@@ -1,0 +1,153 @@
+SC-Transcriptomics:
+  description: This assay technology analyzes the gene expression profiles of individual
+    cells, allowing for the identification of distinct cell types, states, and functions
+    within a heterogeneous population
+  properties:
+        protocol_id:
+          description: Foreign key or unique identifier for the protocol
+          type: string
+          example: PRT451
+        event_id:
+          description: Foreign key or unique identifier to map a patient to an event
+          type: string
+          example: EV-20201124
+        file_id:
+          description: Foreign key or unique identifier to map a file
+          type: string
+          example: F-7391493
+        specimen_id:
+          description: Foreign key or unique identifier to map a specimen
+          type: string
+          example: SP-7391493
+        total_counts:
+          description: Refers to the total number of RNA molecules (or transcripts)
+            detected in a single cell
+          type: float
+          example: 62409
+          lower_limit: 53.0
+          upper_limit: 98789.0
+        percentage_dropouts:
+          description: Refers to the proportion of genes that are not detected (i.e.,
+            have zero counts) in a given cell or sample
+          type: float
+          example: 35.35
+          lower_limit: 14.6
+          upper_limit: 99.96
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: '%'
+            encoding: UTF-8
+        total_cells:
+          description: Number of cells containing the gene, Refers to the total number
+            of individual cells that have been successfully captured and processed
+          type: float
+          format: numeric
+          example: 13612
+          lower_limit: 7.0
+          upper_limit: 17982.0
+        mean_counts:
+          description: Average counts per cell for the feature
+          type: float
+          example: 2.963672
+          lower_limit: 0.0
+          upper_limit: 4.5
+        median_counts:
+          description: Median counts per cell for the feature
+          type: float
+          example: 1003
+        gene_id:
+          description: A unique identifier assigned to genes in the NCBI Gene database.
+          type: integer
+          format: numeric
+          example: 816464
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://geneontology.org/
+        gene_name:
+          description: ID of the feature (gene, protein, metabolite etc.) being measured
+          type: string
+          example: DCXR
+        ensemble_id:
+          description: A unique identifier assigned to various biological entities
+            such as genes, transcripts, proteins, and regulatory features within the
+            Ensembl database
+          type: string
+          example: ENSG00000169738
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://asia.ensembl.org/Help/View?id=285
+        mean:
+          description: Mean value per gene
+          type: float
+          example: 0
+          lower_limit: -1.91
+          upper_limit: 1.79
+        highly_variable_gene:
+          description: A boolean value that indicates whether a particular gene is
+            considered highly variable across the cells
+          type: boolean
+          example: True
+          enum:
+          - True
+          - False
+        mitochondrial_gene:
+          description: A boolean value that indicates whether a particular gene is
+            considered a mitochondrial gene
+          type: boolean
+          example: False
+          enum:
+          - True
+          - False
+        gene_info:
+          description: Brief description of the gene
+          type: string
+          example: The protein encoded by this gene acts as a homotetramer to catalyze
+            diacetyl reductase and L-xylulose reductase reactions. The encoded protein
+            may play a role in the uronate cycle of glucose metabolism and in the
+            cellular osmoregulation in the proximal renal tubules. Defects in this
+            gene are a cause of pentosuria. Two transcript variants encoding different
+            isoforms have been found for this gene.[provided by RefSeq, Aug 2010]
+        mean_expression_in_cell_type:
+          description: Brief description of the mean expression of gene in cells assigned
+            a cell type
+          type: string
+          example: Epithelial cell of proximal tubule ~ 0.1, kidney collecting duct
+            principal cell - -1.04, parietal epithelial cell ~ -0.38, B cell ~ -0.62,
+            CD14-positive monocyte ~ -0.95, T cell ~ -0.81, epithelial cell of distal
+            tubule ~ -0.49, natural killer cell ~ -0.64, kidney proximal straight
+            tubule epithelial cell ~ 0.45
+        mean_expression_in_cluster:
+          description: Brief description of the mean expression of gene in cells assigned
+            to a cluster
+          type: string
+          example: Clustering not available for this dataset
+        median_expression_cell_type:
+          description: Brief description of the median expression of gene in cells
+            assigned a cell type
+          type: string
+          example: Epithelial cell of proximal tubule ~ 0.17, kidney collecting duct
+            principal cell ~ -0.88, parietal epithelial cell ~ -0.5, B cell ~ -0.5,
+            CD14-positive monocyte ~ -0.61, T cell ~ -0.51, epithelial cell of distal
+            tubule ~ -0.17, natural killer cell ~ -0.49, kidney proximal straight
+            tubule epithelial cell ~ 0.58
+        median_expression_in_cluster:
+          description: Brief description of the median expression of gene in cells
+            assigned to a cluster
+          type: string
+          example: Clustering not available for this dataset
+        mean_expression_in_group:
+          description: Brief description of the mean expression of gene in cells belonging
+            to a group (like disease vs control)
+          type: string
+          example: (Grouping by sample ID) GSM4145204 ~ 0.0, GSM4145205 ~ 0.0, GSM4145206
+            ~ -0.0
+        median_expression_in_group:
+          description: Brief description of the median expression of gene in cells
+            belonging to a group
+          type: string
+          example: GSM4145204 ~ -0.48, GSM4145205 ~ 0.22, GSM4145206 ~ 0.2
+  type: object
+  version: 1.0.0

@@ -1,0 +1,113 @@
+Data-file:
+  description: Contains details related to the files associated with the experiment/study.
+    This may include file type, file name, file size, etc
+  properties:
+        file_id:
+          description: Foreign key or unique identifier assigned to a file
+          type: string
+          example: F001
+        protocol_id:
+          description: Foreign key or unique identifier for the protocol
+          type: string
+          example: PRT092
+        specimen_id:
+          description: Foreign key or unique identifier to map a specimen
+          type: string
+          example: SP-7391493
+        data_category:
+          description: Broad categorization of the contents of the data file.
+          type: string
+          example: Transcriptome Profiling
+        data_format:
+          description: Format of the data files
+          type: string
+          example: CSV
+          enum:
+          - CSV
+          - HDF5
+          - MEX
+          - TSV
+          - TXT
+        data_type:
+          description: Specific content type of the data file.
+          type: string
+          example: Gene Expression Quantification
+          enum:
+          - Exon Expression Quantification
+          - Gene Expression Quantification
+          - Isoform Expression Quantification
+          - Splice Junction Quantification
+        experimental_strategy:
+          description: The sequencing strategy used to generate the data file.
+          type: string
+          example: RNA-Seq
+          enum:
+          - m6A MeRIP-Seq
+          - RNA-Seq
+          - scRNA-Seq
+          - Total RNA-Seq
+        file_name:
+          description: Name of the file
+          type: string
+          example: SRR25637231-trimmed-pair2.fastq
+        file_size:
+          description: Size of the file
+          type: integer
+          format: numeric
+          example: 367
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: kb, mb, gb
+            encoding: UTF-8
+        md5sum:
+          description: An MD5 checksum data file contains MD5 checksums for one or
+            more files, used to verify file integrity
+          type: string
+        matrix_cell_count:
+          description: Number of cells analyzed in a matrix file
+          type: integer
+          format: numeric
+          example: 2500000
+          lower_limit: 0
+          upper_limit: 1000000000
+        genome_assembly_version:
+          description: Name of the genome assembly used to generate this file
+          type: string
+          example: GRCh38
+          enum:
+          - GRCh38
+          - GRCh37
+          - GRCm39
+          - GRCm38
+          - GRCm37
+          - Not Applicable
+        genome_patch_version:
+          description: Patch version of the genome assembly used to generate this
+            file
+          type: string
+          example: p11
+        reference_type:
+          description: The type of the reference file
+          type: string
+          example: Genome sequence
+          enum:
+          - Genome sequence
+          - Transcriptome sequence
+          - Annotation reference
+          - Transcriptome index
+          - Genome sequence index
+        assembly_type:
+          description: The assembly type of the genome reference file
+          type: string
+          example: Primary assembly
+          enum:
+          - Primary assembly
+          - Complete assembly
+          - Patch assembly
+        reference_version:
+          description: The genome version of the reference file
+          type: string
+          example: GencodeV27; Ensembl 87
+  type: object
+  version: 1.0.0

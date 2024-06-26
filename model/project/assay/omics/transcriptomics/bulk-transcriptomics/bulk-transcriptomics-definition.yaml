@@ -1,0 +1,58 @@
+Bulk-transcriptomics:
+  description: This RNA sequencing is the method of choice for transcriptomic analysis
+    of pooled cell populations, tissue sections, or biopsies
+  properties:
+        protocol_id:
+          description: Foreign key or unique identifier to map to a protocol
+          type: string
+          example: PRT451
+        event_id:
+          description: Foreign key or unique identifier to map a patient to an event
+          type: string
+          example: EV-20201124
+        specimen_id:
+          description: Foreign key or unique identifier to map a specimen
+          type: string
+          example: SP-7391493
+        file_id:
+          description: Foreign key or unique identifier to map a file
+          type: string
+          example: F-7391493
+        gene_id:
+          description: A unique identifier assigned to genes in the NCBI Gene database.
+          type: integer
+          format: numeric
+          example: 51181
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://geneontology.org/
+        gene_name:
+          description: A standardized, universally accepted shorthand notation used
+            to uniquely identify genes- HGNC
+          type: string
+          example: DCXR
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://genenames.org/
+        ensemble_id:
+          description: A unique identifier assigned to various biological entities
+            such as genes, transcripts, proteins, and regulatory features within the
+            Ensembl database
+          type: string
+          example: ENSG00000169738
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://asia.ensembl.org/Help/View?id=285
+        raw_counts:
+          description: Raw count expression value for the gene in the sample
+          type: integer
+          format: numeric
+        normalized_counts:
+          description: Normalized count expression value for the gene in the sample
+          type: integer
+          format: numeric
+  type: object
+  version: 1.0.0

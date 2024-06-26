@@ -1,0 +1,126 @@
+Biomarker:
+  description: Describes information regarding protein biomarkers/molecules that serve
+    as indicators of specific processes or conditions of the subject
+  properties:
+        subject_id:
+          description: The unique id provided to the entity being investigated. A subject can be a patient, human or non-human donor.
+          type: string
+          example: SUBJECT ID is an alphanumeric string that is globally unique identifier for the entity being investigated.
+        result_id:
+          description: Primary Key or unique identifier mapping result
+          type: string
+          example: R-7391493
+        observation_id:
+          description: A foreign key or unique identifier linking an observation or data point to an event involving a patient or subject.
+          type: string
+          example: "OBS001"
+        treatment_id:
+          description: Primary key or unique identifier for this treatment
+          type: string
+          example: TR-7391493
+        diagnosis_id:
+          description: Primary key or unique identifier for the specific diagnosis
+          type: string
+          example: DI-93143
+        biomarker_id:
+          description: Primary key or unique identifier for biomarker
+          type: string
+          example: BI-343242
+        biomarker_status:
+          description: Status of the biomarker
+          type: string
+          example: Positive
+          enum:
+          - Positive
+          - Negative
+          - Unknown
+        method_of_biomarker_detection:
+          description: Methodology used for checking tissue, blood, or other body fluid for certain genes, proteins, or other molecules that may be a sign of a disease or condition
+          type: string
+          example: IHC
+          enum:
+          - IHC
+          - FISH
+          - Expression
+          - Targetted Panel
+          - Whhole Genome Sequencing
+          - Whole exome sequencing
+          - hematology laboratory test
+        gene_name:
+          description: Gene names according to a standardized nomenclature system, HUGO
+          type: string
+          example: ACE2
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://www.genenames.org/
+        gene_ID:
+          description: HGNC ID associated with the gene name
+          type: integer
+          format: numeric
+          example: 13557
+        protein_name:
+          description: Unique identifier assigned to the set of proteins that constitute the proteome, Uniprot
+          type: string
+          example: P12345
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://www.uniprot.org/
+        reported_exon_abberation:
+          description: Exon number aberration refers to abnormalities or deviations in the number of exons within a gene
+          type: integer
+          format: numeric
+          example: 2
+        reported_ctDNA_mutation:
+          description: Changes in the position or sequence of ctDNA
+          type: string
+          example: chrX:1234567
+        quantification_value:
+          description: Quantifcation value for the reported biomarker
+          type: integer
+          format: numeric
+          example: 200
+          lower_limit: 0
+        quantification_unit:
+          description: Quantifcation unit used for the reported biomarker
+          type: string
+          example: IU/L
+        reported_structural_rearrangement:
+          description: Gene rearrangement fusion or structural variant
+          type: string
+          example: BCR-ABL1
+        reported_amplification:
+          description: Copy number of the gene
+          type: integer
+          format: numeric
+          example: 3
+        reported_fusion:
+          description: Fused protein product reported by FISH, IHC
+          type: string
+          example: BCR-ABL1
+        germline_or_somatic:
+          description: Whether a mutation affect all cells and can be inherited (germline) or is acquired and localized to specific cells or tissues (somatic)
+          type: string
+          example: Germline
+          enum:
+          - Germline
+          - Somatic
+          - Unknown
+        serum_protein:
+          description: Name of protein detected in patient serum
+          type: string
+          example: LDH
+        protein_quatification:
+          description: Measurement of the total protein concentration in a sample
+          type: integer
+          format: numeric
+          example: 150
+          lower_limit: 0
+        protein_quantification_unit:
+          description: The quantification unit for estimating the amount of protein
+            expressed in serum
+          type: string
+          example: IU/L
+  type: object
+  version: 1.0.0

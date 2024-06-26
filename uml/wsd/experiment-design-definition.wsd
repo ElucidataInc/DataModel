@@ -1,0 +1,59 @@
+@startyaml experiment-design
+  experiment-design:
+    properties:
+        donor_id:
+          type: string
+          example: D001
+        experiment_id:
+          type: string
+          example: EXPT045
+        experiment_type:
+          type: string
+          example: Between-Subjects Design
+          enum:
+          - Between-Subjects Design
+          - Within Subject Design
+          - Cross Sectional Design
+          - Longitudinal Design
+          - Cohort Study
+          - Case-Control Study
+          - Ecological Study
+          - Population Study
+          - Randomized Controlled Trial
+          - Non-Randomized Controlled Trial
+        protocol_id:
+          type: string
+          example: PRT451
+        project_id:
+          type: string
+          example: P024
+        total_number_of_samples:
+          type: integer
+          format: numeric
+          example: 40
+          lower_value: 1
+        comparison_groups:
+          type: string
+          example: Control group
+          enum:
+          - Control group
+          - Treatment group
+          - Disease cohort
+          - Healthy cohort
+        genetic_modification:
+          type: string
+          example: Gene knockout
+        hypothesis:
+          type: string
+          example: Drug X reduces tumor size
+        timecourse_value:
+          type: integer
+          format: numeric
+          example: 7
+        timecourse_unit:
+          type: string
+          example: days
+        timecourse_relevance:
+          type: string
+          example: monitor decrease in CRP levels
+@endyaml

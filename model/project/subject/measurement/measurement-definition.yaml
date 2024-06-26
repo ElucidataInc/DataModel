@@ -1,0 +1,62 @@
+Measurement:
+  description: Contains details of sample measurements related to the routine/diagnostic
+    tests
+  properties:
+        donor_id:
+          description: Foreign key or unique identifier to map donor
+          type: string
+          example: D001
+        event_id:
+          description: Foreign key or unique identifier to map a patient to an event
+          type: string
+          example: EV-01012020
+        measurement_id:
+          description: Identifier for the specific measurement
+          type: string
+          example: MS-01012020
+        date_of_measurement:
+          description: Date when the measurement was taken
+          type: date
+          example: 01-01-2020
+        measurement_type:
+          description: Physical measurement that provide medical insights into the
+            donors health status
+          type: string
+          example: Blood Pressure
+          enum:
+          - Tumor weight
+          - Breslow thickness
+          - Body Mass Index
+          - Height
+          - Weight
+          - Waist Circumference
+          - Hip Circumference
+          - Systolic blood pressure
+          - Diastolic blood pressure
+          - Heart rate
+          - Temparature
+          - Respiratory Rate
+        anatomical_site_of_measurement:
+          description: Location where the measurement was taken
+          type: string
+          example: Upper arm
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://www.ebi.ac.uk/ols4/ontologies/uberon
+        measurement_result:
+          description: Numeric or qualitative result of the measurement
+          type: float
+          format: numeric
+          example: 2.2
+          lower_limit: 0.0
+        measurement_result_unit:
+          description: Unit for result of the measurement
+          type: string
+          example: mmHg
+        reference_range:
+          description: Reference range from a normal donor
+          type: string
+          example: 90-120/60-80
+  type: object
+  version: 1.0.0

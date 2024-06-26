@@ -1,0 +1,656 @@
+Mutation:
+  description: Contains information regarding mutations, providing detailed information
+    about each mutation's location, type, impact, and clinical significance
+  properties:
+        protocol_id:
+          description: Foreign key or unique identifier to map to a protocol
+          type: string
+          example: PROTOCOL_025
+        event_id:
+          description: Foreign key or unique identifier to map a patient to an event
+          type: string
+          example: EVENT_123
+        file_id:
+          description: Foreign key or unique identifier to map a file
+          type: string
+          example: FILE_456
+        specimen_id:
+          description: Foreign key or unique identifier to map a specimen
+          type: string
+          example: SP-7391493
+        entrez_gene_id:
+          description: A unique identifier assigned to genes within the NCBI Gene
+            database
+          type: integer
+          format: numeric
+          example: 12345
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://www.ncbi.nlm.nih.gov/gene/
+        ncbi_build:
+          description: The reference genome used for the alignment GRCh38/GRCh37
+          type: string
+          example: GRCh38
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://www.ncbi.nlm.nih.gov/datasets/genome/
+        chromosome:
+          description: The affected chromosome where the gene is located
+          type: string
+          example: chr1
+        start_position:
+          description: Mutation start coordinate
+          type: integer
+          format: numeric
+          example: 10000
+        end_position:
+          description: Mutation end coordinate
+          type: integer
+          format: numeric
+          example: 456184
+        strand:
+          description: Genomic strand of the reported allele. Variants should always
+            be reported on the positive genomic strand.
+          type: string
+          example: +
+          enum:
+          - -
+          - +
+        variant_classification:
+          description: Translational effect of variant allele. snv,mnv, indel, amplification,
+            fusion
+          type: string
+          example: Missense Mutation
+          enum:
+          - Frame Shift Deletion
+          - Frame Shift Insertion
+          - In Frame Deletion
+          - In Frame Insertion
+          - Missense Mutation
+          - Nonsense Mutation
+          - Silent
+          - Splice Site
+          - Translation Start Site
+          - Nonstop Mutation
+          - 3'UTR
+          - 3'Flank
+          - 5'UTR
+          - 5'Flank
+          - IGR
+          - Intron
+          - RNA
+          - Targeted_Region
+        variant_type:
+          description: Type of mutation. synonymous/non-synonymous. TNP (tri-nucleotide
+            polymorphism) is analogous to DNP (di-nucleotide polymorphism) but for
+            three consecutive nucleotides. ONP (oligo-nucleotide polymorphism) is
+            analogous to TNP but for consecutive runs of four or more (SNP, DNP, TNP,
+            ONP, INS, DEL, or Consolidated)
+          type: string
+          example: SNP
+          enum:
+          - SNP
+          - Synonymous
+          - Non-synonumous
+        reference_allele:
+          description: The plus strand reference allele at this position. Comparator
+            allele
+          type: string
+          example: A
+          enum:
+          - A
+          - C
+          - G
+          - T
+        tumor_seq_allele1:
+          description: Nucleotide sequence observed at a specific genomic position
+            in the tumor sample for one of the alleles
+          type: string
+          example: T
+          enum:
+          - T
+          - A
+          - C
+          - G
+        tumor_seq_allele2:
+          description: Nucleotide sequence observed at a specific genomic position
+            in the tumor sample for the second allele
+          type: string
+          example: C
+          enum:
+          - C
+          - G
+          - A
+          - T
+        dbsnp_rs:
+          description: SNP ID number, commonly known as an "rsID," which is a unique
+            identifier assigned to a single nucleotide polymorphism (SNP) by the dbSNP
+            database
+          type: string
+          example: rs123456
+        dbsnp_val_status:
+          description: Validation status of a single nucleotide polymorphism (SNP)
+            in the dbSNP database
+          type: boolean
+          example: True
+        mutation_status:
+          description: Germline/Somatic.  Whether a specific genetic variation (germline/somatic)
+            is present or absent in a given sample
+          type: boolean
+          example: True
+        sequencing_phase:
+          description: Stage of the sequencing process or the specific phase in the
+            preparation and execution of a sequencing experiment
+          type: string
+          example: Phase 1
+        sequence_source:
+          description: Molecular assay type used to produce the analytes used for
+            sequencing
+          type: string
+          example: Genomic DNA
+          enum:
+          - Genomic DNA
+          - Whole exome
+          - Whole transcriptome
+        validation_method:
+          description: The assay platforms used for the validation call
+          type: string
+          example: Sanger sequencing
+        sequencer:
+          description: Instrument used to produce primary sequence data
+          type: string
+          example: Illumina HiSeq
+        hgvsc:
+          description: The coding sequence of the variant in HGVS recommended format
+          type: string
+          example: c.123A>T
+        hgvsp:
+          description: The protein sequence of the variant in HGVS recommended format.
+          type: string
+          example: p.Arg456Ser
+        hgvsp_short:
+          description: Same as the HGVSp column, but using 1-letter amino-acid codes
+          type: string
+          example: R456S
+        transcript_id:
+          description: Ensembl ID of the transcript affected by the variant
+          type: string
+          example: ENST0000012345
+        exon_number:
+          description: Specific exon within a gene where a mutation is located
+          type: integer
+          format: numeric
+          example: 3
+        t_depth:
+          description: Read depth across this locus in tumor BAM
+          type: integer
+          format: numeric
+          example: 50
+        t_ref_count:
+          description: Read depth supporting the reference allele in tumor BAM
+          type: integer
+          format: numeric
+          example: 30
+        t_alt_count:
+          description: Read depth supporting the variant allele in tumor BAM
+          type: integer
+          format: numeric
+          example: 20
+        n_depth:
+          description: Read depth across this locus in normal BAM
+          type: integer
+          format: numeric
+          example: 40
+        n_ref_count:
+          description: Read depth supporting the reference allele in normal BAM (cleared
+            in somatic MAF)
+          type: integer
+          format: numeric
+          example: 25
+        n_alt_count:
+          description: Read depth supporting the variant allele in normal BAM (cleared
+            in somatic MAF)
+          type: integer
+          format: numeric
+          example: 15
+        allele:
+          description: The variant allele used to calculate the consequence
+          type: string
+          example: G
+          enum:
+          - A
+          - C
+          - G
+          - T
+        gene:
+          description: Stable Ensembl ID of affected gene
+          type: string
+          example: TP53
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://www.ncbi.nlm.nih.gov/gene/
+        feature:
+          description: Stable Ensembl ID of feature (transcript, regulatory, motif)
+          type: string
+          example: Exon
+          enum:
+          - Exon
+          - Protein
+          - Gene
+        feature_type:
+          description: Classification of genomic regions based on their function and
+            the type of sequences they contain
+          type: string
+          example: Coding
+          enum:
+          - Coding
+          - non-coding
+        one_consequence:
+          description: The single consequence of the canonical transcript in sequence
+            ontology terms
+          type: string
+          example: Missense_variant
+        consequence:
+          description: Consequence type of this variant in sequence ontology terms
+          type: string
+          example: Predicted to be damaging, VUS, deleterious, Likely pathogenic
+        cdna_position:
+          description: Relative position of base pair in the cDNA sequence as a fraction.
+            A "-" symbol is displayed as the numerator if the variant does not appear
+            in cDNA
+          type: integer
+          format: numeric
+          example: 345
+        cds_position:
+          description: Relative position of base pair in coding sequence. A "-" symbol
+            is displayed as the numerator if the variant does not appear in coding
+            sequence
+          type: integer
+          format: numeric
+          example: 234
+        protein_position:
+          description: Relative position of affected amino acid in protein. A "-"
+            symbol is displayed as the numerator if the variant does not appear in
+            coding sequence
+          type: integer
+          format: numeric
+          example: 78
+        amino_acids:
+          description: If the variation affects the protein-coding sequence
+          type: string
+          example: R/S
+        codons:
+          description: The alternative codons with the variant base
+          type: string
+          example: CGT/TGT
+        existing_variation:
+          description: Known identifier of existing variation
+          type: string
+          example: rs123456
+        allele_num:
+          description: Allele number from input; 0 is reference, 1 is first alternate
+            etc
+          type: integer
+          format: numeric
+          example: 1
+        distance:
+          description: Shortest distance from the variant to transcript
+          type: integer
+          format: numeric
+          example: 500
+        transcript_strand:
+          description: The DNA strand (1 or -1) on which the transcript/feature lies
+          type: string
+          example: -
+          enum:
+          - -
+          - +
+        symbol:
+          description: A standardized shorthand notation used to uniquely identify
+            a gene
+          type: string
+          example: BRCA1
+        symbol_source:
+          description: The source of the gene symbol
+          type: string
+          example: HGNC
+        hgnc_id:
+          description: Gene identifier from the HUGO Gene Nomenclature Committee,
+            if applicable
+          type: string
+          example: HGNC:12345
+        biotype:
+          description: Classification of the transcript based on its functional and
+            structural characteristics
+          type: string
+          example: Protein coding
+          enum:
+          - Protein coding
+          - Non coding
+          - Pseudogene
+          - Others
+        canonical:
+          description: A flag (YES) indicating that the VEP-based canonical transcript,
+            the longest translation, was used for this gene. If not, the value is
+            null
+          type: boolean
+          example: True
+        ccds:
+          description: CCDS identifier for this transcript, where applicable
+          type: string
+          example: CCDS12345
+        ensp:
+          description: The Ensembl protein identifier of the affected transcript
+          type: string
+          example: ENSP0000012345
+        swissprot:
+          description: UniProtKB/Swiss-Prot accession
+          type: string
+          example: P04637
+        trembl:
+          description: UniProtKB/TrEMBL identifier of protein product
+          type: string
+          example: A0A024RBG1
+        uniparc:
+          description: UniParc identifier of protein product
+          type: string
+          example: UPI0000123456
+        refseq:
+          description: RefSeq identifier for this transcript
+          type: string
+          example: NM_000546
+        sift:
+          description: SIFT prediction and/or score, with both given as prediction
+            (score)
+          type: string
+          example: Tolerated
+        polyphen:
+          description: PolyPhen prediction and/or score used to predict the potential
+            impact of amino acid substitutions on the structure and function of proteins.
+            The scores range from 0 (probably benign) to 1 (probably damaging)
+          type: float
+          format: numeric
+          example: 0
+          lower_limit: 0.0
+          upper_limit: 1.0
+        exon:
+          description: The exon number (out of total number)
+          type: integer
+          format: numeric
+          example: 3
+        intron:
+          description: The intron number (out of total number)
+          type: integer
+          format: numeric
+          example: 12
+        domains:
+          description: The source and identifier of any overlapping protein domains
+          type: string
+          example: Zinc Finger
+          enum:
+          - Zinc Finger
+          - Cystein Rich
+          - RAS GEF
+        gmaf:
+          description: Non-reference allele and frequency of existing variant in 1000
+            Genomes
+          type: float
+          format: numeric
+          example: 0.005
+        afr_maf:
+          description: Non-reference allele and frequency of existing variant in 1000
+            Genomes combined African population
+          type: float
+          format: numeric
+          example: 0.002
+        amr_maf:
+          description: Non-reference allele and frequency of existing variant in 1000
+            Genomes combined American population
+          type: float
+          format: numeric
+          example: 0.001
+        asn_maf:
+          description: Non-reference allele and frequency of existing variant in 1000
+            Genomes combined Asian population
+          type: float
+          format: numeric
+          example: 0.004
+        eas_maf:
+          description: Non-reference allele and frequency of existing variant in 1000
+            Genomes combined East Asian population
+          type: float
+          format: numeric
+          example: 0.003
+        eur_maf:
+          description: Non-reference allele and frequency of existing variant in 1000
+            Genomes combined European population
+          type: float
+          format: numeric
+          example: 0.006
+        sas_maf:
+          description: Non-reference allele and frequency of existing variant in 1000
+            Genomes combined South Asian population
+          type: float
+          format: numeric
+          example: 0.007
+        aa_maf:
+          description: Non-reference allele and frequency of existing variant in NHLBI-ESP
+            African American population
+          type: float
+          format: numeric
+          example: 0.008
+        ea_maf:
+          description: Non-reference allele and frequency of existing variant in NHLBI-ESP
+            European American population
+          type: float
+          format: numeric
+          example: 0.009
+        clin_sig:
+          description: Clinical significance of variant from dbSNP
+          type: string
+          example: Pathogenic
+          enum:
+          - Pathogenic
+          - Likely pathogenic
+          - Variant of uncertain significance
+          - Likely benign
+        somatic:
+          description: Somatic status of each ID reported under Existing_variation
+            (0, 1, or null)
+          type: boolean
+          example: True
+        pubmed:
+          description: Pubmed ID(s) of publications that cite existing variant
+          type: integer
+          format: numeric
+          example: 31666701
+        motif_name:
+          description: The source and identifier of a transcription factor binding
+            profile aligned at this position
+          type: string
+          example: TF_BINDING_SITE
+        motif_pos:
+          description: The relative position of the variation in the aligned TFBP
+          type: integer
+          format: numeric
+          example: 100
+        high_inf_pos:
+          description: A flag indicating if the variant falls in a high information
+            position of a transcription factor binding profile (TFBP) (Y, N, or null)
+          type: boolean
+          example: True
+        motif_score_change:
+          description: The difference in motif score of the reference and variant
+            sequences for the TFBP
+          type: float
+          format: numeric
+          example: 0.5
+        impact:
+          description: The impact modifier for the consequence type
+          type: string
+          example: Moderate
+          enum:
+          - Moderate
+          - Severe
+          - No effect
+        pick:
+          description: Indicates if this block of consequence data was picked by VEPs
+          type: string
+          example: High
+          enum:
+          - High
+          - Low
+        variant_class:
+          description: Sequence Ontology variant class
+          type: string
+          example: SNV
+        tsl:
+          description: Transcript support level, which is based on independent RNA
+            analyses
+          type: integer
+          format: numeric
+          example: 2
+        hgvs_offset:
+          description: Indicates by how many bases the HGVS notations for this variant
+            have been shifted
+          type: integer
+          format: numeric
+          example: 10
+        pheno:
+          description: Indicates if existing variant is associated with a phenotype,
+            disease or trait (0, 1, or null)
+          type: boolean
+          example: True
+        minimised:
+          description: Alleles in this variant have been converted to minimal representation
+            before consequence calculation (1 or null)
+          type: boolean
+          example: False
+        exac_af:
+          description: Global Allele Frequency
+          type: float
+          format: numeric
+          example: 0.001
+        exac_af_adj:
+          description: Adjusted Global Allele Frequency
+          type: float
+          format: numeric
+          example: 0.002
+        exac_af_afr:
+          description: African/African American Allele Frequency
+          type: float
+          format: numeric
+          example: 0.0005
+        exac_af_amr:
+          description: American Allele Frequency
+          type: float
+          format: numeric
+          example: 0.0003
+        exac_af_eas:
+          description: East Asian Allele Frequency
+          type: float
+          format: numeric
+          example: 0.0003
+        exac_af_fin:
+          description: Finnish Allele Frequency
+          type: float
+          format: numeric
+          example: 0.0004
+        exac_af_nfe:
+          description: Non-Finnish European Allele Frequency
+          type: float
+          format: numeric
+          example: 0.0006
+        exac_af_oth:
+          description: Other Allele Frequency
+          type: float
+          format: numeric
+          example: 0.0001
+        exac_af_sas:
+          description: South Asian Allele Frequency
+          type: float
+          format: numeric
+          example: 0.0007
+        gene_pheno:
+          description: Indicates if gene that the variant maps to is associated with
+            a phenotype, disease or trait (0, 1, or null)
+          type: boolean
+          example: False
+        filter:
+          description: Copied from input VCF. This includes filters implemented directly
+            by the variant caller and other external software used in the DNA-Seq
+            pipeline
+          type: string
+          example: Pass
+          enum:
+          - Pass
+          - Fail
+        context:
+          description: The reference allele per VCF specs, and its five flanking base
+            pairs
+          type: string
+          example: TCCATAGTAGCCA
+        src_vcf_id:
+          description: GDC UUID for the input VCF file
+          type: string
+          example: VCF_123
+        tumor_bam_uuid:
+          description: GDC UUID for the tumor bam file
+          type: string
+          example: UUID_123
+        normal_bam_uuid:
+          description: GDC UUID for the normal bam file
+          type: string
+          example: UUID_456
+        case_id:
+          description: GDC UUID for the case
+          type: string
+          example: CASE_789
+        gdc_filter:
+          description: 'Whether a Genomic Data Commons (GDC) filter is present '
+          type: boolean
+          example: True
+        cosmic:
+          description: Whether Overlapping COSMIC variants are present
+          type: boolean
+          example: True
+        mc3_overlap:
+          description: Indicates whether this region overlaps with an MC3 variant
+            for the same sample pair
+          type: boolean
+          example: True
+        gdc_validation_status:
+          description: GDC implementation of validation checks
+          type: string
+          example: Validated
+        gdc_valid_somatic:
+          description: A specific criterion available in the Genomic Data Commons
+            (GDC) data portal for filtering somatic mutations that have been validated
+          type: boolean
+          example: True
+        vcf_region:
+          description: Colon separated string containing the CHROM, POS, ID, REF,
+            and ALT columns from the VCF file (e.g., chrZ:20:rs1234:A:T)
+          type: string
+          example: chr1:10000-20000
+        vcf_info:
+          description: INFO column from VCF
+          type: string
+          example: AC=3;DP=50;AF=0.06, AC=5;DP=20;AF=0.01
+        vcf_format:
+          description: FORMAT column from VCF
+          type: string
+          example: GT:AD:DP:GQ:PL
+        vcf_tumor_gt:
+          description: Tumor sample genotype column from VCF
+          type: string
+          example: 1/1:0,50:50:99:0,99
+        vcf_normal_gt:
+          description: Normal sample genotype column from VCF
+          type: string
+          example: 0/1:0,30:40:60:0,60
+  type: object
+  version: 1.0.0

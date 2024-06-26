@@ -1,0 +1,119 @@
+Flow-cytometry:
+  description: This assay provides a well-established method to identify cells in
+    solution and is most commonly used for evaluating peripheral blood, bone marrow,
+    and other body fluids
+  properties:
+        donor_id:
+          description: Foreign key or unique identifier to map donor
+          type: string
+          example: DO-31724
+        result_id:
+          description: Primary key or unique identifier to map the result
+          type: string
+          example: R-7391493
+        event_id:
+          description: Foreign key or unique identifier to map a patient to an event
+          type: string
+          example: EV-20201124
+        specimen_id:
+          description: Foreign key or unique identifier to map a specimen
+          type: string
+          example: SP-123456
+        parent_population_preferred:
+          description: Standarized name of base or parent population preferred term
+            for population percentage calculation
+          type: string
+          example: Lymphoid
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://obofoundry.org/ontology/cl
+        parent_population_reported:
+          description: Reported name of base or parent population preferred term for
+            population percentage calculation
+          type: string
+          example: Lymphoid Cells
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://obofoundry.org/ontology/cl
+        population_name_preferred:
+          description: Standardized name or idenitifier of cell population
+          type: string
+          example: B Cells, T cells
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://obofoundry.org/ontology/cl
+        population_name_reported:
+          description: Reported name or identifier of cell population
+          type: string
+          example: B Lymphocytes, T lymphocyte
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://obofoundry.org/ontology/cl
+        population_stat_unit_preferred:
+          description: Standardized statistical unit
+          type: string
+          example: percentage
+        population_stat_unit_reported:
+          description: Reported statistical unit
+          type: string
+          example: '%'
+        population_statistic_preferred:
+          description: Standardized statistical value
+          ype: float
+          format: numeric
+          example: 12
+          lower_limit: 0.0
+          upper_limit: 100.0
+        population_statistic_reported:
+          description: Reported statistical value
+          type: float
+          format: numeric
+          example: 65
+          lower_limit: 0.0
+          upper_limit: 100.0
+        population_name_modifier:
+          description: The value after the ampersand in the alternate population format
+          type: string
+          example: High Expression
+          enum:
+          - High Expression
+          - Moderate expression
+          - Low Expression
+        parent_population_modifier:
+          description: The value after the ampersand in the alternate parent population
+            format
+          type: string
+          example: Moderate expression
+          enum:
+          - High Expression
+          - Moderate expression
+          - Low Expression
+        population_marker_preferred:
+          description: Preferred marker
+          type: string
+          example: CD19, CD44
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://www.ncbi.nlm.nih.gov/gene
+        population_marker_reported:
+          description: Reported marker
+          type: string
+          example: CD19 Marker, CD44 marker
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://www.ncbi.nlm.nih.gov/gene
+        estimated_cell_count:
+          description: Estimated number of cells in the suspension
+          type: integer
+          format: numeric
+          example: 2100
+          lower_limit: 0
+          upper_limit: 1000000000
+  type: object
+  version: 1.0.0

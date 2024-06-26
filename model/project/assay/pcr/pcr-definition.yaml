@@ -1,0 +1,92 @@
+PCR:
+  description: This assay is a widely used molecular biology technique that allows
+    for the amplification of specific DNA sequences
+  properties:
+        donor_id:
+          description: Foreign key or unique identifier to map to donor
+          type: string
+          example: DO-31724
+        result_id:
+          description: Foreign key or unique identifier to map a patient to a result
+          type: string
+          example: R-7391493
+        event_id:
+          description: Foreign key or unique identifier to map a patient to an event
+          type: string
+          example: EV-20201124
+        specimen_id:
+          description: Foreign key or unique identifier to map a specimen
+          type: string
+          example: SP-123456
+        gene_id:
+          description: NCBI identification for genes
+          type: integer
+          format: numeric
+          example: 16653
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://www.ncbi.nlm.nih.gov/gene
+        gene_name:
+          description: Official gene name from species-specific nomenclature committee
+          type: string
+          example: Beta-actin
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://www.ncbi.nlm.nih.gov/gene
+        gene_symbol_preferred:
+          description: Preferred symbol for the gene identified
+          type: string
+          example: ACTB
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://www.ncbi.nlm.nih.gov/gene
+        gene_symbol_reported:
+          description: Official gene symbol from species-specific nomenclature committee
+          type: string
+          example: ACTB
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://www.ncbi.nlm.nih.gov/gene
+        unit_preferred:
+          description: The preferred units for various components and measurements
+            essential for ensuring accuracy and consistency in the procedure
+          type: string
+          example: mg/mL
+          enum:
+          - M
+          - mg
+          - mg/mL
+          - mM
+          - ng/mL
+          - nM
+          - percent
+          - pfu
+          - pM
+          - rad
+          - U/mL
+          - units
+          - μg
+          - μg/kg
+          - μg/mL
+          - μM
+        unit_reported:
+          description: The reported units for various components and measurements
+            in the procedure
+          type: string
+          example: milligrams per deciliter
+        value_preferred:
+          description: Standardized numerical value
+          type: float
+          format: numeric
+          example: 111.6
+        value_reported:
+          description: Numerical value as reported
+          type: float
+          format: numeric
+          example: 7.2
+  type: object
+  version: 1.0.0

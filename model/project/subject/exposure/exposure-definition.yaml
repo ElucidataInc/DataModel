@@ -1,0 +1,135 @@
+exposure:
+  description: This object captures details about various types of exposures, including their classification, duration, frequency, and other attributes related to diet and exercise.
+  properties:
+    subject_id:
+      description: The unique id provided to the entity being investigated. A subject can be a patient, human or non-human donor.
+      type: string
+      example: SUBJECT ID is an alphanumeric string that is globally unique identifier for the entity being investigated.
+    exposure_id:
+      description: A primary key that uniquely identifies a specific exposure instance in the dataset.
+      type: string
+      example: "EXP001"
+    event_id:
+      description: A foreign key or unique identifier linking a patient to an event within the study's context.
+      type: string
+      example: "EVT001"
+    exposure_type:
+      description: Classifies how individuals encounter hazardous substances or environmental factors, such as smoking or exposure to asbestos.
+      type: string
+      example: "Coal dust"
+      enum:
+        - Smoking
+        - Alcohol
+        - Asbestos
+        - Coal dust
+        - Respirable crystalline silica
+        - Secondhand smoke as child
+        - Radon exposure
+        - Marijuana
+        - Virus
+        - Allergen
+      ontology_link:
+        type: string
+        description: Link to the ontology file providing further information about exposure types.
+        url: "https://bioportal.bioontology.org/ontologies/NCIT?p=classes&conceptid=http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C157103"
+    exposure_unit:
+      description: Specifies the unit used to measure the duration of exposure, such as months or years.
+      type: string
+      example: "months"
+    exposure_duration:
+      description: Represents the time duration associated with the exposure, measured in the specified unit.
+      type: integer
+      format: numeric
+      example: 17
+      lower_limit: 0
+      units:
+        description: Defines the unit of measurement used for specifying exposure duration.
+        uom: "months"
+        encoding: UTF-8
+    exposure_frequency:
+      description: Indicates how often the exposure to the hazardous substance or environmental factor occurs, such as once or multiple times.
+      type: string
+      example: "once"
+      enum:
+        - once
+        - multiple
+        - none
+      units:
+        description: Specifies the frequency unit used to measure exposure frequency, typically in days.
+        uom: "day"
+        encoding: UTF-8
+    diet:
+      description: Describes the general dietary pattern or regimen followed by the donor.
+      type: string
+      example: "Mediterranean"
+    diet_duration:
+      description: Specifies the duration for which the donor has adhered to the described diet, measured in years.
+      type: float
+      format: numeric
+      example: 3.5
+      lower_limit: 0.0
+      units:
+        description: Defines the unit of measurement used for specifying diet duration.
+        uom: "years"
+        encoding: UTF-8
+    exercise:
+      description: Refers to physical activities undertaken by the donor to maintain or improve physical fitness and overall health.
+      type: string
+      example: "Jogging"
+    exercise_specify:
+      description: Indicates the duration for which the donor has engaged in the specified exercise activity, measured in years.
+      type: integer
+      format: numeric
+      example: 10
+      lower_limit: 0
+      units:
+        description: Defines the unit of measurement used for specifying exercise duration.
+        uom: "years"
+        encoding: UTF-8
+    time_between_waking_and_first_exposure:
+      description: Specifies the duration in months between waking up and the first exposure to tobacco (if applicable).
+      type: integer
+      format: numeric
+      example: 15
+      lower_limit: 0
+      units:
+        description: Defines the unit of measurement used for specifying the time duration.
+        uom: "months"
+        encoding: UTF-8
+    exposure_category:
+      description: Describes the reported level of exposure by the donor, such as daily, weekly, occasional, or none.
+      type: string
+      example: "Occasional (< once a month)"
+      enum:
+        - Daily
+        - None
+        - Not applicable
+        - Occasional (< once a month)
+        - Social (> once a month - < once a week)
+        - Unknown
+        - Weekly (>=1x a week)
+    exercise_frequency:
+      description: Indicates how frequently the donor engages in physical exercise, measured in times per week.
+      type: string
+      example: "Less than once a month"
+      enum:
+        - Never
+        - Less than once a month
+        - 1-3 times a month
+        - Not applicable
+        - Once or twice a week
+        - Most days but not every day
+        - Every day
+        - Unknown
+    exercise_intensity:
+      description: Specifies the intensity level of the donor's physical exercise, such as low, moderate, or vigorous.
+      type: string
+      example: "Low - No increase in the heart beat and no perspiration"
+      enum:
+        - Low - No increase in the heart beat and no perspiration
+        - Moderate - Increase in the heart beat slightly with some light perspiration
+        - Vigorous - Increase in the heart beat substantially with heavy perspiration
+        - Not applicable
+        - Unknown
+  type: object
+  version: 1.0.0

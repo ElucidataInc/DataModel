@@ -1,0 +1,80 @@
+Elispot:
+  description: This assay is a highly sensitive and specific technique 
+    used to measure the frequency of cytokine secreting cells at the single cell level
+  properties:
+        donor_id:
+          description: Foreign key or unique identifier to map to donor
+          type: string
+          example: DO-31724
+        result_id:
+          description: Foreign key or unique identifier to map a patient to a result
+          type: string
+          example: R-7391493
+        event_id:
+          description: Foreign key or unique identifier to map a patient to an event
+          type: string
+          example: EV-20201124
+        specimen_id:
+          description: Foreign key or unique identifier to map a specimen
+          type: string
+          example: SP-13224
+        file_id:
+          description: Foreign key or unique identifier assigned to a file
+          type: string
+          example: F-7391493
+        analyte_preferred:
+          description: A specific cytokine or other secreted protein of interest
+          type: string
+          example: IL-2
+        analyte_reported:
+          description: A specific substance or protein that is being measured and
+            reported in the assay results
+          type: string
+          example: IL-2
+        cell_number_preferred:
+          description: Refers to the optimal number of cells recommended for use in
+            the assay to achieve reliable and meaningful results
+          type: integer
+          format: numeric
+          example: 2000
+          lower_limit: 0
+        cell_number_reported:
+          description: Refers to the reported number of cells used in the assay
+          type: integer
+          format: numeric
+          example: 1250
+          lower_limit: 0
+        comments:
+          description: Free text to expand upon details of the assay
+          type: string
+          example: Sample stored at -80°C
+        spot_number_preferred:
+          description: Optimal number of spots or wells that should be analyzed to
+            obtain reliable and meaningful data
+          type: integer
+          format: numeric
+          example: 15
+          lower_limit: 0
+        spot_number_reported:
+          description: Reported number of spots or wells analyzed to obtain the data
+          type: integer
+          format: numeric
+          example: 10
+          lower_limit: 0
+        study_time_collected:
+          description: Specific time point or duration at which samples are collected
+            for analysis during a study
+          type: integer
+          format: numeric
+          example: 2
+        study_time_collected_unit:
+          description: specific time point or duration unit at which samples are collected
+            for analysis during a study
+          type: string
+          example: hours
+          enum:
+          - hours
+          - min
+          - sec
+  type: object
+  version: 1.0.0
