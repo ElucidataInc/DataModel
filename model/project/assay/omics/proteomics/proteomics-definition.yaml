@@ -1,0 +1,53 @@
+Proteomics:
+  description: This proteomics assay analyzes the protein composition of a biological sample using techniques such as mass spectrometry.
+  properties:
+    protocol_id:
+      description: Foreign key or unique identifier to map to a protocol
+      type: string
+      example: PRT451
+    event_id:
+      description: Foreign key or unique identifier to map a patient to an event
+      type: string
+      example: EV-20201124
+    specimen_id:
+      description: Foreign key or unique identifier to map a specimen
+      type: string
+      example: SP-7391493
+    file_id:
+      description: Foreign key or unique identifier to map a file
+      type: string
+      example: F-7391493
+    protein_id:
+      description: A unique identifier assigned to proteins in a database such as UniProt.
+      type: string
+      example: P12345
+      ontology_link:
+        type: string
+        description: Link to the ontology file
+        url: https://www.uniprot.org/
+    protein_name:
+      description: A standardized, universally accepted shorthand notation used to uniquely identify proteins.
+      type: string
+      example: Hemoglobin subunit alpha
+      ontology_link:
+        type: string
+        description: Link to the ontology file
+        url: https://www.uniprot.org/
+    peptide_sequence:
+      description: The amino acid sequence of a peptide identified in the sample.
+      type: string
+      example: AGCTGTTAGC
+    modifications:
+      description: Post-translational modifications identified on the protein or peptide.
+      type: string
+      example: Phosphorylation
+    raw_intensity:
+      description: Raw intensity value for the protein or peptide in the sample.
+      type: integer
+      format: numeric
+    normalized_intensity:
+      description: Normalized intensity value for the protein or peptide in the sample.
+      type: integer
+      format: numeric
+  type: object
+  version: 1.0.0
