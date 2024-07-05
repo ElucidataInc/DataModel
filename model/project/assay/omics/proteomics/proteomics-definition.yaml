@@ -17,6 +17,24 @@ Proteomics:
       description: Foreign key or unique identifier to map a file
       type: string
       example: F-7391493
+    gene_id:
+      description: A unique identifier assigned to genes in the NCBI Gene database.
+      type: integer
+      format: numeric
+      example: 51181
+      ontology_link:
+        type: string
+        description: Link to the ontology file
+        url: https://geneontology.org/
+    gene_name:
+      description: A standardized, universally accepted shorthand notation used
+            to uniquely identify genes- HGNC
+      type: string
+      example: DCXR
+      ontology_link:
+        type: string
+        description: Link to the ontology file
+        url: https://genenames.org/
     protein_id:
       description: A unique identifier assigned to proteins in a database such as UniProt.
       type: string
