@@ -1,0 +1,88 @@
+Clinical-history:
+  description: Describes the information related to the patient's past symptoms, diagnoses, and treatments
+  properties:
+        subject_id:
+          description: The unique id provided to the entity being investigated. A subject can be a patient, human or non-human donor.
+          type: string
+          example: SUBJECT ID is an alphanumeric string that is globally unique identifier for the entity being investigated.
+        clinical_history_id:
+          description: Unique identifier for clinical history record
+          type: string
+          example: CH001
+        age_at_diagnosis:
+          description: Age of the patient at the time of diagnosis
+          type: integer
+          format: numeric
+          example: 45
+          lower_limit: 0
+        date_of_diagnosis:
+          description: Date when the diagnosis was made in YYYY-MM-DD format
+          type: string
+          pattern: "^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$"
+          example: 2023-06-15
+        treatment_for_diagnosis:
+          description: Type of treatment received for the diagnosis
+          type: string
+          example: Chemotherapy
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://bioportal.bioontology.org/ontologies/SNMI?p=classes&conceptid=http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FSNMI%2FG-0005
+        start_date_of_symptoms:
+          description: Start date of symptoms related to diagnosis in YYYY-MM-DD format
+          type: string
+          pattern: "^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$"
+          example: 2023-05-01
+        end_date_of_symptoms:
+          description: End date of symptoms related to diagnosis in YYYY-MM-DD format
+          type: string
+          pattern: "^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$"
+          example: 2023-05-20
+        symptoms_at_diagnosis:
+          description: Description of symptoms at the time of diagnosis
+          type: string
+          example: Fatigue
+        genetic_disorder:
+          description: Presence of a genetic disorder
+          type: boolean
+        prior_malignancy:
+          description: History of a prior malignancy
+          type: boolean
+        laterality_of_prior_malignancy:
+          description: Laterality of any prior malignancy
+          type: string
+          example: Left
+          enum:
+          - Left
+          - Right
+          - Bilateral
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://bioportal.bioontology.org/ontologies/HRAVS?p=classes&conceptid=https%3A%2F%2Fpurl.humanatlas.io%2Fvocab%2Fhravs%23HRAVS_1000651
+        allergy_status:
+          description: Presence of allergies
+          type: boolean
+        allergy_type:
+          description: Type of allergy, if present
+          type: string
+          example: Penicillin allergy
+        previous_treatments:
+          description: Details of any previous treatments
+          type: string
+          example: Surgery, Radiation Therapy
+        failed_treatments:
+          description: Details of treatments were unsuccessful
+          type: string
+          example: Immunotherapy
+        treatment_switch:
+          description: Information about whether patients were switched from their
+            randomly assigned treatment onto an alternative
+          type: string
+          example: Switched from Drug A to Drug B
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://bioportal.bioontology.org/ontologies/COGAT?p=classes&conceptid=file%3A%2Fsrv%2Fncbo%2Frepository%2FCOGAT%2F8%2Fcogat.owl%23cnt_4bd1ebae45752
+  type: object
+  version: 1.0.0

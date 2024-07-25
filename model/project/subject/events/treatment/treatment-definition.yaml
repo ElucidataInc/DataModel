@@ -1,0 +1,393 @@
+treatment:
+  description: Describes the therapeutic agents, therapies, or procedures used to
+    treat a medical condition.
+  properties:
+        subject_id:
+          description: The unique id provided to the entity being investigated. A subject can be a patient, human or non-human donor.
+          type: string
+          example: SUBJECT ID is an alphanumeric string that is globally unique identifier for the entity being investigated.
+        treatment_id:
+          description: Primary key unique identifier for this treatment
+          type: string
+          example: TR-7391493
+        event_id:
+          description: Foreign key unique identifier to map a patient to an event
+          type: string
+          example: EV-20201124
+        treatment_name:
+          description: Name of the treatment given to the samples i.e. name of the
+            chemical/drug/therapy
+          type: string
+          example: Carboplatin
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://www.ebi.ac.uk/chebi/
+        treatment_start_date:
+          description: Start date for treatment in YYYY-MM-DD format
+          type: string
+          pattern: "^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$"
+          example: 2021-02-12
+        treatment_end_date:
+          description: End date for treatment in YYYY-MM-DD format
+          type: string
+          pattern: "^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$"
+          example: 2022-06-06
+        is_treatment_ongoing:
+          description: Is the treatment ongoing?
+          type: boolean
+          enum:
+          - True
+          - False
+        is_primary_treatment:
+          description: Is the treatment primary?
+          type: boolean
+          enum:
+          - True
+          - False
+        treatement_response:
+          description: This field indicates the type/extent of response to the treatment
+          type: string
+          example: Partial Response (PR)
+          enum:
+          - Complete Response (CR)
+          - Partial Response (PR)
+          - Stable Disease (SD)
+          - Progressive Disease (PD)
+          - No Response
+        treatment_response_criteria_method:
+          description: This field indicates the criteria used to document response
+            to the treatment
+          type: string
+          example: ELN Dohner AML 2017 Oncology Response Criteria
+          enum:
+          - ELN Dohner AML 2017 Oncology Response Criteria
+          - IWG Cheson AML 2003 Oncology Response Criteria
+          - iRECIST
+          - RECIST
+          - Response Assessment in Neuro-Oncology (RANO)
+          - Physician Assessed Response Criteria
+        treatment_type:
+          description: Treatment types can be chemotherapy, radiotherapy, cognitive
+            therapy
+          type: string
+          example: Chemotherapy
+          enum:
+          - Medication
+          - Chemotherapy
+          - Radiation Therapy
+          - Surgery on Primary Tumor
+          - Surgery on Lymph Node
+          - Cognitive Behavioral Therapy
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://www.ebi.ac.uk/ols4/ontologies/maxo
+        treatment_intent:
+          description: Indicate the purpose of the treatment, or the desired effect
+            or outcome resulting from the treatment
+          type: string
+          example: Curative
+          enum:
+          - Curative
+          - Diagnostic
+          - Forensic
+          - Guidance
+          - Palliative
+          - Preventative
+          - Screening
+          - Supportive
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://www.ebi.ac.uk/ols4/ontologies/maxo
+        treatment_setting:
+          description: Indicate the treatment setting, which describes the treatments
+            purpose in relation to the primary treatment
+          type: string
+          example: Adjuvant
+          enum:
+          - Adjuvant
+          - Advanced/Metastatic
+          - Conditioning
+          - Induction
+          - Maintenance
+          - Mobilization
+          - Neoadjuvant
+          - Preventative
+          - Radiosensitization
+          - Salvage
+        treatment_type_detail:
+          description: Treatment details which capture type of surgery, types of radiotherapy
+          type: string
+          example: Biopsy
+          enum:
+          - Biopsy
+          - Resection
+          - 3D conformal
+          - Intensity-modulated radiation therapy (IMRT)
+          - Volumetric modulated radiation therapy (VMAT)
+          - Image-guided radiation therapy (IGRT)
+          - Stereotactic radiosurgery (SRS)
+          - Brachytherapy
+          - Superficial x-ray radiation therapy (SXRT)
+          - Intraoperative radiation therapy (IORT)
+          - Other
+          - Unknown
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://obi-ontology.org/
+        treatment_dosage:
+          description: Treatment dosage for the drug administered over a defined period.
+            Dosages can be increase or decreased as disease/condition improves or
+            degrades
+          type: integer
+          format: numeric
+          example: 100
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: mg, gy
+            encoding: UTF-8
+        treatment_dose_level:
+          description: Dosage level corresponding to the cohort in a given clinical
+            trial
+          type: string
+        treatment_anatomic_site:
+          description: Anatomical site of administered drug or chemotherapy
+          type: string
+          example: Arm
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://www.ebi.ac.uk/ols4/ontologies/uberon
+        treatment_anotamical_site_type:
+          description: Anatomical site type such as primary, lymph node or metastatic
+          type: string
+          example: Primary tumor
+          enum:
+          - Primary tumor
+          - Lymph node
+          - Metastatic
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://www.ebi.ac.uk/ols4/ontologies/pato, https://www.ebi.ac.uk/efo/
+        days_per_cycle_of_chemotherapy:
+          description: Days per cycle of chemotherapy
+          type: integer
+          format: numeric
+          example: 120
+        number_of_cycles_of_chemotherapy:
+          description: The number of cycles of chemotherapy refers to the repeated
+            administration of chemotherapy drugs over a defined period.
+          type: integer
+          format: numeric
+          example: 4
+          lower_limit: 1
+        route_of_administration:
+          description: The route of administration describes how chemotherapy drugs
+            are delivered into the body
+          type: string
+          example: Intravenous (IV)
+          enum:
+          - Oral
+          - Intravenous (IV)
+          - Subcutaneous (SC).
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://www.ebi.ac.uk/ols4/ontologies/ogms
+        adverse_event_list:
+          description: Adverse events refer to undesirable or harmful effects experienced
+            by patients as a result of chemotherapy or drug treatments.
+          type: string
+          example: Nausea, Vomitting, Anemia, Palpitation
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://www.ebi.ac.uk/ols4/ontologies/ogms
+        adverse_event_treatment:
+          description: Adverse event treatment involves managing and mitigating the
+            side effects and complications associated with drug or chemotherapy.
+          type: string
+          example: Zofran
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://www.ebi.ac.uk/chebi/
+        location_reaction_reported:
+          description: Location of adverse event
+          type: string
+          example: Injection site redness
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://www.ebi.ac.uk/ols4/ontologies/ogms
+        severity_reported:
+          description: Severity reported of adverse event
+          type: string
+          example: Mild
+          enum:
+          - Mild
+          - Moderate
+          - Sever
+          - Life Threatening
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://www.ebi.ac.uk/ols4/ontologies/ogms
+        previous_treatments:
+          description: Previous treatments for the donor
+          type: string
+          example: Chemotherapy
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://www.ebi.ac.uk/ols4/ontologies/ogms
+        failed_treatments:
+          description: Failed treatments of the donor
+          type: string
+          example: ALK inhibitors
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://www.ebi.ac.uk/ols4/ontologies/ogms
+        treatment_switch:
+          description: Treatment switch information for the donor
+          type: string
+          example: Patient responded poorly to the allocated treatment hence switched
+            to a different regimen
+        drug_class:
+          description: The class that drug belongs to in ATC Classification
+          type: string
+          pattern: "^[A-Z][0-9]{2}[A-Z]{2}[0-9]{2}$"
+          example: A10BA02
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://pubchem.ncbi.nlm.nih.gov/classification/#hid=79
+        drug_brand_name:
+          description: The brand name of the drug in use
+          type: string
+          example: Tagrisso
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://www.ebi.ac.uk/chebi/
+        drug_name_generic:
+          description: Chemical composition of the active drug component
+          type: string
+          example: Osimertinib
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://www.ebi.ac.uk/chebi/
+        treatment_chronology_with_surgery:
+          description: The order of events for treatment and surgery.
+          type: string
+          enum:
+          - Pre-operative
+          - Post-operative
+          - No surgery
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://www.ebi.ac.uk/ols4/ontologies/ogms
+        line_of_treatment:
+          description: If treatment is not primary then what line is it?
+          type: string
+          example: second-line threrapy
+        response_to_treatment_criteria_method:
+          description: Indicate the criteria used to assess the donors response to
+            the applied treatment regimen.
+          type: string
+          example: WG Cheson AML 2003 Oncology Response Criteria
+          enum:
+          - ELN Dohner AML 2017 Oncology Response Criteria
+          - IWG Cheson AML 2003 Oncology Response Criteria
+          - iRECIST
+          - RECIST
+          - Response Assessment in Neuro-Oncology (RANO)
+          - Physician Assessed Response Criteria
+        outcome_of_treatment:
+          description: Indicate the donors outcome of the prescribed treatment.
+          type: string
+          example: Patient choice (stopped or interrupted treatment)
+          enum:
+          - Treatment completed as prescribed
+          - Treatment incomplete due to technical or organizational problems
+          - Treatment incomplete because patient died
+          - Patient choice (stopped or interrupted treatment)
+          - Physician decision (stopped or interrupted treatment)
+          - Treatment stopped due to lack of efficacy (disease progression)
+          - Treatment stopped due to acute toxicity
+          - Other
+          - Not applicable
+          - Unknown
+        toxicity_type:
+          description: If the treatment was terminated early due to acute toxicity,
+            indicate whether it was due to hematological toxicity or non-hematological
+            toxicity.
+          type: string
+          example: Hematological
+          enum:
+          - Hematological
+          - Non-hematological
+          - Not applicable
+          - Unknown
+        hematological_toxicity:
+          description: Indicate the hematological toxicities which caused early termination
+            of the treatment.
+          type: string
+          example: Anemia - Grade 4
+          enum:
+          - Anemia - Grade 3
+          - Anemia - Grade 4
+          - Anemia - Grade 5
+          - Neutropenia - Grade 3
+          - Neutropenia - Grade 4
+          - Neutropenia - Grade 5
+          - Thrombocytopenia - Grade 3
+          - Thrombocytopenia - Grade 4
+          - Thrombocytopenia - Grade 5
+          - Unknown
+        non-hematological_toxicity:
+          description: Indicate the non-hematological toxicities which caused early
+            termination of the treatment
+          type: string
+          example: Cardiac disorders - Grade 1
+          enum:
+          - Cardiac disorders - Grade 1
+          - Cardiac disorders - Grade 2
+          - Cardiac disorders - Grade 3
+          - Cardiac disorders - Grade 4
+          - Cardiac disorders - Grade 5
+          - Dehydration - Grade 1
+          - Dehydration - Grade 2
+          - Dehydration - Grade 3
+          - Dehydration - Grade 4
+          - Dehydration - Grade 5
+          - Diarrhea - Grade 1
+          - Diarrhea - Grade 2
+          - Diarrhea - Grade 3
+          - Diarrhea - Grade 4
+          - Diarrhea - Grade 5
+          - Fatigue - Grade 1
+          - Fatigue - Grade 2
+          - Fatigue - Grade 3
+          - Nausea - Grade 1
+          - Nausea - Grade 2
+          - Nausea - Grade 3
+          - Unknown
+          - Vomiting - Grade 1
+          - Vomiting - Grade 2
+          - Vomiting - Grade 3
+          - Vomiting - Grade 4
+          - Vomiting - Grade 5
+          - Weight loss - Grade 1
+          - Weight loss - Grade 2
+          - Weight loss - Grade 3
+  type: object
+  version: 1.0.0

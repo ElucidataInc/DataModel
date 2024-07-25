@@ -1,0 +1,86 @@
+Comorbidity:
+  description: Refers to the presence of one or more additional medical conditions
+    co-occurring with a primary condition
+  properties:
+        donor_id:
+          description: Foreign key or unique identifier to map donor
+          type: string
+          example: D-002
+        diagnosis_id:
+          description: Foreign key or unique identifier to map a project
+          type: string
+          example: DI-034
+        comorbidity_id:
+          description: Primary key or unique identifier to track comorbidity
+          type: string
+          example: CMBT-124
+        disease_name:
+          description: Simultaneous disease described for the donor along with the
+            curated_disease of interest
+          type: string
+          example: Diabetes, Hypercholesterolemia
+        comorbidity_duration:
+          description: Time duration for this simultaneous disease in years
+          type: float
+          format: numeric
+          example: 8.8
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: years
+            encoding: UTF-8
+        disease_treatment:
+          description: Specific treatment undergone to treat the comorbid condition
+          type: string
+          example: Anti-diabetic drug, statins
+        disease_treatment_duration:
+          description: Duration of treament for the given disease indication in years
+          type: float
+          format: numeric
+          example: 2.5
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: years
+            encoding: UTF-8
+        age_at_diagnosis:
+          description: Age at which the comorbid condition was identificied
+          type: integer
+          format: numeric
+          example: 56
+        comorbidity_treatment_status:
+          description: Indicate if the patient is being treated for the comorbidity
+            (this includes prior malignancies).
+          type: boolean
+          example: True
+          enum:
+          - True
+          - False
+        prior_malignancy:
+          description: Prior malignancy affecting donor.
+          type: boolean
+          example: True
+          enum:
+          - True
+          - False
+        laterality_of_prior_malignancy:
+          description: If donor has history of prior malignancy, indicate laterality
+            of previous diagnosis
+          type: string
+          example: Unilateral
+          enum:
+          - Bilateral
+          - Left
+          - Midline
+          - Not applicable
+          - Right
+          - Unilateral
+          - Side not specified
+          - Unknown
+        comorbidity_type_code:
+          description: Indicate the code for the comorbidity using the WHO ICD-10
+            code classification
+          type: string
+          example: E11, B02, K74.60
+  type: object
+  version: 1.0.0

@@ -1,0 +1,70 @@
+Events-core:
+  description: Lists any significant occurrence or activity that is recorded within
+    a patient's health record. Contains information like project ID, donor ID, event
+    ID and event type.
+  properties:
+        project_id:
+          description: The unique id provided to the experimental study or project that is governed by an investigator.
+          type: string
+          example: P012
+        subject_id:
+          description: The unique id provided to the entity being investigated. A subject can be a patient, human or non-human donor.
+          type: string
+          example: D001
+        event_id:
+          description: Primary key or unique identifier for a event
+          type: string
+          example: E001
+        billing_id:
+          description: Primary key or unique identifier used for billing purposes
+          type: string
+          example: B1234
+        event_type:
+          description: Describing the events occurence for a patient
+          type: string
+          example: Diagnosis
+          enum:
+          - Encounter
+          - Treatment
+          - Procedure
+        event_date:
+          description: The date when the event occurred in YYYY-MM-DD format
+          type: string
+          pattern: "^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$"
+          example: 2024-06-24
+        event_time:
+          description: The time when the event occurred
+          type: time
+          example: 14:30:00
+        reason:
+          description: The reason for the event occurrence
+          type: string
+          example: Routine check-up
+        site:
+          description: The location where the event took place
+          type: string
+          example: Clinic A, Room 202
+        notes:
+          description: Additional notes or comments about the event
+          type: text
+          example: Patient improved
+        status:
+          description: Current status of the event
+          type: string
+          example: Completed
+          enum:
+          - Pending
+          - Completed
+          - Cancelled
+        duration:
+          description: Duration of the event in minutes
+          type: integer
+          format: numeric
+          example: 60
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: min
+            encoding: UTF-8
+  type: object
+  version: 1.0.0

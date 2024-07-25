@@ -1,0 +1,68 @@
+@startyaml Project-core  
+  Project-core:
+    description: Describes the core details of the project like project ID, summary,
+      overall design, publication related details and any other supplementary links
+      associated with the project
+    properties:
+        project_id:
+          description: Primary key or unique identifier for a project
+          type: string
+          example: P034
+        summary:
+          description: Summary of the study which provides information about the key objectives and results from the publication
+          type: string
+          example: The identification of novel therapeutic strategies to overcome the intrinsic 
+              or acquired resistance to trametinib in mutant KRAS lung adenocarcinoma (LUAD) is a major challenge. 
+              This study analyzes the effects of trametinib in Id1, a key factor involved in the oncogenic KRAS 
+              pathway, and investigates the Id1 role in acquire resistance and synergy with immunotherapy in KRAS-driven 
+              LUAD. Restoring the antitumor immune response by blocking programmed-cell death protein 1 (PD-1) and 
+              programmed-cell death-ligand 1 (PD-L1) pathway represents a major breakthrough in non-small-cell lung 
+              cancer (NSCLC) treatment. Nevertheless, a high proportion of LUAD patients with KRAS alterations remain 
+              refractory to this therapy.
+        overall_design:
+          description: Overall design of the experiment as given by the author
+          type: string
+          example: In order to investigate the molecular mechanisms involved in the
+              trametinib-mediated Id1 downregulation, a global transcriptomic profiling
+              using RNA sequencing analysis was performed on murine CMT167 and KLA lung
+              cancer cells treated or not with trametinib
+        donor_derived_dataset:
+          description: Whether the dataset has been derived from a donor or not
+          type: boolean
+        organism:
+          description: The organism from which the samples were derived
+          type: string
+          example: Homo sapiens
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://www.ebi.ac.uk/ols4/ontologies/ncbitaxon
+        cell_line:
+          description: Specific population of cells that can maintain in vitro culture for an extended period of time and are used to derive samples for an experiment
+          type: string
+          pattern: "^CVCL_[0-9]{4}$"
+          example: CVCL_0030
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://www.cellosaurus.org/index.html
+        author_cell_type:
+          description: Cell types as curated from the publication/source for this experiment
+          type: string
+          example: CMT167 cell
+          ontology_link:
+            type: string
+            description: Link to the ontology file
+            url: https://obofoundry.org/ontology/cl.html
+        source_link:
+          description: Link to source from where the data was fetched given as a url
+          type: string
+          format: alphanumeric
+          example: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE236258
+        supplementary_links:
+          description: External link(s) pointing to code, supplementary data files,
+            or analysis files associated with the project which will not be uploaded
+          type: array
+          format: alphanumeric
+          example: https://github.com/czbiohub/tabula-muris, http://celltag.org/
+@endyaml

@@ -1,0 +1,921 @@
+QC-metrics:
+  description: Contains details of quality checks done for various procedures and
+    assays to ensure the accuracy, reliability, and consistency of experimental data
+    and results.
+  properties:
+        protocol_id:
+          description: Foreign key or unique identifier for the protocol
+          type: string
+          example: PRT451
+        event_id:
+          description: Foreign key or unique identifier to map a patient to an event
+          type: string
+          example: EV-20201124
+        file_id:
+          description: Foreign key or unique identifier to map a file
+          type: string
+          example: F-7391493, F-427255
+  RNAseq:
+      description: A technique used to analyze the quantity and sequences of RNA in a sample, providing insights into gene expression and discovering new transcripts
+      properties:
+        encoding:
+          description: Encoding format of the quality scores
+          type: string
+          example: Sanger / Illumina 1.9
+        post_aligned_gc_content:
+          description: GC content of reads after alignment
+          type: float
+          format: numeric
+          example: 44
+          lower_limit: 0.0
+          upper_limit: 100.0
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: '%'
+            encoding: UTF-8
+        number_of_reads_aligned_to_human_genome_by_star:
+          description: Total reads aligned to the human genome using STAR aligner
+          type: float
+          format: numeric
+          example: 100000000
+        number_of_reads_aligned_to_exons_5_3_utrs:
+          description: Number of reads aligned specifically to exons and UTRs
+          type: float
+          format: numeric
+          example: 75000000
+        rseqc_infer_experiment:
+          description: Ratio of reads expected sense to total (sense + anti-sense),
+            for stranded data
+          type: float
+          format: numeric
+          example: 0.9
+          lower_limit: 0.0
+          upper_limit: 1.0
+        rseqc_percent_of_read_corresponding_to_cds_exon_utr:
+          description: Percent of reads corresponding to CDS, exon, and UTR regions
+          type: float
+          format: numeric
+          example: 55
+          lower_limit: 0.0
+          upper_limit: 100.0
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: '%'
+            encoding: UTF-8
+        percent_of_proper_pair_reads_aligned:
+          description: Percentage of reads that are properly paired and aligned
+          type: float
+          format: numeric
+          example: 90
+          lower_limit: 0.0
+          upper_limit: 100.0
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: '%'
+            encoding: UTF-8
+        duplicate_reads:
+          description: Number of duplicate reads detected in the sequencing data
+          type: float
+          format: numeric
+          example: 500000000
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: '%'
+            encoding: UTF-8
+        library_complexity:
+          description: Number of unique DNA fragments present in a library
+          type: float
+          format: numeric
+          example: 1000000
+        read_group:
+          description: Identifier of the read group
+          type: string
+          example: RG01
+        sequencing_platform:
+          description: The platform used for sequencing
+          type: string
+          example: Illumina HiSeq
+        total_reads:
+          description: Total number of reads
+          type: float
+          format: numeric
+          example: 1000000
+        mapped_reads:
+          description: Number of reads mapped to the reference genome
+          type: float
+          format: numeric
+          example: 900000
+        average_insert_size:
+          description: Average size of the inserted sequence
+          type: float
+          format: numeric
+          example: 150
+        average_read_length:
+          description: Average length of the reads
+          type: float
+          format: numeric
+          example: 75
+        median_quality_score:
+          description: Median quality score of reads
+          type: float
+          format: numeric
+          example: 30.5
+        passing_filter_reads:
+          description: Number of reads passing quality filters
+          type: float
+          format: numeric
+          example: 850000
+        adapter_content:
+          description: Proportion of the adapter content
+          type: float
+          format: numeric
+          example: 5
+          lower_limit: 0.0
+          upper_limit: 100.0
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: '%'
+            encoding: UTF-8
+        quality_metric_of:
+          description: A particular file associated with this quality metric
+          type: string
+          example: checksums.text
+        sequence_counts:
+          description: Estimated number of sequences per sample, including duplicates
+          type: integer
+          format: numeric
+          example: 500000
+        sequence_quality:
+          description: Mean quality value across each base position in the read (phred
+            score)
+          type: integer
+          format: numeric
+          example: 30
+          lower_limit: 20.0
+          upper_limit: 60.0
+        per_sequence_quality_score:
+          description: Number of reads with average quality scores per read
+          type: integer
+          format: numeric
+          example: 28
+          lower_limit: 20.0
+          upper_limit: 40.0
+        per_base_sequence_content:
+          description: 'Proportion of each DNA base at each position. ex: 25% (A at
+            position 10)'
+          type: float
+          format: numeric
+          example: 25
+          lower_limit: 0.0
+          upper_limit: 100.0
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: '%'
+            encoding: UTF-8
+        per_sequence_gc_content:
+          description: Average GC content in reads
+          type: float
+          format: numeric
+          example: 50
+          lower_limit: 0..0
+          upper_limit: 100.0
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: '%'
+            encoding: UTF-8
+        per_base_n_content:
+          description: Percentage of N bases at each position
+          type: float
+          format: numeric
+          example: 1
+          lower_limit: 0.0
+          upper_limit: 100.0
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: '%'
+            encoding: UTF-8
+        sequence_length_distribution:
+          description: Most common sequence length across all samples
+          type: float
+          format: numeric
+          example: 63
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: bp
+            encoding: UTF-8
+        sequence_duplication_levels:
+          description: Relative level of duplication for each sequence
+          type: float
+          format: numeric
+          example: 10
+          lower_limit: 0.0
+          upper_limit: 100.0
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: '%'
+            encoding: UTF-8
+        overrepresented_sequences:
+          description: Number of sequences that appear more frequently than expected
+          type: integer
+          format: numeric
+          example: 100
+        total_deduplicated_percentage:
+          description: Percentage of deduplicated sequences
+          type: float
+          format: numeric
+          example: 25.83
+          lower_limit: 0.0
+          upper_limit: 100.0
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: '%'
+            encoding: UTF-8
+        total_records:
+          description: Total number of records in the sample
+          type: integer
+          format: numeric
+          example: 662541538
+        qc_failed:
+          description: Number of records that failed quality control
+          type: integer
+          format: numeric
+          example: 0
+        optical_pcr_duplicate:
+          description: Number of duplicate records due to PCR or optical errors
+          type: integer
+          format: numeric
+          example: 0
+        non_primary_hits:
+          description: Number of secondary alignment hits
+          type: integer
+          format: numeric
+          example: 22117310
+        unmapped_reads:
+          description: Number of reads that did not map to the reference genome
+          type: integer
+          format: numeric
+          example: 304568704
+        mapq_lt_mapq_cut_non_unique:
+          description: Reads with mapping quality less than the threshold
+          type: integer
+          format: numeric
+          example: 783066
+        mapq_gte_mapq_cut_unique:
+          description: Reads with mapping quality above the threshold and unique
+          type: integer
+          format: numeric
+          example: 335072458
+        read_1:
+          description: Number of first reads in pairs
+          type: integer
+          format: numeric
+          example: 172232289
+        read_2:
+          description: Number of second reads in pairs
+          type: integer
+          format: numeric
+          example: 162840169
+        reads_map_to_sense:
+          description: Reads mapped to the sense strand of the genome
+          type: integer
+          format: numeric
+          example: 168129713
+        reads_map_to_antisense:
+          description: Reads mapped to the antisense strand of the genome
+          type: integer
+          format: numeric
+          example: 166942745
+        non_splice_reads:
+          description: Reads that are not spliced
+          type: integer
+          format: numeric
+          example: 206621110
+        splice_reads:
+          description: Reads that are spliced
+          type: integer
+          format: numeric
+          example: 128451348
+        reads_mapped_in_proper_pairs:
+          description: Reads correctly paired and mapped
+          type: integer
+          format: numeric
+          example: 322356294
+        proper_paired_reads_map_to_different_chrom:
+          description: Properly paired reads that map to different chromosomes
+          type: integer
+          format: numeric
+          example: 0
+        unique_percent:
+          description: Percentage of reads that map uniquely to the genome
+          type: float
+          format: numeric
+          example: 50.57
+          lower_limit: 0.0
+          upper_limit: 100.0
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: '%'
+            encoding: UTF-8
+        proper_pairs_percent:
+          description: Percentage of reads that are mapped in proper pairs
+          type: float
+          format: numeric
+          example: 48.65
+          lower_limit: 0.0
+          upper_limit: 100.0
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: '%'
+            encoding: UTF-8
+        average_input_read_length:
+          description: Average length of input reads
+          type: integer
+          format: numeric
+          example: 200
+        number_of_splices_gt_ag:
+          description: Number of GT/AG splices
+          type: integer
+          format: numeric
+          example: 10449311
+        number_of_reads_mapped_too_many_loci:
+          description: Reads mapped to more locations than allowed
+          type: integer
+          format: numeric
+          example: 2135
+        mapping_speed_million_reads_per_hour:
+          description: Speed of mapping reads per hour
+          type: float
+          format: numeric
+          example: 116.6
+        percent_reads_unmapped_too_short:
+          description: Percentage of reads unmapped due to being too short
+          type: float
+          format: numeric
+          example: 2.75
+          lower_limit: 0.0
+          upper_limit: 100.0
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: '%'
+            encoding: UTF-8
+        number_of_splices_non_canonical:
+          description: Number of non-canonical splices
+          type: integer
+          format: numeric
+          example: 8537
+        number_of_reads_mapped_multiple_loci:
+          description: Reads mapped to multiple locations
+          type: integer
+          format: numeric
+          example: 1224406
+        percent_reads_unmapped_many_mismatches:
+          description: Percentage of reads unmapped due to too many mismatches
+          type: float
+          format: numeric
+          example: 0
+          lower_limit: 0.0
+          upper_limit: 100.0
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: '%'
+            encoding: UTF-8
+        average_mapped_length:
+          description: Average length of mapped reads
+          type: float
+          format: numeric
+          example: 198.79
+        deletion_rate_per_base:
+          description: Percentage of deletions per base
+          type: float
+          format: numeric
+          example: 0.01
+          lower_limit: 0.0
+          upper_limit: 100.0
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: '%'
+            encoding: UTF-8
+        insertion_average_length:
+          description: Average length of insertions
+          type: float
+          format: numeric
+          example: 1.51
+        number_of_splices_gc_ag:
+          description: Number of GC/AG splices
+          type: integer
+          format: numeric
+          example: 81342
+        insertion_rate_per_base:
+          description: Percentage of insertions per base
+          type: float
+          format: numeric
+          example: 0.01
+          lower_limit: 0.0
+          upper_limit: 100.0
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: '%'
+            encoding: UTF-8
+        number_of_splices_annotated_sjdb:
+          description: Number of splices annotated in sjdb
+          type: integer
+          format: numeric
+          example: 10428229
+        percent_reads_unmapped_other:
+          description: Percentage of reads unmapped due to other reasons
+          type: float
+          format: numeric
+          example: 0.1
+          lower_limit: 0.0
+          upper_limit: 100.0
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: '%'
+            encoding: UTF-8
+        uniquely_mapped_reads_percent:
+          description: Percentage of uniquely mapped reads
+          type: float
+          format: numeric
+          example: 90.64
+          lower_limit: 0.0
+          upper_limit: 100.0
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: '%'
+            encoding: UTF-8
+        percent_reads_mapped_too_many_loci:
+          description: Percentage of reads mapped to too many loci
+          type: float
+          format: numeric
+          example: 0.01
+          lower_limit: 0.0
+          upper_limit: 100.0
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: '%'
+            encoding: UTF-8
+        number_of_splices_total:
+          description: Total number of splices
+          type: integer
+          format: numeric
+          example: 10549888
+        deletion_average_length:
+          description: Average length of deletions
+          type: float
+          format: numeric
+          example: 2.1
+        uniquely_mapped_reads_number:
+          description: Number of reads that mapped uniquely
+          type: integer
+          format: numeric
+          example: 17055977
+        percent_reads_mapped_multiple_loci:
+          description: Percentage of reads mapped to multiple loci
+          type: float
+          format: numeric
+          example: 6.51
+          lower_limit: 0.0
+          upper_limit: 100.0
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: '%'
+            encoding: UTF-8
+        number_of_splices_at_ac:
+          description: Number of AT/AC splices
+          type: integer
+          format: numeric
+          example: 10698
+        mismatch_rate_per_base_percent:
+          description: Mismatch rate per base calculated as a percentage
+          type: float
+          format: numeric
+          example: 0.34
+          lower_limit: 0.0
+          upper_limit: 100.0
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: '%'
+            encoding: UTF-8
+        read_depth:
+          description: Total reads used in the analysis
+          type: integer
+          format: numeric
+          example: 18280383
+  scRNAseq:
+      description: A technique used to analyze the gene expression profiles of individual cells, providing insights into cellular diversity, function, and states within a complex tissue
+      properties:
+        sequencing_saturation:
+          description: Percentage of sequencing saturation
+          type: float
+          format: numeric
+          example: 50
+          lower_limit: 50.0
+          upper_limit: 100.0
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: '%'
+            encoding: UTF-8
+        number_of_cells_passing_cell_level_qc:
+          description: Number of cells passing QC per patient
+          type: integer
+          format: numeric
+          example: 500
+        proportion_of_cells_passing_cell_level_qc:
+          description: Proportion of cells passing QC per sample
+          type: float
+          format: numeric
+          example: 50
+          lower_limit: 50.0
+          upper_limit: 100.0
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: '%'
+            encoding: UTF-8
+        median_number_of_reads_per_cell:
+          description: Median number of reads per cell
+          type: integer
+          format: numeric
+          example: 10000
+          lower_limit: 10000
+        median_number_of_genes_per_cell:
+          description: Median number of genes identified per cell
+          type: integer
+          format: numeric
+          example: 2000
+          lower_limit: 2000
+        median_number_of_umi_counts_per_cell:
+          description: Median number of UMI counts per cell
+          type: integer
+          format: numeric
+          example: 3000
+          lower_limit: 3000
+        percent_confidently_mapped_reads_in_cells:
+          description: Percentage of reads confidently mapped in cells
+          type: float
+          format: numeric
+          example: 70
+          lower_limit: 70.0
+          upper_limit: 100.0
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: '%'
+            encoding: UTF-8
+        number_of_umi_counts_per_cell:
+          description: Number of UMI counts per cell
+          type: integer
+          format: numeric
+          example: 1000
+          lower_limit: 1000
+        number_of_features_per_cell:
+          description: Number of features (e.g., genes, transcripts) detected per
+            cell
+          type: integer
+          format: numeric
+          example: 200
+          lower_limit: 200
+        percent_reads_in_mitochondrial_genes:
+          description: Percentage of reads mapped to mitochondrial genes (scRNAseq)
+          type: float
+          format: numeric
+          example: 10
+          lower_limit: 0.0
+          upper_limit: 20.0
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: '%'
+            encoding: UTF-8
+        percent_reads_in_haemoglobin_gene:
+          description: Percentage of reads mapped to haemoglobin genes
+          type: float
+          format: numeric
+          example: 5
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: '%'
+            encoding: UTF-8
+        percent_reads_in_ribosomal_genes:
+          description: Percentage of reads mapped to ribosomal genes
+          type: float
+          format: numeric
+          example: 25
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: '%'
+            encoding: UTF-8
+  ChIP-seq:
+      description: No description provided
+      properties:
+        usable_fragments:
+          description: Fragments passing various filters in the ChIP-seq processing
+            pipeline
+          type: integer
+          format: numeric
+          example: 100000
+        relaxed_peaks:
+          description: Peaks called with low significance, high false positive rate
+          type: integer
+          format: numeric
+          example: 5000
+  eCLIP:
+      description: A technique used to analyze protein-DNA interactions in the genome. It identifies the binding sites of DNA-associated proteins, such as transcription factors, and maps the locations of histone modifications
+      properties:
+        unique_fragments:
+          description: Fragments uniquely mapping to the genome
+          type: integer
+          format: numeric
+          example: 85000
+        usable_reads:
+          description: Reads uniquely mapping and without duplicates
+          type: integer
+          format: numeric
+          example: 120000
+        saturated_peak_detection:
+          description: Whether 80% of original peaks are detected after downsampling
+            50%
+          type: boolean
+          example: True
+        read_clusters:
+          description: Regions with higher read density than background
+          type: integer
+          format: numeric
+          example: 400
+  RNA-seq, RAMPAGE:
+      description: A specialized technique designed to precisely map transcription start sites (TSS) and quantify gene expression. It provides high-resolution data on promoter usage and the structure of the 5' ends of transcripts
+      properties:
+        uniquely_mapped_reads:
+          description: Reads mapping to exactly one location
+          type: integer
+          format: numeric
+          example: 150000
+  ChIA-PET:
+      description: A technique used to study the interactions between different regions of the genome that are mediated by specific proteins
+      properties:
+        unique_usable_pets:
+          description: PETs mapping uniquely and within set distances
+          type: integer
+          format: numeric
+          example: 30000
+  multiQC:
+      description: A bioinformatics tool used to aggregate and visualize quality control (QC) metrics from multiple tools across many samples
+      properties:
+        aligned_reads:
+          description: Total of uniquely mapped and multi-mappers
+          type: integer
+          format: numeric
+          example: 200000
+        frip:
+          description: Mapped reads in peak regions divided by all usable reads
+          type: float
+          format: numeric
+          example: 0.65
+          lower_limit: 0.0
+          upper_limit: 100.0
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: '%'
+            encoding: UTF-8
+  WGBS:
+      description: A high-throughput sequencing technique used to analyze DNA methylation patterns across the entire genome at single-base resolution
+      properties:
+        coverage:
+          description: Read length times number of uniquely mapped reads divided by
+            genome size
+          type: float
+          format: numeric
+          example: 30
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: X
+            encoding: UTF-8
+  DNase-seq:
+      description: A high-throughput sequencing technique used to identify regions of open chromatin, which are accessible to regulatory proteins and are indicative of regulatory elements such as promoters, enhancers, and other DNA-binding sites
+      properties:
+        spot:
+          description: Fraction of reads in tag-enriched regions
+          type: float
+          format: numeric
+          example: 0.8
+          lower_limit: 0.0
+          upper_limit: 1.0
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: '%'
+            encoding: UTF-8
+  ATAC-seq:
+      description: A high-throughput sequencing technique used to study chromatin accessibility, identifying regions of open chromatin, nucleosome positioning, and transcription factor binding sites across the genome
+      properties:
+        tss_enrichment_score:
+          description: Signal to noise ratio at transcription start sites
+          type: float
+          format: numeric
+          example: 6
+  RNA Bind-N-Seq:
+      description: A high-throughput sequencing technique used to identify the binding preferences and specific RNA targets of RNA-binding proteins (RBPs)
+      properties:
+        r_value_of_k_mer:
+          description: Frequency of k-mer in enriched vs. input reads
+          type: float
+          format: numeric
+          example: 1.5
+  Imaging:
+      description: Data obtained from various imaging technologies used to visualize biological structures, tissues, and processes in medical and research settings
+      properties:
+        tissue_section_length:
+          description: Length of tissue section
+          type: float
+          format: numeric
+          example: 3.5
+        tissue_section_breadth:
+          description: Breadth of tissue section
+          type: float
+          format: numeric
+          example: 1.5
+        tissue_section_artefacts:
+          description: Artefacts visible in H&E image of tissue section
+          type: string
+          example: Folding
+          enum:
+          - Chatter
+          - Tears
+          - Folding
+          - Creasing
+          - Pen markings
+          - Air bubbles
+          - None
+        tissue_section_thickness:
+          description: Thickness of the tissue section being examined
+          type: float
+          format: numeric
+          example: 5
+        scanning_artefacts:
+          description: Artefacts introduced in tissue image during scanning
+          type: string
+          example: None
+          enum:
+          - Scan lines
+          - Background effects
+          - None
+        magnification:
+          description: Magnification of the instrement used for imaging
+          type: integer
+          format: numeric
+          example: 10
+        resolution:
+          description: Smallest spatial distance that can be resolved in the image
+          type: float
+          format: numeric
+          example: 10
+        out_of_focus_regions:
+          description: Whether the tissue image contains out of focus (OOF) regions,
+            degree of OOF
+          type: string
+          example: Global OOF
+          enum:
+          - Global OOF
+          - Regional OOF
+        percent_stromal_cells:
+          description: The percent of stromal cells based on the tissue image.
+          type: float
+          format: numeric
+          example: 90
+          lower_limit: 0.0
+          upper_limit: 100.0
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: '%'
+            encoding: UTF-8
+        percent_necrosis:
+          description: The percent of necrotic region based on the tissue image.
+          type: float
+          format: numeric
+          example: 80
+          lower_limit: 0.0
+          upper_limit: 100.0
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: '%'
+            encoding: UTF-8
+        percent_inflam_infiltration:
+          description: The ratio of inflammatory cells to the gross cell population
+            seen on a slide.
+          type: float
+          format: numeric
+          example: 10
+          lower_limit: 0.0
+          upper_limit: 100.0
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: '%'
+            encoding: UTF-8
+        number_proliferating_cells:
+          description: The number of proliferating cells based on the tissue image.
+          type: integer
+          format: numeric
+          example: 200
+        percent_tumor_cells:
+          description: The percent of tumor cells based on the tissue image.
+          type: float
+          format: numeric
+          example: 10
+          lower_limit: 0.0
+          upper_limit: 100.0
+          units:
+            description: Unit is a quantity of constant magnitude which is used to
+              measure the magnitudes of other quantities of the same manner
+            uom: '%'
+            encoding: UTF-8
+        number_malignant_cells:
+          description: The number of malignant cells based on tissue image
+          type: integer
+          format: numeric
+          example: 1500
+        region_mean_intensity:
+          description: Mean expression (pixel intensity) of a marker across the imaged
+            region
+          type: float
+          format: numeric
+          example: 112
+        region_stdev:
+          description: Std deviation in expression (pixel intensity) of a marker across
+            the imaged region
+          type: float
+          format: numeric
+          example: 18
+        signal_area:
+          description: Area of the imaged region with marker expression above a binarization
+            threshold - Area with Signal
+          type: integer
+          format: numeric
+          example: 45
+        signal_mean_intensity:
+          description: Mean expression (pixel intensity) of a marker across the signal
+            area
+          type: float
+          format: numeric
+          example: 50
+        signal_stdev:
+          description: Std Deviation in expression (pixel intensity) of a marker across
+            the signal area
+          type: float
+          format: numeric
+          example: 55.5
+        background_area:
+          description: Area of the imaged region with marker expression below a binarization
+            threshold - Area with Background/Noise
+          type: integer
+          format: numeric
+          example: 32
+        background_mean_intensity:
+          description: Mean expression (pixel intensity) of a marker across the background
+            area
+          type: float
+          format: numeric
+          example: 100
+        background_stdev:
+          description: Std Deviation in expression (pixel intensity) of a marker across
+            the background area
+          type: float
+          format: numeric
+          example: 11
+        SNR:
+          description: Ratio of mean intensity in signal area to mean intensity in
+            backgroud area
+          type: float
+          format: numeric
+          example: 1.3
+  type: object
+  version: 1.0.0
